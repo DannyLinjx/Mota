@@ -1,0 +1,14 @@
+module_id: i2c_pullups
+version: 1
+title: I2C pull-ups
+status: verified
+description: One 3.3 kOhm resistor from each of SDA and SCL to the 3.3 V rail.
+parts: {R1: r_3k3, R2: r_3k3}
+constraints:
+  - {id: SDA_PULLUP, expression: "resistor_between(SDA, 3V3) >= 1"}
+  - {id: SCL_PULLUP, expression: "resistor_between(SCL, 3V3) >= 1"}
+  - {id: PULLUP_TARGET_IS_3V3, expression: "pullup rail is 3V3, never 5 V"}
+sources: [{id: D3, title: ADI DS1621 datasheet (bus characteristics)}]
+tests:
+  - {id: missing_sda_pullup, expect: I2C_PULLUPS=FAIL}
+  - {id: pullup_to_5v, expect: I2C_PULLUPS or VOLTAGE_DOMAIN=FAIL}

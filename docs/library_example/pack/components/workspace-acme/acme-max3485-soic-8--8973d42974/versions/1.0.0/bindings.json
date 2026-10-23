@@ -1,0 +1,39 @@
+{
+ "footprint": {
+  "asset_id": "workspace_acme:footprint:acme_soic8",
+  "package_version": "1.0.0"
+ },
+ "mapping_evidence": {
+  "source": "equal pin and pad numbers"
+ },
+ "pin_pad_map": {
+  "1": [
+   "1"
+  ],
+  "2": [
+   "2"
+  ],
+  "3": [
+   "3"
+  ],
+  "4": [
+   "4"
+  ],
+  "5": [
+   "5"
+  ],
+  "6": [
+   "6"
+  ],
+  "7": [
+   "7"
+  ],
+  "8": [
+   "8"
+  ]
+ },
+ "symbol": {
+  "asset_id": "workspace_acme:symbol:acme_max3485",
+  "package_version": "1.0.0"
+ }
+}

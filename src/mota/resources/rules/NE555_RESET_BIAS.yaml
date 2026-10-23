@@ -1,0 +1,8 @@
+rule_id: NE555_RESET_BIAS
+version: 1
+kind: hard
+applies_to: [led_timer]
+source: {id: D2, section: "Astable operation"}
+predicate_id: pins_share_net
+parameters: {a: "U1:4", b: "U1:8", expected_net_class: power}
+on_failure: {code: RESET_NOT_BIASED, block_auto_build: true}

@@ -1,0 +1,80 @@
+id: led_timer
+version: 1
+title: LED Timer Board
+subtitle: A simple timer circuit with a blinking LED.
+description: >
+  A TI NE555P astable timer running at about 1 Hz from 5 V. RA=10k, RB=68k and
+  C=10uF set the nominal frequency; the LED is wired from VCC through 1k into the
+  output pin and lights when the output is low.
+status: candidate
+validation_profile: mota_demo_2layer_v1
+modules: [dc_input_2pin, ne555_astable, led_indicator, power_decoupling]
+required_fields: [supply_voltage_v, target_frequency_hz]
+defaults:
+  supply_voltage_v: 5.0
+  target_frequency_hz: 1.0
+  ra_kohm: 10
+  rb_kohm: 68
+  timing_cap_uf: 10
+  board_width_mm: 50
+  board_height_mm: 35
+  board_thickness_mm: 1.6
+constraints:
+  supply_voltage_v: {min: 4.5, max: 5.5}
+  target_frequency_hz: {min: 0.8, max: 1.2}
+  layer_count: {const: 2}
+board:
+  width_mm: 50
+  height_mm: 35
+  thickness_mm: 1.6
+  mounting_holes:
+    - {x_mm: 3.5, y_mm: 3.5, drill_mm: 3.2}
+    - {x_mm: 46.5, y_mm: 31.5, drill_mm: 3.2}
+parts:
+  - {reference: J1, part_id: conn_1x02, value: "5V IN", module: dc_input_2pin, rotation: 90}
+  - {reference: U1, part_id: ne555p, value: NE555P, module: ne555_astable}
+  - {reference: R1, part_id: r_10k, value: 10k, module: ne555_astable}
+  - {reference: R2, part_id: r_68k, value: 68k, module: ne555_astable}
+  - {reference: C1, part_id: c_10u_16v, value: 10uF, module: ne555_astable}
+  - {reference: C2, part_id: c_10n_50v, value: 10nF, module: ne555_astable}
+  - {reference: C3, part_id: c_100n_50v, value: 100nF, module: power_decoupling}
+  - {reference: R3, part_id: r_1k, value: 1k, module: led_indicator}
+  - {reference: D1, part_id: led_red_5mm, value: LED-RED, module: led_indicator}
+nets:
+  - {name: VCC_5V, class: power, voltage_v: 5.0, pins: [J1:1, U1:8, U1:4, R1:1, C3:1, R3:1]}
+  - {name: GND, class: ground, pins: [J1:2, U1:1, C1:2, C2:2, C3:2]}
+  - {name: DISCH, class: signal, pins: [U1:7, R1:2, R2:1]}
+  - {name: TIMING, class: signal, pins: [U1:2, U1:6, R2:2, C1:1]}
+  - {name: CONT, class: signal, pins: [U1:5, C2:1]}
+  - {name: LED_A, class: signal, pins: [R3:2, D1:1]}
+  - {name: LED_K, class: signal, pins: [D1:2, U1:3]}
+no_connects: []
+placement:
+  - {ref: J1, fx: 0.00, fy: 0.50, rotation: 90}
+  - {ref: C3, fx: 0.12, fy: 0.12}
+  - {ref: R3, fx: 0.15, fy: 0.82, rotation: 90}
+  - {ref: D1, fx: 0.36, fy: 0.83}
+  - {ref: U1, fx: 0.42, fy: 0.50}
+  - {ref: R1, fx: 0.65, fy: 0.15}
+  - {ref: R2, fx: 0.65, fy: 0.40}
+  - {ref: C1, fx: 0.88, fy: 0.25}
+  - {ref: C2, fx: 0.88, fy: 0.72}
+required_checks:
+  - PIN_PAD_MAPPING
+  - NE555_PINMAP
+  - NET_COMPLETENESS
+  - REQUIRED_CONNECTIONS
+  - NE555_RESET_BIAS
+  - NE555_TIMING
+  - LED_POLARITY
+  - SUPPLY_DECOUPLING
+  - VOLTAGE_DOMAIN
+  - SCHEMATIC_PCB_CONSISTENCY
+  - ROUTING_COMPLETE
+  - DRC_CLEARANCE
+  - DRC_BOARD_EDGE
+  - DRC_TRACK_WIDTH
+  - DRC_HOLES
+  - COPPER_CONNECTIVITY
+  - COPPER_SHORTS
+source_ids: [D2, SPEC-R, SPEC-C, SPEC-LED, SPEC-CONN]

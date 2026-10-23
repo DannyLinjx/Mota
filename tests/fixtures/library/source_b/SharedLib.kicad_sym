@@ -1,0 +1,14 @@
+(kicad_symbol_lib (version 20231120) (generator kicad_symbol_editor)
+  (symbol "Shared"
+    (property "Reference" "U" (at 0 0 0))
+    (property "Value" "Shared" (at 0 0 0))
+    (property "Description" "Shared name from source B with different pins" (at 0 0 0))
+    (symbol "Shared_1_1"
+      (pin output line (at -2.54 0 0) (length 1.27)
+        (name "B" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27)))))
+      (pin output line (at 2.54 0 180) (length 1.27)
+        (name "C" (effects (font (size 1.27 1.27))))
+        (number "2" (effects (font (size 1.27 1.27))))))
+  )
+)

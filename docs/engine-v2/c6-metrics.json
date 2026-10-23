@@ -1,0 +1,1 @@
+{"checks":110,"failures":0,"geometry":{"checks":74,"failures":0,"rtree":{"build_ms":52.060875,"hits":271972,"index_memory_bytes":8400072,"leaves":8192,"max_depth":14,"nodes":16383,"objects":100000,"query_ms":132.419292,"rss_bytes":19283968}},"worker":{"checks":36,"failures":0}}

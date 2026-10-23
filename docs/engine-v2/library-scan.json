@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-21T09:08:52Z",
+  "tool": "scripts/library_import_scan.py",
+  "library_root": "/tmp/mota-kicad/mota-data/catalog/library",
+  "sources": [
+    {
+      "source_id": "kicad-symbols-9.0.0",
+      "path": "/tmp/mota-kicad/kicad-symbols-9.0.0",
+      "version": "9.0.0",
+      "license": "CC-BY-SA-4.0 WITH KiCad-Library-Exception",
+      "license_url": "https://www.kicad.org/libraries/license/",
+      "store_content": true,
+      "snapshot_id": "485955f46a22acb2",
+      "status": "PARTIAL",
+      "first_pass": {
+        "wall_seconds": 57.444,
+        "duration_ms": 57128,
+        "counts": {
+          "discovered": 21806,
+          "parsed": 21771,
+          "unsupported": 35,
+          "failed": 0,
+          "indexed": 21806,
+          "added": 21806,
+          "changed": 0,
+          "unchanged": 0,
+          "removed": 0,
+          "mapped": 21771,
+          "rendered": 0,
+          "auto_synthesis_ready": null,
+          "files_total": 224,
+          "files_processed": 224,
+          "files_reused": 0,
+          "bytes_parsed": 219889181
+        },
+        "counts_by_kind": {
+          "symbol": {
+            "discovered": 21806,
+            "parsed": 21771,
+            "unsupported": 35,
+            "failed": 0
+          },
+          "footprint": {
+            "discovered": 0,
+            "parsed": 0,
+            "unsupported": 0,
+            "failed": 0
+          },
+          "legacy": {
+            "discovered": 0,
+            "parsed": 0,
+            "unsupported": 0,
+            "failed": 0
+          }
+        },
+        "failure_codes": {},
+        "unsupported_codes": {
+          "NO_PINS": 35
+        },
+        "semantic_warning_codes": {},
+        "diagnostic_codes": {},
+        "diagnostics_total_capped": 0,
+        "diagnostics_truncated": 0,
+        "diagnostics_sample": [],
+        "process_max_rss_bytes": 722468864
+      },
+      "second_pass": {
+        "wall_seconds": 0.648,
+        "duration_ms": 377,
+        "counts": {
+          "discovered": 21806,
+          "parsed": 21771,
+          "unsupported": 35,
+          "failed": 0,
+          "indexed": 21806,
+          "added": 0,
+          "changed": 0,
+          "unchanged": 21806,
+          "removed": 0,
+          "mapped": 21771,
+          "rendered": 0,
+          "auto_synthesis_ready": null,
+          "files_total": 224,
+          "files_processed": 0,
+          "files_reused": 224,
+          "bytes_parsed": 0
+        },
+        "snapshot_id": "485955f46a22acb2"
+      },
+      "coverage_identity_holds": true,
+      "discovered": 21806,
+      "parsed": 21771,
+      "unsupported": 35,
+      "failed": 0
+    },
+    {
+      "source_id": "kicad-footprints-9.0.0",
+      "path": "/tmp/mota-kicad/kicad-footprints-9.0.0",
+      "version": "9.0.0",
+      "license": "CC-BY-SA-4.0 WITH KiCad-Library-Exception",
+      "license_url": "https://www.kicad.org/libraries/license/",
+      "store_content": true,
+      "snapshot_id": "722a652b49aa57ac",
+      "status": "PARTIAL",
+      "first_pass": {
+        "wall_seconds": 37.402,
+        "duration_ms": 37128,
+        "counts": {
+          "discovered": 14216,
+          "parsed": 14047,
+          "unsupported": 169,
+          "failed": 0,
+          "indexed": 14216,
+          "added": 14216,
+          "changed": 0,
+          "unchanged": 0,
+          "removed": 0,
+          "mapped": 13979,
+          "rendered": 0,
+          "auto_synthesis_ready": null,
+          "files_total": 14216,
+          "files_processed": 14216,
+          "files_reused": 0,
+          "bytes_parsed": 183360838
+        },
+        "counts_by_kind": {
+          "symbol": {
+            "discovered": 0,
+            "parsed": 0,
+            "unsupported": 0,
+            "failed": 0
+          },
+          "footprint": {
+            "discovered": 14216,
+            "parsed": 14047,
+            "unsupported": 169,
+            "failed": 0
+          },
+          "legacy": {
+            "discovered": 0,
+            "parsed": 0,
+            "unsupported": 0,
+            "failed": 0
+          }
+        },
+        "failure_codes": {},
+        "unsupported_codes": {
+          "NO_PADS": 169
+        },
+        "semantic_warning_codes": {},
+        "diagnostic_codes": {
+          "DUPLICATE_PAD_NUMBERS": 2530,
+          "UNNUMBERED_NON_NPTH_PAD": 13665,
+          "UNKNOWN_TOKEN": 1031
+        },
+        "diagnostics_total_capped": 200,
+        "diagnostics_truncated": 2194,
+        "diagnostics_sample": [
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SP3T_PCM13.kicad_mod",
+            "line": 377,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SP3T_PCM13"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SP3T_PCM13.kicad_mod",
+            "line": 383,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SP3T_PCM13"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SP3T_PCM13.kicad_mod",
+            "line": 403,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SP3T_PCM13"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SP3T_PCM13.kicad_mod",
+            "line": 409,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SP3T_PCM13"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SPDT_PCM12.kicad_mod",
+            "line": 347,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SPDT_PCM12"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SPDT_PCM12.kicad_mod",
+            "line": 353,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SPDT_PCM12"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SPDT_PCM12.kicad_mod",
+            "line": 373,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SPDT_PCM12"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'smd' has no number",
+            "file": "Button_Switch_SMD.pretty/SW_SPDT_PCM12.kicad_mod",
+            "line": 379,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_SMD:SW_SPDT_PCM12"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG1224_SPDT_Angled.kicad_mod",
+            "line": 288,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG1224_SPDT_Angled.kicad_mod",
+            "line": 296,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG1224_SPDT_Angled.kicad_mod",
+            "line": 304,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG1224_SPDT_Angled.kicad_mod",
+            "line": 312,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG2219_DPDT_Angled.kicad_mod",
+            "line": 288,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG2219_DPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG2219_DPDT_Angled.kicad_mod",
+            "line": 296,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG2219_DPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG2219_DPDT_Angled.kicad_mod",
+            "line": 304,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG2219_DPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_E-Switch_EG2219_DPDT_Angled.kicad_mod",
+            "line": 312,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_E-Switch_EG2219_DPDT_Angled"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_Lever_1P2T_NKK_GW12LxH.kicad_mod",
+            "line": 290,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_Lever_1P2T_NKK_GW12LxH"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_Lever_1P2T_NKK_GW12LxH.kicad_mod",
+            "line": 298,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_Lever_1P2T_NKK_GW12LxH"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_NKK_BB15AH.kicad_mod",
+            "line": 298,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_NKK_BB15AH"
+          },
+          {
+            "severity": "warning",
+            "code": "UNNUMBERED_NON_NPTH_PAD",
+            "message": "pad of type 'thru_hole' has no number",
+            "file": "Button_Switch_THT.pretty/SW_NKK_BB15AH.kicad_mod",
+            "line": 306,
+            "column": 2,
+            "asset_id": "fp:kicad-footprints-9.0.0:Button_Switch_THT:SW_NKK_BB15AH"
+          }
+        ],
+        "process_max_rss_bytes": 722468864
+      },
+      "second_pass": {
+        "wall_seconds": 3.107,
+        "duration_ms": 2883,
+        "counts": {
+          "discovered": 14216,
+          "parsed": 14047,
+          "unsupported": 169,
+          "failed": 0,
+          "indexed": 14216,
+          "added": 0,
+          "changed": 0,
+          "unchanged": 14216,
+          "removed": 0,
+          "mapped": 13979,
+          "rendered": 0,
+          "auto_synthesis_ready": null,
+          "files_total": 14216,
+          "files_processed": 0,
+          "files_reused": 14216,
+          "bytes_parsed": 0
+        },
+        "snapshot_id": "722a652b49aa57ac"
+      },
+      "coverage_identity_holds": true,
+      "discovered": 14216,
+      "parsed": 14047,
+      "unsupported": 169,
+      "failed": 0
+    }
+  ],
+  "totals": {
+    "discovered": 36022,
+    "parsed": 35818,
+    "unsupported": 204,
+    "failed": 0
+  },
+  "notes": [
+    "All numbers come from real imports of the public KiCad 9.0.0 archives; no fixture or estimate is substituted.",
+    "store_content=True: source bytes are copied into the content-addressed store.",
+    "process_max_rss_bytes is process-wide max RSS and therefore not attributable to a single source when both run in one process.",
+    "auto_synthesis_ready is not evaluated in C1 (pair synthesis is C2)."
+  ]
+}

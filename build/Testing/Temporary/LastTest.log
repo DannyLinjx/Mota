@@ -1,0 +1,133 @@
+Start testing: Oct 22 12:17 CST
+----------------------------------------------------------
+1/7 Testing: geometry
+1/7 Test: geometry
+Command: "/Users/danny/Documents/Mota/build/mota-kernel-tests"
+Directory: /Users/danny/Documents/Mota/build
+"geometry" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+rtree objects=100000 nodes=16383 depth=14 memory=8400072 build_ms=20.6042 query_ms=94.9172 rss=19562496
+checks=110 failures=0
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"geometry" end time: Oct 22 12:17 CST
+"geometry" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: connectivity
+2/7 Test: connectivity
+Command: "/Users/danny/Documents/Mota/build/mota-connectivity-tests"
+Directory: /Users/danny/Documents/Mota/build
+"connectivity" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+connectivity checks=43 failures=0
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"connectivity" end time: Oct 22 12:17 CST
+"connectivity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: drc
+3/7 Test: drc
+Command: "/Users/danny/Documents/Mota/build/mota-drc-tests"
+Directory: /Users/danny/Documents/Mota/build
+"drc" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+drc checks=25 failures=0
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"drc" end time: Oct 22 12:17 CST
+"drc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: placement
+4/7 Test: placement
+Command: "/Users/danny/Documents/Mota/build/mota-placement-tests"
+Directory: /Users/danny/Documents/Mota/build
+"placement" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+placement checks=51 failures=0
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"placement" end time: Oct 22 12:17 CST
+"placement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: routing
+5/7 Test: routing
+Command: "/Users/danny/Documents/Mota/build/mota-routing-tests"
+Directory: /Users/danny/Documents/Mota/build
+"routing" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+routing checks=38 failures=0
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"routing" end time: Oct 22 12:17 CST
+"routing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: fanout
+6/7 Test: fanout
+Command: "/Users/danny/Documents/Mota/build/mota-fanout-tests"
+Directory: /Users/danny/Documents/Mota/build
+"fanout" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+platform_stm32h743_tfbga240 status=SUCCEEDED required=240 escaped=240 failures=0 vias=240 dogbone=240 via_in_pad=0 channel=1 nodes=16
+synthetic_0p5_feasible status=SUCCEEDED required=100 escaped=100 failures=0 vias=100 dogbone=36 via_in_pad=64 channel=0 nodes=12
+synthetic_0p5_infeasible status=INFEASIBLE required=100 escaped=0 failures=100 vias=0 dogbone=0 via_in_pad=0 channel=0 nodes=0 first_failure=A2:GROUP_RESERVATION_FAILED
+synthetic_0p8_feasible status=SUCCEEDED required=64 escaped=64 failures=0 vias=64 dogbone=64 via_in_pad=0 channel=1 nodes=16
+synthetic_0p8_infeasible status=INFEASIBLE required=64 escaped=0 failures=64 vias=0 dogbone=0 via_in_pad=0 channel=1 nodes=0 first_failure=A2:GROUP_RESERVATION_FAILED
+fanout checks=3381 failures=0
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"fanout" end time: Oct 22 12:17 CST
+"fanout" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: highspeed
+7/7 Test: highspeed
+Command: "/Users/danny/Documents/Mota/build/mota-highspeed-tests"
+Directory: /Users/danny/Documents/Mota/build
+"highspeed" start time: Oct 22 12:17 CST
+Output:
+----------------------------------------------------------
+channel_series_matched status=SUCCEEDED pass=4 fail=0 not_checked=0 skipped=0 checks=4 bundles=0 tuning=0 nodes=0
+local_uncoupled status=FAILED pass=1 fail=2 not_checked=0 skipped=2 checks=5 bundles=1 tuning=0 nodes=942
+  bundle DP_NEAR MEASURED coupled=10500000 uncoupled=6200000 skew=2600000 corners=0/4 unmatched=4 vias=0/0 paired=1
+missing_package_model status=PARTIAL pass=3 fail=0 not_checked=1 skipped=0 checks=4 bundles=0 tuning=0 nodes=0
+pair_matched status=SUCCEEDED pass=5 fail=0 not_checked=0 skipped=0 checks=5 bundles=1 tuning=0 nodes=408
+  bundle DP1 MEASURED coupled=20400000 uncoupled=0 skew=0 corners=0/0 unmatched=0 vias=1/1 paired=1
+reference_split status=FAILED pass=1 fail=1 not_checked=0 skipped=1 checks=3 bundles=0 tuning=0 nodes=0
+same_length_different_layer status=FAILED pass=2 fail=2 not_checked=0 skipped=2 checks=6 bundles=1 tuning=0 nodes=0
+  bundle DP_LAYER MEASURED coupled=0 uncoupled=20200000 skew=0 corners=0/0 unmatched=0 vias=0/0 paired=1
+tuning_required status=FAILED pass=2 fail=1 not_checked=0 skipped=3 checks=6 bundles=1 tuning=1 nodes=384
+  bundle DP_SKEW MEASURED coupled=18200000 uncoupled=1000000 skew=2000000 corners=0/0 unmatched=0 vias=0/0 paired=1
+  tuning DP_N required=2000000 added=2248192 teeth=8 pitch=500000 controlled=1
+highspeed checks=193 failures=0
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"highspeed" end time: Oct 22 12:17 CST
+"highspeed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 22 12:17 CST

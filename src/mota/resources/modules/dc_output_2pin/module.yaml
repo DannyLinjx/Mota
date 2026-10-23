@@ -1,0 +1,13 @@
+module_id: dc_output_2pin
+version: 1
+title: 2-pin DC output connector
+status: verified
+description: 2.54 mm through-hole header J2, pin 1 regulated output, pin 2 GND.
+parts: {J2: conn_1x02}
+constraints:
+  - {id: PIN1_REGULATED, expression: "J2.1 net is VOUT_3V3"}
+  - {id: PIN2_GND, expression: "J2.2 in GND"}
+  - {id: CONNECTOR_AT_RIGHT_EDGE, expression: "J2.x >= board_width - 10 mm"}
+placement_rules:
+  - {part: J2, anchor: right_center, rotation: 90}
+sources: [{id: SPEC-CONN, title: Mota 2.54 mm header engineering spec}]

@@ -1,0 +1,63 @@
+{
+  "id": "missing_package_model",
+  "source": "Negative fixture: both receiver paths are length-matched, but one receiver has no package delay model. Length PASS must stay PARTIAL, never a timing PASS.",
+  "expected_status": "PARTIAL",
+  "layers": ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"],
+  "board": {
+    "width_nm": 40000000,
+    "height_nm": 20000000,
+    "outline": [
+      {"x": 0, "y": 0},
+      {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000},
+      {"x": 0, "y": 20000000}
+    ]
+  },
+  "channels": [
+    {
+      "id": "CH_MISSING",
+      "net": "N1",
+      "driver": "D1",
+      "receivers": ["R1", "R2"],
+      "length_tolerance_nm": 1000000,
+      "target_delay_ps": 200.0,
+      "delay_tolerance_ps": 5.0,
+      "nodes": [
+        {"id": "D1", "kind": "driver", "net": "N1", "component_id": "U1", "pin": "1", "x_nm": 5000000, "y_nm": 10000000, "layer": "F.Cu"},
+        {"id": "R1", "kind": "receiver", "net": "N1", "component_id": "U2", "pin": "1", "x_nm": 26000000, "y_nm": 14000000, "layer": "F.Cu"},
+        {"id": "R2", "kind": "receiver", "net": "N1", "component_id": "U3", "pin": "1", "x_nm": 26000000, "y_nm": 6000000, "layer": "F.Cu"}
+      ]
+    }
+  ],
+  "tracks": [
+    {"id": "T_MAIN", "net": "N1", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 5000000, "y": 10000000}, {"x": 26000000, "y": 10000000}]},
+    {"id": "T_UP", "net": "N1", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 26000000, "y": 10000000}, {"x": 26000000, "y": 14000000}]},
+    {"id": "T_DOWN", "net": "N1", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 26000000, "y": 10000000}, {"x": 26000000, "y": 6000000}]}
+  ],
+  "layer_models": [
+    {"layer": "F.Cu", "thickness_nm": 100000, "reference_layer": "In1.Cu", "propagation_ps_per_mm": 6.0, "source": "declared in fixture"},
+    {"layer": "In1.Cu", "thickness_nm": 200000, "reference_layer": "In2.Cu", "propagation_ps_per_mm": 9.0, "source": "declared in fixture"},
+    {"layer": "In2.Cu", "thickness_nm": 200000, "reference_layer": "In1.Cu", "propagation_ps_per_mm": 9.4, "source": "declared in fixture"},
+    {"layer": "B.Cu", "thickness_nm": 100000, "reference_layer": "In2.Cu", "propagation_ps_per_mm": 6.4, "source": "declared in fixture"}
+  ],
+  "reference_planes": [
+    {"layer": "In1.Cu", "polygons": [[
+      {"x": 0, "y": 0}, {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000}, {"x": 0, "y": 20000000}
+    ]]}
+  ],
+  "package_models": [
+    {"component_id": "U1", "pin": "1", "length_nm": 2000000, "delay_ps": 20.0, "present": true, "source": "declared in fixture"},
+    {"component_id": "U2", "pin": "1", "length_nm": 2000000, "delay_ps": 15.0, "present": true, "source": "declared in fixture"}
+  ],
+  "expect_checks": [
+    {"kind": "channel_topology", "status": "PASS"},
+    {"kind": "length_match", "status": "PASS", "measured_nm": 0},
+    {"kind": "delay", "status": "NOT_CHECKED"},
+    {"kind": "return_path", "status": "PASS"}
+  ],
+  "rules": {"sample_step_nm": 100000, "seed": 61}
+}

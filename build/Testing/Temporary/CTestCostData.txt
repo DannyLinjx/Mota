@@ -1,0 +1,8 @@
+geometry 12 0.0114035
+connectivity 11 0.00124919
+drc 11 0.00108506
+placement 9 0.00549006
+routing 7 0.00219022
+fanout 6 0.00779317
+highspeed 4 0.00405526
+---

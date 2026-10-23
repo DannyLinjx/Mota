@@ -1,0 +1,1460 @@
+{
+  "scenario": "mcu_i2c_eeprom_uart_led",
+  "status": "OK",
+  "semantic_hash": "99407fa91570177a20e593a031b483ae161012a434a6d967fb113074399e84fb",
+  "components": 15,
+  "nets": 11,
+  "schematic": {
+    "schema_version": 1,
+    "page_w_nm": 297000000,
+    "page_h_nm": 210000000,
+    "snap_nm": 1270000,
+    "symbols": [
+      {
+        "component_id": "component_reg__cin",
+        "symbol_id": "SYM_C",
+        "reference": "C1",
+        "value": "2.2uF",
+        "x_nm": 26000000,
+        "y_nm": 176000000,
+        "rotation_deg": 0,
+        "body_w_nm": 4000000,
+        "body_h_nm": 5080000,
+        "pin_anchors": {
+          "1": [
+            26000000,
+            181080000
+          ],
+          "2": [
+            26000000,
+            170920000
+          ]
+        }
+      },
+      {
+        "component_id": "component_reg__cout",
+        "symbol_id": "SYM_C",
+        "reference": "C2",
+        "value": "10uF",
+        "x_nm": 72000000,
+        "y_nm": 176000000,
+        "rotation_deg": 0,
+        "body_w_nm": 4000000,
+        "body_h_nm": 5080000,
+        "pin_anchors": {
+          "1": [
+            72000000,
+            181080000
+          ],
+          "2": [
+            72000000,
+            170920000
+          ]
+        }
+      },
+      {
+        "component_id": "component_mcu__cdec1",
+        "symbol_id": "SYM_C",
+        "reference": "C3",
+        "value": "100nF",
+        "x_nm": 118000000,
+        "y_nm": 176000000,
+        "rotation_deg": 0,
+        "body_w_nm": 4000000,
+        "body_h_nm": 5080000,
+        "pin_anchors": {
+          "1": [
+            118000000,
+            181080000
+          ],
+          "2": [
+            118000000,
+            170920000
+          ]
+        }
+      },
+      {
+        "component_id": "component_mcu__cdec2",
+        "symbol_id": "SYM_C",
+        "reference": "C4",
+        "value": "10uF",
+        "x_nm": 164000000,
+        "y_nm": 176000000,
+        "rotation_deg": 0,
+        "body_w_nm": 4000000,
+        "body_h_nm": 5080000,
+        "pin_anchors": {
+          "1": [
+            164000000,
+            181080000
+          ],
+          "2": [
+            164000000,
+            170920000
+          ]
+        }
+      },
+      {
+        "component_id": "component_eeprom__cdec",
+        "symbol_id": "SYM_C",
+        "reference": "C5",
+        "value": "100nF",
+        "x_nm": 26000000,
+        "y_nm": 136000000,
+        "rotation_deg": 0,
+        "body_w_nm": 4000000,
+        "body_h_nm": 5080000,
+        "pin_anchors": {
+          "1": [
+            26000000,
+            141080000
+          ],
+          "2": [
+            26000000,
+            130920000
+          ]
+        }
+      },
+      {
+        "component_id": "component_led__dled",
+        "symbol_id": "SYM_LED",
+        "reference": "D1",
+        "value": "red LED",
+        "x_nm": 72000000,
+        "y_nm": 136000000,
+        "rotation_deg": 0,
+        "body_w_nm": 5080000,
+        "body_h_nm": 5080000,
+        "pin_anchors": {
+          "1": [
+            66920000,
+            136000000
+          ],
+          "2": [
+            77080000,
+            136000000
+          ]
+        }
+      },
+      {
+        "component_id": "component_pwr__jpwr",
+        "symbol_id": "SYM_CONN_2",
+        "reference": "J1",
+        "value": "DC IN",
+        "x_nm": 118000000,
+        "y_nm": 136000000,
+        "rotation_deg": 0,
+        "body_w_nm": 5080000,
+        "body_h_nm": 6350000,
+        "pin_anchors": {
+          "1": [
+            112920000,
+            137270000
+          ],
+          "2": [
+            112920000,
+            134730000
+          ]
+        }
+      },
+      {
+        "component_id": "component_uart1__juart",
+        "symbol_id": "SYM_CONN_4",
+        "reference": "J2",
+        "value": "UART",
+        "x_nm": 164000000,
+        "y_nm": 136000000,
+        "rotation_deg": 0,
+        "body_w_nm": 5080000,
+        "body_h_nm": 11430000,
+        "pin_anchors": {
+          "1": [
+            158920000,
+            139810000
+          ],
+          "2": [
+            158920000,
+            137270000
+          ],
+          "3": [
+            158920000,
+            134730000
+          ],
+          "4": [
+            158920000,
+            132190000
+          ]
+        }
+      },
+      {
+        "component_id": "component_mcu__rboot",
+        "symbol_id": "SYM_R",
+        "reference": "R1",
+        "value": "10k",
+        "x_nm": 26000000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "body_w_nm": 7620000,
+        "body_h_nm": 2540000,
+        "pin_anchors": {
+          "1": [
+            18380000,
+            96000000
+          ],
+          "2": [
+            33620000,
+            96000000
+          ]
+        }
+      },
+      {
+        "component_id": "component_eeprom__rsda",
+        "symbol_id": "SYM_R",
+        "reference": "R2",
+        "value": "10k",
+        "x_nm": 72000000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "body_w_nm": 7620000,
+        "body_h_nm": 2540000,
+        "pin_anchors": {
+          "1": [
+            64380000,
+            96000000
+          ],
+          "2": [
+            79620000,
+            96000000
+          ]
+        }
+      },
+      {
+        "component_id": "component_eeprom__rscl",
+        "symbol_id": "SYM_R",
+        "reference": "R3",
+        "value": "10k",
+        "x_nm": 118000000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "body_w_nm": 7620000,
+        "body_h_nm": 2540000,
+        "pin_anchors": {
+          "1": [
+            110380000,
+            96000000
+          ],
+          "2": [
+            125620000,
+            96000000
+          ]
+        }
+      },
+      {
+        "component_id": "component_led__rled",
+        "symbol_id": "SYM_R",
+        "reference": "R4",
+        "value": "1k",
+        "x_nm": 164000000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "body_w_nm": 7620000,
+        "body_h_nm": 2540000,
+        "pin_anchors": {
+          "1": [
+            156380000,
+            96000000
+          ],
+          "2": [
+            171620000,
+            96000000
+          ]
+        }
+      },
+      {
+        "component_id": "component_reg__ureg",
+        "symbol_id": "SYM_MCP1700_TO92",
+        "reference": "U1",
+        "value": "3.3 V LDO",
+        "x_nm": 26000000,
+        "y_nm": 56000000,
+        "rotation_deg": 0,
+        "body_w_nm": 7620000,
+        "body_h_nm": 7620000,
+        "pin_anchors": {
+          "1": [
+            19650000,
+            54730000
+          ],
+          "2": [
+            19650000,
+            57270000
+          ],
+          "3": [
+            32350000,
+            56000000
+          ]
+        }
+      },
+      {
+        "component_id": "component_mcu__umcu",
+        "symbol_id": "mota:local:mota:mcu_stm32g071k8",
+        "reference": "U2",
+        "value": "STM32G071K8",
+        "x_nm": 72000000,
+        "y_nm": 56000000,
+        "rotation_deg": 0,
+        "body_w_nm": 15240000,
+        "body_h_nm": 17780000,
+        "pin_anchors": {
+          "1": [
+            64380000,
+            62350000
+          ],
+          "2": [
+            79620000,
+            62350000
+          ],
+          "3": [
+            64380000,
+            59810000
+          ],
+          "4": [
+            79620000,
+            59810000
+          ],
+          "5": [
+            64380000,
+            57270000
+          ],
+          "6": [
+            79620000,
+            57270000
+          ],
+          "7": [
+            64380000,
+            54730000
+          ],
+          "8": [
+            79620000,
+            54730000
+          ],
+          "9": [
+            64380000,
+            52190000
+          ]
+        }
+      },
+      {
+        "component_id": "component_eeprom__ueeprom",
+        "symbol_id": "mota:local:mota:at24c02",
+        "reference": "U3",
+        "value": "AT24C02",
+        "x_nm": 118000000,
+        "y_nm": 56000000,
+        "rotation_deg": 0,
+        "body_w_nm": 15240000,
+        "body_h_nm": 15240000,
+        "pin_anchors": {
+          "1": [
+            110380000,
+            61080000
+          ],
+          "2": [
+            125620000,
+            61080000
+          ],
+          "3": [
+            110380000,
+            58540000
+          ],
+          "4": [
+            125620000,
+            58540000
+          ],
+          "5": [
+            110380000,
+            56000000
+          ],
+          "6": [
+            125620000,
+            56000000
+          ],
+          "7": [
+            110380000,
+            53460000
+          ],
+          "8": [
+            125620000,
+            53460000
+          ]
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "wire_0001",
+        "net_id": "net_global_vin",
+        "points": [
+          [
+            26000000,
+            181080000
+          ],
+          [
+            26000000,
+            183620000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0002",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            26000000,
+            170920000
+          ],
+          [
+            26000000,
+            168380000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0003",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            72000000,
+            181080000
+          ],
+          [
+            72000000,
+            183620000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0004",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            72000000,
+            170920000
+          ],
+          [
+            72000000,
+            168380000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0005",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            118000000,
+            181080000
+          ],
+          [
+            118000000,
+            183620000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0006",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            118000000,
+            170920000
+          ],
+          [
+            118000000,
+            168380000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0007",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            164000000,
+            181080000
+          ],
+          [
+            164000000,
+            183620000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0008",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            164000000,
+            170920000
+          ],
+          [
+            164000000,
+            168380000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0009",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            26000000,
+            141080000
+          ],
+          [
+            26000000,
+            143620000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0010",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            26000000,
+            130920000
+          ],
+          [
+            26000000,
+            128380000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0011",
+        "net_id": "net_led_mid",
+        "points": [
+          [
+            66920000,
+            136000000
+          ],
+          [
+            64380000,
+            136000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0012",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            77080000,
+            136000000
+          ],
+          [
+            79620000,
+            136000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0013",
+        "net_id": "net_global_vin",
+        "points": [
+          [
+            112920000,
+            137270000
+          ],
+          [
+            110380000,
+            137270000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0014",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            112920000,
+            134730000
+          ],
+          [
+            110380000,
+            134730000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0015",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            158920000,
+            139810000
+          ],
+          [
+            156380000,
+            139810000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0016",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            158920000,
+            137270000
+          ],
+          [
+            156380000,
+            137270000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0017",
+        "net_id": "net_uarttx",
+        "points": [
+          [
+            158920000,
+            134730000
+          ],
+          [
+            156380000,
+            134730000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0018",
+        "net_id": "net_uartrx",
+        "points": [
+          [
+            158920000,
+            132190000
+          ],
+          [
+            156380000,
+            132190000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0019",
+        "net_id": "net_mcu_boot",
+        "points": [
+          [
+            18380000,
+            96000000
+          ],
+          [
+            15840000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0020",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            33620000,
+            96000000
+          ],
+          [
+            36160000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0021",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            64380000,
+            96000000
+          ],
+          [
+            61840000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0022",
+        "net_id": "net_i2csda",
+        "points": [
+          [
+            79620000,
+            96000000
+          ],
+          [
+            82160000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0023",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            110380000,
+            96000000
+          ],
+          [
+            107840000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0024",
+        "net_id": "net_i2cscl",
+        "points": [
+          [
+            125620000,
+            96000000
+          ],
+          [
+            128160000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0025",
+        "net_id": "net_ledsig",
+        "points": [
+          [
+            156380000,
+            96000000
+          ],
+          [
+            153840000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0026",
+        "net_id": "net_led_mid",
+        "points": [
+          [
+            171620000,
+            96000000
+          ],
+          [
+            174160000,
+            96000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0027",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            19650000,
+            54730000
+          ],
+          [
+            17110000,
+            54730000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0028",
+        "net_id": "net_global_vin",
+        "points": [
+          [
+            19650000,
+            57270000
+          ],
+          [
+            17110000,
+            57270000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0029",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            32350000,
+            56000000
+          ],
+          [
+            34890000,
+            56000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0030",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            64380000,
+            62350000
+          ],
+          [
+            61840000,
+            62350000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0031",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            79620000,
+            62350000
+          ],
+          [
+            82160000,
+            62350000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0032",
+        "net_id": "net_mcu_nrst",
+        "points": [
+          [
+            64380000,
+            59810000
+          ],
+          [
+            61840000,
+            59810000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0033",
+        "net_id": "net_mcu_boot",
+        "points": [
+          [
+            79620000,
+            59810000
+          ],
+          [
+            82160000,
+            59810000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0034",
+        "net_id": "net_uarttx",
+        "points": [
+          [
+            64380000,
+            57270000
+          ],
+          [
+            61840000,
+            57270000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0035",
+        "net_id": "net_uartrx",
+        "points": [
+          [
+            79620000,
+            57270000
+          ],
+          [
+            82160000,
+            57270000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0036",
+        "net_id": "net_i2cscl",
+        "points": [
+          [
+            64380000,
+            54730000
+          ],
+          [
+            61840000,
+            54730000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0037",
+        "net_id": "net_i2csda",
+        "points": [
+          [
+            79620000,
+            54730000
+          ],
+          [
+            82160000,
+            54730000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0038",
+        "net_id": "net_ledsig",
+        "points": [
+          [
+            64380000,
+            52190000
+          ],
+          [
+            61840000,
+            52190000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0039",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            110380000,
+            61080000
+          ],
+          [
+            107840000,
+            61080000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0040",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            125620000,
+            61080000
+          ],
+          [
+            128160000,
+            61080000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0041",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            110380000,
+            58540000
+          ],
+          [
+            107840000,
+            58540000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0042",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            125620000,
+            58540000
+          ],
+          [
+            128160000,
+            58540000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0043",
+        "net_id": "net_i2csda",
+        "points": [
+          [
+            110380000,
+            56000000
+          ],
+          [
+            107840000,
+            56000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0044",
+        "net_id": "net_i2cscl",
+        "points": [
+          [
+            125620000,
+            56000000
+          ],
+          [
+            128160000,
+            56000000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0045",
+        "net_id": "net_global_gnd",
+        "points": [
+          [
+            110380000,
+            53460000
+          ],
+          [
+            107840000,
+            53460000
+          ]
+        ],
+        "width_nm": 152400
+      },
+      {
+        "id": "wire_0046",
+        "net_id": "net_global_3v3",
+        "points": [
+          [
+            125620000,
+            53460000
+          ],
+          [
+            128160000,
+            53460000
+          ]
+        ],
+        "width_nm": 152400
+      }
+    ],
+    "junctions": [],
+    "labels": [
+      {
+        "net_id": "net_global_vin",
+        "text": "VIN",
+        "x_nm": 26000000,
+        "y_nm": 184520000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 26000000,
+        "y_nm": 167480000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 72000000,
+        "y_nm": 184520000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 72000000,
+        "y_nm": 167480000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 118000000,
+        "y_nm": 184520000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 118000000,
+        "y_nm": 167480000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 164000000,
+        "y_nm": 184520000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 164000000,
+        "y_nm": 167480000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 26000000,
+        "y_nm": 144520000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 26000000,
+        "y_nm": 127480000,
+        "rotation_deg": 90,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_led_mid",
+        "text": "LED/MID",
+        "x_nm": 63480000,
+        "y_nm": 136000000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 80520000,
+        "y_nm": 136000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_vin",
+        "text": "VIN",
+        "x_nm": 109480000,
+        "y_nm": 137270000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 109480000,
+        "y_nm": 134730000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 155480000,
+        "y_nm": 139810000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 155480000,
+        "y_nm": 137270000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_uarttx",
+        "text": "UART_TX",
+        "x_nm": 155480000,
+        "y_nm": 134730000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_uartrx",
+        "text": "UART_RX",
+        "x_nm": 155480000,
+        "y_nm": 132190000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_mcu_boot",
+        "text": "MCU/BOOT",
+        "x_nm": 14940000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 37060000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 60940000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_i2csda",
+        "text": "I2C_SDA",
+        "x_nm": 83060000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 106940000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_i2cscl",
+        "text": "I2C_SCL",
+        "x_nm": 129060000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_ledsig",
+        "text": "LED_SIG",
+        "x_nm": 152940000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_led_mid",
+        "text": "LED/MID",
+        "x_nm": 175060000,
+        "y_nm": 96000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 16210000,
+        "y_nm": 54730000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_vin",
+        "text": "VIN",
+        "x_nm": 16210000,
+        "y_nm": 57270000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 35790000,
+        "y_nm": 56000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 60940000,
+        "y_nm": 62350000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 83060000,
+        "y_nm": 62350000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_mcu_nrst",
+        "text": "MCU/NRST",
+        "x_nm": 60940000,
+        "y_nm": 59810000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_mcu_boot",
+        "text": "MCU/BOOT",
+        "x_nm": 83060000,
+        "y_nm": 59810000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_uarttx",
+        "text": "UART_TX",
+        "x_nm": 60940000,
+        "y_nm": 57270000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_uartrx",
+        "text": "UART_RX",
+        "x_nm": 83060000,
+        "y_nm": 57270000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_i2cscl",
+        "text": "I2C_SCL",
+        "x_nm": 60940000,
+        "y_nm": 54730000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_i2csda",
+        "text": "I2C_SDA",
+        "x_nm": 83060000,
+        "y_nm": 54730000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_ledsig",
+        "text": "LED_SIG",
+        "x_nm": 60940000,
+        "y_nm": 52190000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 106940000,
+        "y_nm": 61080000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 129060000,
+        "y_nm": 61080000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 106940000,
+        "y_nm": 58540000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 129060000,
+        "y_nm": 58540000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_i2csda",
+        "text": "I2C_SDA",
+        "x_nm": 106940000,
+        "y_nm": 56000000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_i2cscl",
+        "text": "I2C_SCL",
+        "x_nm": 129060000,
+        "y_nm": 56000000,
+        "rotation_deg": 0,
+        "justify": "left"
+      },
+      {
+        "net_id": "net_global_gnd",
+        "text": "GND",
+        "x_nm": 106940000,
+        "y_nm": 53460000,
+        "rotation_deg": 0,
+        "justify": "right"
+      },
+      {
+        "net_id": "net_global_3v3",
+        "text": "3V3",
+        "x_nm": 129060000,
+        "y_nm": 53460000,
+        "rotation_deg": 0,
+        "justify": "left"
+      }
+    ],
+    "no_connect_pins": [],
+    "no_connects": [],
+    "title": "Mota composition: mcu_i2c_eeprom_uart_led"
+  }
+}

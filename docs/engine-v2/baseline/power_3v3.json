@@ -1,0 +1,112 @@
+{
+  "schema_version": 2,
+  "template_id": "power_3v3",
+  "template_version": 1,
+  "parameters": {
+    "input_voltage_v": 5.0,
+    "max_load_ma": 50,
+    "output_voltage_v": 3.3,
+    "board_width_mm": 40,
+    "board_height_mm": 30,
+    "board_thickness_mm": 1.6
+  },
+  "requirement": {
+    "board_size": {
+      "width_mm": 40.0,
+      "height_mm": 30.0
+    },
+    "supply": "5.0 V",
+    "parameters": {
+      "input_voltage_v": {
+        "value": 5.0,
+        "unit": "V",
+        "origin": "user",
+        "source_ids": []
+      },
+      "max_load_ma": {
+        "value": 50,
+        "unit": "mA",
+        "origin": "user",
+        "source_ids": []
+      },
+      "output_voltage_v": {
+        "value": 3.3,
+        "unit": null,
+        "origin": "user",
+        "source_ids": []
+      },
+      "board_width_mm": {
+        "value": 40,
+        "unit": "mm",
+        "origin": "user",
+        "source_ids": []
+      },
+      "board_height_mm": {
+        "value": 30,
+        "unit": "mm",
+        "origin": "user",
+        "source_ids": []
+      },
+      "board_thickness_mm": {
+        "value": 1.6,
+        "unit": null,
+        "origin": "user",
+        "source_ids": []
+      }
+    }
+  },
+  "state": "PARTIAL",
+  "review_status": "REVIEW_BLOCKED",
+  "counts": {
+    "PASS": 17,
+    "FAIL": 0,
+    "WARN": 0,
+    "NOT_CHECKED": 4
+  },
+  "design_hash": "99d5ba046b9c105d3490f2f574e0e7f52f1671f6847a1009cda1c1b0236363c9",
+  "semantic_hash_v1": "8938ec67a6a551b31ddcd95c336ced98aabee7d585e1fdd007323b572b5dd9c6",
+  "semantic_hash_v2": "8938ec67a6a551b31ddcd95c336ced98aabee7d585e1fdd007323b572b5dd9c6",
+  "components": 5,
+  "nets": 3,
+  "pads": 11,
+  "tracks": 8,
+  "vias": 0,
+  "through_hole_pads": 11,
+  "component_ids": [
+    "component_c1",
+    "component_c2",
+    "component_j1",
+    "component_j2",
+    "component_u1"
+  ],
+  "net_ids": [
+    "net_gnd",
+    "net_vin5v",
+    "net_vout3v3"
+  ],
+  "check_statuses": {
+    "PIN_PAD_MAPPING": "PASS",
+    "NET_COMPLETENESS": "PASS",
+    "REQUIRED_CONNECTIONS": "PASS",
+    "VOLTAGE_DOMAIN": "PASS",
+    "SUPPLY_DECOUPLING": "PASS",
+    "SCHEMATIC_PCB_CONSISTENCY": "PASS",
+    "VISIBLE_TEXT": "PASS",
+    "MCP1700_TO92_PINMAP": "PASS",
+    "OUTPUT_CAP_EFFECTIVE": "NOT_CHECKED",
+    "OUTPUT_CAP_ESR": "NOT_CHECKED",
+    "THERMAL_ESTIMATE": "NOT_CHECKED",
+    "EMC": "NOT_CHECKED",
+    "ROUTING_COMPLETE": "PASS",
+    "DRC_CLEARANCE": "PASS",
+    "COPPER_SHORTS": "PASS",
+    "DRC_BOARD_EDGE": "PASS",
+    "DRC_TRACK_WIDTH": "PASS",
+    "DRC_VIA": "PASS",
+    "DRC_HOLES": "PASS",
+    "COURTYARD": "PASS",
+    "COPPER_CONNECTIVITY": "PASS"
+  },
+  "run_id": "run_75276d861794",
+  "revision_id": "rev_000002"
+}

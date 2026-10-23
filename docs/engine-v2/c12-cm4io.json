@@ -1,0 +1,879 @@
+{
+  "import": {
+    "coordinate_system": "kicad_mm_y_down",
+    "counts": {
+      "copper_layers": 4,
+      "footprints": 151,
+      "graphics": 25,
+      "labels": 417,
+      "layers": 22,
+      "nets": 248,
+      "pads": 944,
+      "schematic_files": 7,
+      "symbols": 225,
+      "tracks": 5655,
+      "vias": 781,
+      "wires": 1002,
+      "zones": 27
+    },
+    "design_rules": {
+      "allow_blind_buried_vias": 0.0,
+      "allow_microvias": 0.0,
+      "max_error": 0.005,
+      "min_clearance": 0.0,
+      "min_copper_edge_clearance": 0.01,
+      "min_hole_clearance": 0.0,
+      "min_hole_to_hole": 0.24,
+      "min_microvia_diameter": 0.19999999999999998,
+      "min_microvia_drill": 0.09999999999999999,
+      "min_silk_clearance": 0.0,
+      "min_through_hole_diameter": 0.25,
+      "min_track_width": 0.09999999999999999,
+      "min_via_annular_width": 0.049999999999999996,
+      "min_via_annulus": 0.049999999999999996,
+      "min_via_diameter": 0.44999999999999996,
+      "use_height_for_length_calcs": 1.0
+    },
+    "file_hashes": {
+      "CM4IOv5.kicad_pcb": "ccbe95fe3c0c395f8c5c06342d6724b9e49980a1d74c3f4008a6c4d81f00e0a1",
+      "CM4IOv5.kicad_pro": "3a86a8e8e1191cc61902bd1d10b3beabe3c35bbc60847c95e6a34ca50e71f345",
+      "CM4IOv5.kicad_sch": "9d54c31f46f1a1814c6e9dff711b01bc167563988775ba14805b4bead4753a4b",
+      "CM4_GPIO.kicad_sch": "6325d1943cf992534aa1e117a05655feee1e06de09b19da6198de11b513695e7",
+      "CM4_HighSpeed.kicad_sch": "fca60c8f294777d25c0cd664ec0bdd5f61a82e1fb0d88a9b1f7533cbcd6e56de",
+      "PCIe.kicad_sch": "0b217074de82fa319ef64860e3e3fc374832dc82c066278fff30e6d0efbd652e",
+      "PSUs.kicad_sch": "719afbf5aec8e0f8ac55c5d91346074daee196097f89f937e70dcac2fd71b084",
+      "RTC.kicad_sch": "3c0dae6d072d6e4f8ecd313cf227c5d758854284ba7a0088f88efacfc218fce2",
+      "USB2-HUB.kicad_sch": "acd403dcb09586557b889f68eafd53bb85b834e20196b95b10d4dcfc37291b44"
+    },
+    "layers": [
+      {
+        "kind": "signal",
+        "name": "F.Cu",
+        "number": 0,
+        "user_name": ""
+      },
+      {
+        "kind": "power",
+        "name": "In1.Cu",
+        "number": 1,
+        "user_name": ""
+      },
+      {
+        "kind": "power",
+        "name": "In2.Cu",
+        "number": 2,
+        "user_name": ""
+      },
+      {
+        "kind": "signal",
+        "name": "B.Cu",
+        "number": 31,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "B.Adhes",
+        "number": 32,
+        "user_name": "B.Adhesive"
+      },
+      {
+        "kind": "user",
+        "name": "F.Adhes",
+        "number": 33,
+        "user_name": "F.Adhesive"
+      },
+      {
+        "kind": "user",
+        "name": "B.Paste",
+        "number": 34,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "F.Paste",
+        "number": 35,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "B.SilkS",
+        "number": 36,
+        "user_name": "B.Silkscreen"
+      },
+      {
+        "kind": "user",
+        "name": "F.SilkS",
+        "number": 37,
+        "user_name": "F.Silkscreen"
+      },
+      {
+        "kind": "user",
+        "name": "B.Mask",
+        "number": 38,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "F.Mask",
+        "number": 39,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "Dwgs.User",
+        "number": 40,
+        "user_name": "User.Drawings"
+      },
+      {
+        "kind": "user",
+        "name": "Cmts.User",
+        "number": 41,
+        "user_name": "User.Comments"
+      },
+      {
+        "kind": "user",
+        "name": "Eco1.User",
+        "number": 42,
+        "user_name": "User.Eco1"
+      },
+      {
+        "kind": "user",
+        "name": "Eco2.User",
+        "number": 43,
+        "user_name": "User.Eco2"
+      },
+      {
+        "kind": "user",
+        "name": "Edge.Cuts",
+        "number": 44,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "Margin",
+        "number": 45,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "B.CrtYd",
+        "number": 46,
+        "user_name": "B.Courtyard"
+      },
+      {
+        "kind": "user",
+        "name": "F.CrtYd",
+        "number": 47,
+        "user_name": "F.Courtyard"
+      },
+      {
+        "kind": "user",
+        "name": "B.Fab",
+        "number": 48,
+        "user_name": ""
+      },
+      {
+        "kind": "user",
+        "name": "F.Fab",
+        "number": 49,
+        "user_name": ""
+      }
+    ],
+    "netclasses": [
+      {
+        "clearance_nm": 130000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 130000,
+        "name": "Default",
+        "track_width_nm": 130000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      },
+      {
+        "clearance_nm": 130000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 130000,
+        "name": "100R",
+        "track_width_nm": 127000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      },
+      {
+        "clearance_nm": 130000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 178000,
+        "name": "50R",
+        "track_width_nm": 130000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      },
+      {
+        "clearance_nm": 130000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 130000,
+        "name": "75R",
+        "track_width_nm": 130000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      },
+      {
+        "clearance_nm": 130000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 150000,
+        "name": "90R",
+        "track_width_nm": 147000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      },
+      {
+        "clearance_nm": 130000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 130000,
+        "name": "HDMI",
+        "track_width_nm": 127000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      },
+      {
+        "clearance_nm": 1000000,
+        "diff_pair_gap_nm": 250000,
+        "diff_pair_width_nm": 130000,
+        "name": "POE TAPS",
+        "track_width_nm": 130000,
+        "via_diameter_nm": 450000,
+        "via_drill_nm": 250000
+      }
+    ],
+    "pcb_file": "CM4IOv5.kicad_pcb",
+    "pcb_generator": "pcbnew",
+    "pcb_version": "20211014",
+    "project_file": "CM4IOv5.kicad_pro",
+    "source_dir": "/tmp/mota-cm4io/design",
+    "thickness_nm": 1600000,
+    "unknown": [
+      {
+        "area": "pcb",
+        "count": 28,
+        "detail": "dimension is not imported",
+        "path": "CM4IOv5.kicad_pcb",
+        "severity": "geometry"
+      },
+      {
+        "area": "pcb",
+        "count": 2,
+        "detail": "target is not imported",
+        "path": "CM4IOv5.kicad_pcb",
+        "severity": "geometry"
+      },
+      {
+        "area": "pcb",
+        "count": 234,
+        "detail": "zone fill copper geometry is not imported (outline only)",
+        "path": "CM4IOv5.kicad_pcb",
+        "severity": "electrical"
+      },
+      {
+        "area": "pcb",
+        "count": 1,
+        "detail": "custom pad copper primitives are not imported",
+        "path": "pad",
+        "severity": "electrical"
+      },
+      {
+        "area": "pcb",
+        "count": 15,
+        "detail": "oval drill is stored as a width/height pair and exported as a slot",
+        "path": "pad",
+        "severity": "geometry"
+      },
+      {
+        "area": "pcb",
+        "count": 28,
+        "detail": "pad without number is not matched to a pin",
+        "path": "pad",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "boards",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "cvpcb",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "erc",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.bus_width",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.diff_pair_via_gap",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.line_style",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.microvia_diameter",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.microvia_drill",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 6,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.nets",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.pcb_color",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.schematic_color",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.wire_width",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "pcbnew",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "schematic",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "text_variables",
+        "severity": "metadata"
+      }
+    ]
+  },
+  "manufacturing": {
+    "artifacts": [
+      {
+        "file_stem": "B_Cu",
+        "generated": false,
+        "layer": "B.Cu"
+      },
+      {
+        "file_stem": "B_Mask",
+        "generated": false,
+        "layer": "B.Mask"
+      },
+      {
+        "file_stem": "Edge_Cuts",
+        "generated": false,
+        "layer": "Edge.Cuts"
+      },
+      {
+        "file_stem": "F_Cu",
+        "generated": false,
+        "layer": "F.Cu"
+      },
+      {
+        "file_stem": "F_Mask",
+        "generated": false,
+        "layer": "F.Mask"
+      },
+      {
+        "file_stem": "F_Paste",
+        "generated": false,
+        "layer": "F.Paste"
+      },
+      {
+        "file_stem": "F_Silkscreen",
+        "generated": false,
+        "layer": "F.SilkS"
+      },
+      {
+        "file_stem": "In1_Cu",
+        "generated": false,
+        "layer": "In1.Cu"
+      },
+      {
+        "file_stem": "In2_Cu",
+        "generated": false,
+        "layer": "In2.Cu"
+      }
+    ],
+    "bom_rows": 151,
+    "checks": [
+      {
+        "detail": "9 production layers mapped",
+        "id": "LAYER_MAP",
+        "objects": 9,
+        "status": "PASS"
+      },
+      {
+        "detail": "closed outline with 69 points",
+        "id": "BOARD_OUTLINE",
+        "objects": 69,
+        "status": "PASS"
+      },
+      {
+        "detail": "968 round holes + 15 slots: 966 plated, 17 non-plated; 15 tools",
+        "id": "DRILL_CONSISTENCY",
+        "objects": 983,
+        "status": "PASS"
+      },
+      {
+        "detail": "15 routed slots: endpoints match the drill length",
+        "id": "SLOT_GEOMETRY",
+        "objects": 15,
+        "status": "PASS"
+      },
+      {
+        "detail": "slot orientation uses the pad transform verified on round holes; the pinned vendor drill contains no slots to compare against",
+        "id": "SLOT_VALIDATION",
+        "objects": 0,
+        "status": "NOT_CHECKED"
+      },
+      {
+        "detail": "151 references present in both",
+        "id": "BOM_POSITION_REFERENCES",
+        "objects": 151,
+        "status": "PASS"
+      },
+      {
+        "detail": "all references unique",
+        "id": "BOM_UNIQUE_REFERENCES",
+        "objects": 151,
+        "status": "PASS"
+      },
+      {
+        "detail": "every BOM row has value and footprint",
+        "id": "BOM_COMPLETENESS",
+        "objects": 151,
+        "status": "PASS"
+      },
+      {
+        "detail": "bottom-side rotation is exported in KiCad convention; a specific assembler convention is not applied",
+        "id": "POSITION_CONVENTION",
+        "objects": 0,
+        "status": "NOT_CHECKED"
+      },
+      {
+        "detail": "Mota does not emit Gerber artwork; artifacts are named but not written",
+        "id": "GERBER_ARTWORK",
+        "objects": 0,
+        "status": "NOT_CHECKED"
+      },
+      {
+        "detail": "no kicad-cli or independent Gerber tool was run in this environment",
+        "id": "EXTERNAL_VALIDATION",
+        "objects": 0,
+        "status": "NOT_CHECKED"
+      }
+    ],
+    "package_files": [
+      "CM4IOv5-bom",
+      "CM4IOv5-positions",
+      "drill_NPTH",
+      "drill_PTH",
+      "manifest"
+    ],
+    "package_status": "NOT_CHECKED",
+    "position_rows": 151,
+    "round_holes": 968,
+    "slots": 15,
+    "status": "NOT_CHECKED",
+    "tools": [
+      {
+        "count": 1,
+        "diameter_nm": 1100000,
+        "plated": false,
+        "sources": [
+          "pad"
+        ],
+        "tool": 1
+      },
+      {
+        "count": 2,
+        "diameter_nm": 2350000,
+        "plated": false,
+        "sources": [
+          "pad"
+        ],
+        "tool": 2
+      },
+      {
+        "count": 12,
+        "diameter_nm": 2700000,
+        "plated": false,
+        "sources": [
+          "pad",
+          "slot"
+        ],
+        "tool": 3
+      },
+      {
+        "count": 2,
+        "diameter_nm": 3200000,
+        "plated": false,
+        "sources": [
+          "pad"
+        ],
+        "tool": 4
+      },
+      {
+        "count": 797,
+        "diameter_nm": 250000,
+        "plated": true,
+        "sources": [
+          "via",
+          "pad"
+        ],
+        "tool": 5
+      },
+      {
+        "count": 2,
+        "diameter_nm": 650000,
+        "plated": true,
+        "sources": [
+          "slot"
+        ],
+        "tool": 6
+      },
+      {
+        "count": 38,
+        "diameter_nm": 700000,
+        "plated": true,
+        "sources": [
+          "pad",
+          "slot"
+        ],
+        "tool": 7
+      },
+      {
+        "count": 1,
+        "diameter_nm": 800000,
+        "plated": true,
+        "sources": [
+          "slot"
+        ],
+        "tool": 8
+      },
+      {
+        "count": 18,
+        "diameter_nm": 900000,
+        "plated": true,
+        "sources": [
+          "pad"
+        ],
+        "tool": 9
+      },
+      {
+        "count": 86,
+        "diameter_nm": 1000000,
+        "plated": true,
+        "sources": [
+          "pad"
+        ],
+        "tool": 10
+      },
+      {
+        "count": 8,
+        "diameter_nm": 1020000,
+        "plated": true,
+        "sources": [
+          "pad"
+        ],
+        "tool": 11
+      },
+      {
+        "count": 6,
+        "diameter_nm": 1700000,
+        "plated": true,
+        "sources": [
+          "pad",
+          "slot"
+        ],
+        "tool": 12
+      },
+      {
+        "count": 4,
+        "diameter_nm": 2300000,
+        "plated": true,
+        "sources": [
+          "pad"
+        ],
+        "tool": 13
+      },
+      {
+        "count": 4,
+        "diameter_nm": 2700000,
+        "plated": true,
+        "sources": [
+          "pad",
+          "slot"
+        ],
+        "tool": 14
+      },
+      {
+        "count": 2,
+        "diameter_nm": 3000000,
+        "plated": true,
+        "sources": [
+          "pad",
+          "slot"
+        ],
+        "tool": 15
+      }
+    ]
+  },
+  "roundtrip": {
+    "checked": [
+      "layers",
+      "nets",
+      "footprints",
+      "pads",
+      "tracks",
+      "vias",
+      "zones",
+      "graphics",
+      "netclasses",
+      "rules",
+      "schematic"
+    ],
+    "differences": [],
+    "export_warnings": [
+      "lib_symbols definitions are not synthesised; exported schematics re-import structurally but need the original libraries in KiCad",
+      "project sections outside meta/board/net_settings/sheets/libraries are not exported",
+      "zone fill copper is not re-emitted; only zone outlines and nets",
+      "custom pad primitives are not re-emitted; pad size/position is kept"
+    ],
+    "mota_issues": 0,
+    "source_issues": [
+      {
+        "area": "pcb",
+        "count": 28,
+        "detail": "dimension is not imported",
+        "path": "CM4IOv5.kicad_pcb",
+        "severity": "geometry"
+      },
+      {
+        "area": "pcb",
+        "count": 2,
+        "detail": "target is not imported",
+        "path": "CM4IOv5.kicad_pcb",
+        "severity": "geometry"
+      },
+      {
+        "area": "pcb",
+        "count": 234,
+        "detail": "zone fill copper geometry is not imported (outline only)",
+        "path": "CM4IOv5.kicad_pcb",
+        "severity": "electrical"
+      },
+      {
+        "area": "pcb",
+        "count": 1,
+        "detail": "custom pad copper primitives are not imported",
+        "path": "pad",
+        "severity": "electrical"
+      },
+      {
+        "area": "pcb",
+        "count": 15,
+        "detail": "oval drill is stored as a width/height pair and exported as a slot",
+        "path": "pad",
+        "severity": "geometry"
+      },
+      {
+        "area": "pcb",
+        "count": 28,
+        "detail": "pad without number is not matched to a pin",
+        "path": "pad",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "boards",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "cvpcb",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "erc",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.bus_width",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.diff_pair_via_gap",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.line_style",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.microvia_diameter",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.microvia_drill",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 6,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.nets",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.pcb_color",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.schematic_color",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 7,
+        "detail": "netclass field is not compiled into Mota rules",
+        "path": "net_settings.classes.wire_width",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "pcbnew",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "schematic",
+        "severity": "metadata"
+      },
+      {
+        "area": "project",
+        "count": 1,
+        "detail": "project section is not exported by Mota",
+        "path": "text_variables",
+        "severity": "metadata"
+      }
+    ],
+    "status": "PASS_WITH_SOURCE_ISSUES"
+  },
+  "source": {
+    "design": "Raspberry Pi Compute Module 4 IO Board",
+    "format": {
+      "pcb_generator": "pcbnew",
+      "pcb_version": "20211014",
+      "schematic_generator": "eeschema",
+      "schematic_version": "20211123"
+    },
+    "license": "README.TXT in the package states no license; the Raspberry Pi product information portal terms apply. 3D models remain under their manufacturers terms.",
+    "page": "https://pip.raspberrypi.com/categories/1210-design-files",
+    "resources": [
+      "CM4IO.pretty footprints",
+      "fp-lib-table",
+      "CM4IO.3dshapes STEP models (external downloads named in README.TXT)",
+      "RPI-CM4IO-Gerber vendor outputs"
+    ],
+    "url": "https://pip-assets.raspberrypi.com/categories/1210-design-files/documents/RP-008173-DS-1-CM4IO-KiCAD.zip",
+    "zip_bytes": 6819369,
+    "zip_sha256": "5ea867e17968cb9c117fbce7a982ea395d66a6ee605253a9a0879483bbfcb0aa"
+  },
+  "stage": "C12",
+  "vendor_cross_check": {
+    "note": "All 187 drilled pad holes match the vendor drill exactly. The 9 unmatched holes are vias that changed between the 2021 Gerber run and the current board file; the vendor drill has no slot records, so the 15 routed slots cannot be compared externally.",
+    "pad_holes": 187,
+    "pad_holes_matching_vendor": 187,
+    "unmatched_are_vias": true,
+    "unmatched_ours": 9,
+    "vendor_drill": "RPI-CM4IO-Gerber/CM4IOv5.drl (generated by KiCad 5.99, 2021-04-16)",
+    "vendor_holes": 969
+  }
+}

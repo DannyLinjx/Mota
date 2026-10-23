@@ -1,0 +1,11 @@
+rule_id: OUTPUT_CAP_EFFECTIVE
+version: 1
+kind: hard
+applies_to: [power_3v3]
+source: {id: D1, section: "Output capacitor / stability"}
+predicate_id: capacitor_derating_evidence_at_least
+parameters: {net: VOUT_3V3, other_net: GND, effective_uf_min: 1.0, esr_ohm_max: 2.0}
+on_failure: {code: CAPACITOR_DERATING_NOT_CHECKED, block_auto_build: false, block_review: true}
+note: >
+  A capacitor without verified derating/ESR evidence yields NOT_CHECKED, which blocks
+  READY_FOR_REVIEW but still allows a REVIEW_BLOCKED snapshot to be committed.

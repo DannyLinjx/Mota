@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40.0mm" height="30.0mm" viewBox="0 0 40 30" font-family="-apple-system, Segoe UI, Noto Sans, sans-serif">
+<rect x="0" y="0" width="40" height="30" fill="#0B1015"/>
+<g transform="translate(0,30) scale(1,-1)">
+<polygon points="0,0 40,0 40,30 0,30 0,0" fill="#173E35" stroke="#D7E2EA" stroke-width="0.25"/>
+<circle cx="3.5" cy="3.5" r="1.6" fill="#0B1015" stroke="#E0ECE7" stroke-width="0.2"/>
+<circle cx="36.5" cy="26.5" r="1.6" fill="#0B1015" stroke="#E0ECE7" stroke-width="0.2"/>
+<rect x="4.7" y="12.1" width="2.6" height="5.8" fill="none" stroke="#2B3B47" stroke-width="0.12" stroke-dasharray="0.6 0.4"/>
+<rect x="5.05" y="12.45" width="1.9" height="5.1" fill="none" stroke="#E0ECE7" stroke-width="0.16"/>
+
+<rect x="9.8" y="6.76" width="6.4" height="6.4" fill="none" stroke="#2B3B47" stroke-width="0.12" stroke-dasharray="0.6 0.4"/>
+<rect x="10.15" y="7.11" width="5.7" height="5.7" fill="none" stroke="#E0ECE7" stroke-width="0.16"/>
+
+<rect x="17.3" y="13.7" width="5.4" height="4.4" fill="none" stroke="#2B3B47" stroke-width="0.12" stroke-dasharray="0.6 0.4"/>
+<rect x="17.65" y="14.05" width="4.7" height="3.7" fill="none" stroke="#E0ECE7" stroke-width="0.16"/>
+
+<rect x="23.8" y="9.1" width="6.4" height="6.4" fill="none" stroke="#2B3B47" stroke-width="0.12" stroke-dasharray="0.6 0.4"/>
+<rect x="24.15" y="9.45" width="5.7" height="5.7" fill="none" stroke="#E0ECE7" stroke-width="0.16"/>
+
+<rect x="32.7" y="12.1" width="2.6" height="5.8" fill="none" stroke="#2B3B47" stroke-width="0.12" stroke-dasharray="0.6 0.4"/>
+<rect x="33.05" y="12.45" width="1.9" height="5.1" fill="none" stroke="#E0ECE7" stroke-width="0.16"/>
+
+<circle cx="6" cy="13.73" r="0.85" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="6" cy="13.73" r="0.5" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="6" cy="16.27" r="0.85" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="6" cy="16.27" r="0.5" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="11.73" cy="9.96" r="0.9" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="11.73" cy="9.96" r="0.45" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="14.27" cy="9.96" r="0.9" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="14.27" cy="9.96" r="0.45" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="18.73" cy="15.9" r="0.5" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="18.73" cy="15.9" r="0.275" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="20" cy="15.9" r="0.5" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="20" cy="15.9" r="0.275" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="21.27" cy="15.9" r="0.5" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="21.27" cy="15.9" r="0.275" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="25.73" cy="12.3" r="0.9" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="25.73" cy="12.3" r="0.45" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="28.27" cy="12.3" r="0.9" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="28.27" cy="12.3" r="0.45" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="34" cy="13.73" r="0.85" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="34" cy="13.73" r="0.5" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<circle cx="34" cy="16.27" r="0.85" fill="#D68C6A" stroke="#D68C6A"/>
+<circle cx="34" cy="16.27" r="0.5" fill="#0B1015" stroke="#0B1015" stroke-width="0.15"/>
+<polyline points="6,13.73 6.477,13.081 6.477,10.795 10.922,10.795 10.922,10.541 11.049,10.541 11.73,9.96" fill="none" stroke="#D68C6A" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="11.73,9.96 12.446,10.414 12.7,10.414 12.7,10.541 12.827,10.541 12.827,10.795 12.954,10.795 12.954,10.922 13.081,10.922 13.081,11.049 13.208,11.049 13.208,11.176 13.335,11.176 13.335,11.303 13.462,11.303 13.462,11.43 13.843,11.43 13.843,11.557 19.558,11.557 19.558,15.113 19.685,15.113 19.685,15.24 19.812,15.24 19.812,15.494 20,15.9" fill="none" stroke="#D68C6A" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="21.27,15.9 21.463,15.494 21.463,13.081 24.892,13.081 24.892,12.827 25.019,12.827 25.73,12.3" fill="none" stroke="#D68C6A" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="25.73,12.3 26.416,12.827 26.797,12.827 26.797,13.081 26.924,13.081 26.924,13.208 27.051,13.208 27.051,13.462 27.178,13.462 27.178,13.589 27.432,13.589 27.432,13.716 27.686,13.716 27.686,13.843 33.274,13.843 34,13.73" fill="none" stroke="#D68C6A" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="6,16.27 6.477,15.621 6.477,15.24 6.604,15.24 6.604,15.113 6.858,15.113 6.858,14.986 6.985,14.986 6.985,14.859 7.112,14.859 7.112,14.732 7.239,14.732 7.239,14.605 7.366,14.605 7.366,14.351 7.493,14.351 7.493,11.557 12.192,11.557 12.192,11.43 12.446,11.43 12.446,11.303 12.7,11.303 12.7,11.176 12.827,11.176 12.827,11.049 12.954,11.049 12.954,10.922 13.081,10.922 13.081,10.795 13.462,10.795 13.462,10.541 13.589,10.541 14.27,9.96" fill="none" stroke="#69A8E8" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="14.27,9.96 14.986,10.414 18.288,10.414 18.288,15.494 18.542,15.494 18.73,15.9" fill="none" stroke="#69A8E8" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="18.73,15.9 18.923,15.494 18.923,13.843 26.289,13.843 26.289,13.716 26.543,13.716 26.543,13.589 26.797,13.589 26.797,13.462 26.924,13.462 26.924,13.335 27.051,13.335 27.051,13.081 27.432,13.081 27.432,12.827 27.559,12.827 28.27,12.3" fill="none" stroke="#69A8E8" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="28.27,12.3 28.956,12.827 32.512,12.827 32.512,14.351 32.639,14.351 32.639,14.605 32.766,14.605 32.766,14.732 32.893,14.732 32.893,14.859 33.02,14.859 33.02,14.986 33.147,14.986 33.147,15.113 33.274,15.113 33.274,15.494 33.655,15.494 34,16.27" fill="none" stroke="#69A8E8" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="4.7" y="11.5" font-size="1.5" fill="#E0ECE7">J1</text>
+<text x="9.8" y="16.24" font-size="1.5" fill="#E0ECE7">C1</text>
+<text x="17.3" y="11.3" font-size="1.5" fill="#E0ECE7">U1</text>
+<text x="23.8" y="13.9" font-size="1.5" fill="#E0ECE7">C2</text>
+<text x="32.7" y="11.5" font-size="1.5" fill="#E0ECE7">J2</text>
+</svg>

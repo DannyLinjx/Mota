@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-21T08:46:14Z",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.15",
+  "engine": "mota-engine-v1 (migrated to v2)",
+  "templates": [
+    {
+      "template_id": "power_3v3",
+      "state": "PARTIAL",
+      "review_status": "REVIEW_BLOCKED",
+      "counts": {
+        "PASS": 17,
+        "FAIL": 0,
+        "WARN": 0,
+        "NOT_CHECKED": 4
+      },
+      "design_hash": "99d5ba046b9c105d3490f2f574e0e7f52f1671f6847a1009cda1c1b0236363c9",
+      "semantic_hash_v1": "8938ec67a6a551b31ddcd95c336ced98aabee7d585e1fdd007323b572b5dd9c6",
+      "components": 5,
+      "nets": 3,
+      "pads": 11,
+      "tracks": 8,
+      "vias": 0
+    },
+    {
+      "template_id": "led_timer",
+      "state": "SUCCEEDED",
+      "review_status": "READY_FOR_REVIEW",
+      "counts": {
+        "PASS": 20,
+        "FAIL": 0,
+        "WARN": 1,
+        "NOT_CHECKED": 1
+      },
+      "design_hash": "30241b9d71d307245125b600d2b869d09eb2d5935e9c9a7a77a346edd0fe46db",
+      "semantic_hash_v1": "24302110527f461dc766b96a20b266ca2898dd63b6f2439df62e48eb2214bf6c",
+      "components": 9,
+      "nets": 7,
+      "pads": 24,
+      "tracks": 19,
+      "vias": 2
+    },
+    {
+      "template_id": "i2c_temperature",
+      "state": "SUCCEEDED",
+      "review_status": "READY_FOR_REVIEW",
+      "counts": {
+        "PASS": 20,
+        "FAIL": 0,
+        "WARN": 1,
+        "NOT_CHECKED": 1
+      },
+      "design_hash": "2b21d96ad0ceae39b993a4726eee87cf7205eb82f2b5b0466b9b3d554afdc173",
+      "semantic_hash_v1": "7d51b05324ca160b320d4b92e3c7dfeadb6e49027535c3afe18ade3c943078e4",
+      "components": 5,
+      "nets": 4,
+      "pads": 18,
+      "tracks": 13,
+      "vias": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "patch": [
+    {
+      "component_id": "c_j1",
+      "x_nm": 5000000,
+      "y_nm": 5000000,
+      "rotation_deg": 0,
+      "fixed": true
+    },
+    {
+      "component_id": "c_c1",
+      "x_nm": 4040000,
+      "y_nm": 12160000,
+      "rotation_deg": 90,
+      "fixed": false
+    },
+    {
+      "component_id": "c_u1",
+      "x_nm": 8580000,
+      "y_nm": 12390000,
+      "rotation_deg": 0,
+      "fixed": false
+    }
+  ],
+  "congestion": {
+    "columns": 20,
+    "rows": 15,
+    "cell_nm": 2000000,
+    "max_load": 2.03333333333,
+    "mean_load": 0.0238063492063,
+    "hot_cells": [
+      {
+        "column": 4,
+        "load": 2.03333333333,
+        "row": 6,
+        "x_nm": 8000000,
+        "y_nm": 12000000
+      },
+      {
+        "column": 2,
+        "load": 1.08,
+        "row": 6,
+        "x_nm": 4000000,
+        "y_nm": 12000000
+      },
+      {
+        "column": 2,
+        "load": 1.02857142857,
+        "row": 2,
+        "x_nm": 4000000,
+        "y_nm": 4000000
+      },
+      {
+        "column": 3,
+        "load": 1,
+        "row": 3,
+        "x_nm": 6000000,
+        "y_nm": 6000000
+      },
+      {
+        "column": 3,
+        "load": 1,
+        "row": 4,
+        "x_nm": 6000000,
+        "y_nm": 8000000
+      },
+      {
+        "column": 3,
+        "load": 1,
+        "row": 6,
+        "x_nm": 6000000,
+        "y_nm": 12000000
+      }
+    ]
+  },
+  "semantic_hash": "d5cc75feeffac153bd5c8ba7df5e876c74be09a9876545ac2f4325d31ea8b4c0",
+  "wirelength_nm": 15740000.0,
+  "escape_pressure": 0.473015873016
+}

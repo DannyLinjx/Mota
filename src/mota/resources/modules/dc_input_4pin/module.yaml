@@ -1,0 +1,15 @@
+module_id: dc_input_4pin
+version: 1
+title: 4-pin 3V3/GND/SDA/SCL connector
+status: verified
+description: 2.54 mm through-hole header J1 exposing supply and the 2-wire bus.
+parts: {J1: conn_1x04}
+pin_map: {"1": 3V3, "2": GND, "3": SDA, "4": SCL}
+constraints:
+  - {id: PIN1_3V3, expression: "J1.1 in 3V3"}
+  - {id: PIN2_GND, expression: "J1.2 in GND"}
+  - {id: PIN3_SDA, expression: "J1.3 in SDA"}
+  - {id: PIN4_SCL, expression: "J1.4 in SCL"}
+placement_rules:
+  - {part: J1, anchor: left_center, rotation: 90}
+sources: [{id: SPEC-CONN, title: Mota 2.54 mm header engineering spec}]

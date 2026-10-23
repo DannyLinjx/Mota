@@ -1,0 +1,162 @@
+{
+ "attributes": [
+  "smd"
+ ],
+ "models": [
+  "${KICAD7_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.wrl"
+ ],
+ "pads": [
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "1",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": -2.475,
+   "y_mm": -1.905
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "2",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": -2.475,
+   "y_mm": -0.635
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "3",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": -2.475,
+   "y_mm": 0.635
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "4",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": -2.475,
+   "y_mm": 1.905
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "5",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": 2.475,
+   "y_mm": 1.905
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "6",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": 2.475,
+   "y_mm": 0.635
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "7",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": 2.475,
+   "y_mm": -0.635
+  },
+  {
+   "drill_height_mm": 0.0,
+   "drill_mm": 0.0,
+   "height_mm": 0.6,
+   "layers": [
+    "F.Cu",
+    "F.Mask",
+    "F.Paste"
+   ],
+   "number": "8",
+   "pad_type": "smd",
+   "rotation_deg": 0.0,
+   "shape": "roundrect",
+   "unsupported_shape": false,
+   "unsupported_type": false,
+   "width_mm": 1.95,
+   "x_mm": 2.475,
+   "y_mm": -1.905
+  }
+ ]
+}

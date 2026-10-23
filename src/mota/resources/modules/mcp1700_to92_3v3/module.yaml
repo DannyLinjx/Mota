@@ -1,0 +1,71 @@
+module_id: mcp1700_to92_3v3
+version: 1
+title: MCP1700 3.3 V LDO stage (TO-92)
+status: verified
+description: >
+  Fixed 3.3 V low-dropout stage for a 5 V nominal input and a low-current load.
+  Only the TO-92 package variant is supported by this recipe.
+parts:
+  U1: mcp1700_3302e_to
+pin_map:
+  "1": GND
+  "2": VIN
+  "3": VOUT
+topology:
+  nets:
+    - name: VIN_5V
+      pins: [J1:1, U1:2, C1:1]
+    - name: VOUT_3V3
+      pins: [U1:3, C2:1, J2:1]
+    - name: GND
+      pins: [J1:2, C1:2, U1:1, C2:2, J2:2]
+parameters:
+  input_voltage_v:
+    type: number
+    unit: V
+    min: 4.75
+    max: 5.25
+    default: 5.0
+  max_load_ma:
+    type: number
+    unit: mA
+    min: 0
+    max: 50
+    default: 50
+constraints:
+  - id: PACKAGE_MUST_BE_TO92
+    expression: part.package == "TO-92"
+    on_failure: PINMAP_MISMATCH
+  - id: OUTPUT_CAPACITOR_REQUIRED
+    expression: capacitor_between(VOUT_3V3, GND) >= 1
+    on_failure: SUPPLY_DECOUPLING_FAILED
+  - id: EFFECTIVE_OUTPUT_CAPACITANCE
+    expression: effective_uf >= 1.0 with evidence
+    on_failure: CAPACITOR_DERATING_NOT_CHECKED
+  - id: OUTPUT_CAP_ESR
+    expression: esr_ohm <= 2.0 with evidence
+    on_failure: CAPACITOR_DERATING_NOT_CHECKED
+placement_rules:
+  - {part: J1, anchor: left_center, rotation: 90}
+  - {part: C1, anchor: near_pin, target: U1.VIN, distance_mm: 8}
+  - {part: U1, anchor: center}
+  - {part: C2, anchor: near_pin, target: U1.VOUT, distance_mm: 8}
+  - {part: J2, anchor: right_center, rotation: 90}
+sources:
+  - id: D1
+    title: Microchip MCP1700 datasheet DS20001826F
+    url: https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP1700-Data-Sheet-20001826F.pdf
+  - id: SPEC-C
+    title: Mota radial capacitor engineering spec (derating not verified)
+tests:
+  - id: pinmap_to92
+    expect: physical pins 1=GND 2=VIN 3=VOUT
+    evidence: catalog part mcp1700_3302e_to + rule MCP1700_TO92_PINMAP
+  - id: reject_sot23
+    expect: PINMAP_MISMATCH
+    fixture: component.footprint_id = SOT-23
+  - id: reject_12v
+    expect: CONSTRAINT_CONFLICT
+    fixture: input_voltage_v = 12
+limitations:
+  - Thermal design, EMC and capacitor bias derating are outside this demo's coverage.

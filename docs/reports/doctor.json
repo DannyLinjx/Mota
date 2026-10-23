@@ -1,0 +1,61 @@
+{
+  "ok": true,
+  "version": "1.0.0",
+  "checks": [
+    {
+      "check": "python",
+      "status": "PASS",
+      "detail": "3.12.15",
+      "next_step": "Install Python 3.11 or newer"
+    },
+    {
+      "check": "qt",
+      "status": "PASS",
+      "detail": "PySide6 6.12.0",
+      "next_step": ""
+    },
+    {
+      "check": "qt_widgets",
+      "status": "PASS",
+      "detail": "Qt Widgets importable",
+      "next_step": ""
+    },
+    {
+      "check": "opengl_widget",
+      "status": "PASS",
+      "detail": "QOpenGLWidget available; actual GL context is probed when the 3D view opens",
+      "next_step": ""
+    },
+    {
+      "check": "data_dir",
+      "status": "PASS",
+      "detail": "/private/tmp/mota-doctor",
+      "next_step": ""
+    },
+    {
+      "check": "account",
+      "status": "PASS",
+      "detail": "no CLI session (run `mota auth login`)",
+      "next_step": ""
+    },
+    {
+      "check": "model_api_key",
+      "status": "FAIL",
+      "detail": "not configured for this CLI session",
+      "next_step": "mota auth login && mota config api-key set"
+    },
+    {
+      "check": "catalog",
+      "status": "PASS",
+      "detail": "builtin curated snapshot (14 parts, 7 footprints, 3 recipe-ready templates)",
+      "next_step": ""
+    },
+    {
+      "check": "kicad_cli",
+      "status": "FAIL",
+      "detail": "kicad-cli not found (optional; KiCad export stays disabled)",
+      "next_step": "Install KiCad 10 and run the external compatibility test"
+    }
+  ],
+  "data_root": "/private/tmp/mota-doctor"
+}

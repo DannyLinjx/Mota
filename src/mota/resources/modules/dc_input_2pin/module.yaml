@@ -1,0 +1,14 @@
+module_id: dc_input_2pin
+version: 1
+title: 2-pin DC input connector
+status: verified
+description: 2.54 mm through-hole header J1, pin 1 positive input, pin 2 GND.
+parts: {J1: conn_1x02}
+constraints:
+  - {id: PIN1_SUPPLY, expression: "J1.1 in power_net"}
+  - {id: PIN2_GND, expression: "J1.2 in GND"}
+placement_rules:
+  - {part: J1, anchor: left_center, rotation: 90}
+sources: [{id: SPEC-CONN, title: Mota 2.54 mm header engineering spec}]
+tests:
+  - {id: reversed_supply, expect: VOLTAGE_DOMAIN or REQUIRED_CONNECTIONS fails}

@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/mota">
+    <file alias="app.png">assets/mota-1024.png</file>
+    <file alias="app-256.png">assets/mota-256.png</file>
+    <file alias="app-64.png">assets/mota-64.png</file>
+    <file alias="app-32.png">assets/mota-32.png</file>
+  </qresource>
+</RCC>

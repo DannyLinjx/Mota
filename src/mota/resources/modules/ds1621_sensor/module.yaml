@@ -1,0 +1,51 @@
+module_id: ds1621_sensor
+version: 1
+title: DS1621+ temperature sensor
+status: verified
+description: >
+  Analog Devices DS1621+ digital thermometer in a 300 mil DIP-8 package on a 3.3 V,
+  100 kHz 2-wire bus. Address pins A2..A0 are tied low (0x48) and TOUT is explicitly
+  not connected.
+parts:
+  U1: ds1621_plus
+pin_map:
+  "1": SDA
+  "2": SCL
+  "3": TOUT
+  "4": GND
+  "5": A2
+  "6": A1
+  "7": A0
+  "8": VDD
+topology:
+  nets:
+    - {name: 3V3, pins: [J1:1, U1:8, R1:1, R2:1, C1:1]}
+    - {name: GND, pins: [J1:2, U1:4, U1:5, U1:6, U1:7, C1:2]}
+    - {name: SDA, pins: [J1:3, U1:1, R1:2]}
+    - {name: SCL, pins: [J1:4, U1:2, R2:2]}
+  no_connects: [U1:3]
+constraints:
+  - id: ADDRESS_0X48
+    expression: A0 == A1 == A2 == GND
+  - id: TOUT_EXPLICIT_NC
+    expression: U1.3 in no_connects
+  - id: VDD_DECOUPLING_100NF
+    expression: capacitor_between(3V3, GND) >= 1
+interface_assumptions:
+  bus_capacitance_pf_max: 100
+  external_master: not part of this board
+  note: Cable and master capacitance are assumptions, not measured by Mota.
+sources:
+  - id: D3
+    title: Analog Devices DS1621 datasheet
+    url: https://www.analog.com/media/en/technical-documentation/data-sheets/DS1621.pdf
+tests:
+  - id: address_conflict
+    expect: I2C_ADDRESS_STRAP=FAIL
+    fixture: A0 tied to 3V3
+  - id: missing_pullup
+    expect: I2C_PULLUPS=FAIL
+    fixture: remove R1
+  - id: tout_not_marked
+    expect: DS1621_TOUT_NC=FAIL
+    fixture: remove U1:3 from no_connects

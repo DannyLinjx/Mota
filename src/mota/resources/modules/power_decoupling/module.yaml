@@ -1,0 +1,18 @@
+module_id: power_decoupling
+version: 1
+title: Power decoupling
+status: verified
+description: >
+  One ceramic capacitor between a power rail and GND, placed close to the consuming
+  device. The capacitor part's effective capacitance and ESR are NOT verified by this
+  demo catalog unless explicit evidence is attached.
+parts: {C: c_100n_50v}
+constraints:
+  - {id: CAP_TO_GND, expression: "C.1 in power_net and C.2 in GND"}
+  - {id: PLACEMENT_DISTANCE, expression: "distance(C, consumer) <= 8 mm"}
+evidence:
+  required_for_review: false
+  note: Effective capacitance under bias and ESR require part-specific evidence.
+sources: [{id: SPEC-C, title: Mota radial capacitor engineering spec}]
+tests:
+  - {id: missing_cap, expect: SUPPLY_DECOUPLING=FAIL}

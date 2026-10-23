@@ -1,0 +1,11 @@
+rule_id: I2C_PULLUPS
+version: 1
+kind: hard
+applies_to: [i2c_temperature]
+source: {id: D3, section: "2-wire interface"}
+predicate_id: resistor_between_nets
+parameters:
+  nets: [SDA, SCL]
+  target_net: 3V3
+  min_value_ohm: 1000
+on_failure: {code: I2C_PULLUP_MISSING, block_auto_build: true}

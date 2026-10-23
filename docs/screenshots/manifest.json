@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-10-21T07:49:52Z",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.15",
+  "data_root": "/tmp/mota-capture-data",
+  "screenshots": [
+    {
+      "file": "01_welcome.png",
+      "note": "Welcome page with Mota entry animation"
+    },
+    {
+      "file": "02_welcome_reduced_motion.png",
+      "note": "Reduced motion: static content, no trace animation loop"
+    },
+    {
+      "file": "03_auth_sign_in.png",
+      "note": "Sign in page with sample design animation"
+    },
+    {
+      "file": "04_auth_error.png",
+      "note": "Inline authentication error"
+    },
+    {
+      "file": "05_build_empty.png",
+      "note": "Empty Build workspace with the three templates"
+    },
+    {
+      "file": "21_template_parameter_preview.png",
+      "note": "Template parameters are previewed before any project is created"
+    },
+    {
+      "file": "06_design_schematic.png",
+      "note": "Schematic for the current saved revision (LED timer)"
+    },
+    {
+      "file": "07_design_pcb2d.png",
+      "note": "PCB 2D with real tracks, vias, pads and silkscreen"
+    },
+    {
+      "file": "08_design_pcb3d.png",
+      "note": "PCB 3D generated from the same revision; simplified bodies are labelled"
+    },
+    {
+      "file": "09_run_timeline_and_checks.png",
+      "note": "Real tool cards, saved revision and the checks panel for the same version"
+    },
+    {
+      "file": "10_partial_power_checks.png",
+      "note": "power_3v3 is REVIEW_BLOCKED because required capacitor evidence is NOT_CHECKED"
+    },
+    {
+      "file": "11_clarification_replay.png",
+      "note": "PROTOCOL REPLAY fixture: clarification card and paused progress; not a live model run"
+    },
+    {
+      "file": "12_revision_readonly.png",
+      "note": "Read-only older revision; the current revision is unchanged"
+    },
+    {
+      "file": "13_history.png",
+      "note": "History: compact project list with a live preview pane"
+    },
+    {
+      "file": "19_history_grid.png",
+      "note": "History grid view built from the same project cards"
+    },
+    {
+      "file": "14_model_settings.png",
+      "note": "AI connections: saved profiles, redacted key, model behavior and test suites"
+    },
+    {
+      "file": "18_ai_connections_deepseek.png",
+      "note": "DeepSeek connection: provider and API format are independent; suites below"
+    },
+    {
+      "file": "15_memory_experience.png",
+      "note": "Experience layer entry with project scope and verified evidence"
+    },
+    {
+      "file": "16_build_1280x800.png",
+      "note": "1280x800 workspace: left resources, centre design, right agent"
+    },
+    {
+      "file": "17_build_compact.png",
+      "note": "Compact layout: resources and agent move behind the header toggles; canvas keeps priority"
+    },
+    {
+      "file": "20_build_narrow_agent_overlay.png",
+      "note": "Narrow layout: agent opens as an overlay with the input and its draft intact"
+    }
+  ]
+}

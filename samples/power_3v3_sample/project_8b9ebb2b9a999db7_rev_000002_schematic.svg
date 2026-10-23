@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297.0mm" height="210.0mm" viewBox="0 0 297 210" font-family="-apple-system, Segoe UI, Noto Sans, sans-serif">
+<rect x="0" y="0" width="297" height="210" fill="#0B1015"/>
+<g transform="translate(0,210) scale(1,-1)">
+<rect x="0" y="0" width="297" height="210" fill="#0E151B" stroke="#2B3B47" stroke-width="0.3"/>
+<rect x="209" y="2" width="86" height="20" fill="none" stroke="#2B3B47" stroke-width="0.2"/>
+
+
+<rect x="24" y="173.46" width="4" height="5.08" fill="#141D25" stroke="#E3C7A1" stroke-width="0.25"/>
+
+
+<line x1="26" y1="181.08" x2="26" y2="178.54" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<line x1="26" y1="170.92" x2="26" y2="173.46" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<rect x="70" y="173.46" width="4" height="5.08" fill="#141D25" stroke="#E3C7A1" stroke-width="0.25"/>
+
+
+<line x1="72" y1="181.08" x2="72" y2="178.54" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<line x1="72" y1="170.92" x2="72" y2="173.46" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<rect x="115.46" y="172.825" width="5.08" height="6.35" fill="#141D25" stroke="#E3C7A1" stroke-width="0.25"/>
+
+
+<line x1="112.92" y1="177.27" x2="115.46" y2="177.27" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<line x1="112.92" y1="174.73" x2="115.46" y2="174.73" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<rect x="23.46" y="132.825" width="5.08" height="6.35" fill="#141D25" stroke="#E3C7A1" stroke-width="0.25"/>
+
+
+<line x1="20.92" y1="137.27" x2="23.46" y2="137.27" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<line x1="20.92" y1="134.73" x2="23.46" y2="134.73" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<rect x="68.19" y="132.19" width="7.62" height="7.62" fill="#141D25" stroke="#E3C7A1" stroke-width="0.25"/>
+
+
+<line x1="65.65" y1="134.73" x2="68.19" y2="134.73" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<line x1="65.65" y1="137.27" x2="68.19" y2="137.27" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<line x1="78.35" y1="136" x2="75.81" y2="136" stroke="#E3C7A1" stroke-width="0.2"/>
+
+<polyline points="26,181.08 26,183.62" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="26,170.92 26,168.38" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="72,181.08 72,183.62" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="72,170.92 72,168.38" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="112.92,177.27 110.38,177.27" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="112.92,174.73 110.38,174.73" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="20.92,137.27 18.38,137.27" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="20.92,134.73 18.38,134.73" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65.65,134.73 63.11,134.73" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65.65,137.27 63.11,137.27" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="78.35,136 80.89,136" fill="none" stroke="#B8D8AD" stroke-width="0.152" stroke-linecap="round" stroke-linejoin="round"/>
+
+
+
+
+
+
+
+
+
+
+
+</g>
+<text x="213" y="204" font-size="3.2" fill="#E7EDF2">3.3 V Power Board</text>
+<text x="213" y="198" font-size="2.2" fill="#748895">297 x 210 mm  |  snap 1.27 mm</text>
+<text x="24" y="30.66" font-size="2.4" fill="#E7EDF2">C1</text>
+<text x="23.75" y="38.94" font-size="2" fill="#748895">2.2uF</text>
+<text x="26.4" y="30.96" font-size="1.7" fill="#748895">1</text>
+<text x="26.4" y="36.04" font-size="1.7" fill="#748895">2</text>
+<text x="70" y="30.66" font-size="2.4" fill="#E7EDF2">C2</text>
+<text x="69.75" y="38.94" font-size="2" fill="#748895">2.2uF</text>
+<text x="72.4" y="30.96" font-size="1.7" fill="#748895">1</text>
+<text x="72.4" y="36.04" font-size="1.7" fill="#748895">2</text>
+<text x="116" y="30.025" font-size="2.4" fill="#E7EDF2">J1</text>
+<text x="115.75" y="39.575" font-size="2" fill="#748895">5V IN</text>
+<text x="114.66" y="32.23" font-size="1.7" fill="#748895">1</text>
+<text x="114.66" y="34.77" font-size="1.7" fill="#748895">2</text>
+<text x="24" y="70.025" font-size="2.4" fill="#E7EDF2">J2</text>
+<text x="22.85" y="79.575" font-size="2" fill="#748895">3V3 OUT</text>
+<text x="22.66" y="72.23" font-size="1.7" fill="#748895">1</text>
+<text x="22.66" y="74.77" font-size="1.7" fill="#748895">2</text>
+<text x="70" y="69.39" font-size="2.4" fill="#E7EDF2">U1</text>
+<text x="64.8" y="80.21" font-size="2" fill="#748895">MCP1700-3302E/TO</text>
+<text x="67.39" y="74.77" font-size="1.7" fill="#748895">1</text>
+<text x="67.39" y="72.23" font-size="1.7" fill="#748895">2</text>
+<text x="76.21" y="73.5" font-size="1.7" fill="#748895">3</text>
+<text x="26" y="25.48" font-size="2.2" fill="#79B8F2">VIN_5V</text>
+<text x="26" y="42.52" font-size="2.2" fill="#79B8F2">GND</text>
+<text x="72" y="25.48" font-size="2.2" fill="#79B8F2">VOUT_3V3</text>
+<text x="72" y="42.52" font-size="2.2" fill="#79B8F2">GND</text>
+<text x="101.824" y="32.73" font-size="2.2" fill="#79B8F2">VIN_5V</text>
+<text x="105.652" y="35.27" font-size="2.2" fill="#79B8F2">GND</text>
+<text x="7.272" y="72.73" font-size="2.2" fill="#79B8F2">VOUT_3V3</text>
+<text x="13.652" y="75.27" font-size="2.2" fill="#79B8F2">GND</text>
+<text x="58.382" y="75.27" font-size="2.2" fill="#79B8F2">GND</text>
+<text x="54.554" y="72.73" font-size="2.2" fill="#79B8F2">VIN_5V</text>
+<text x="81.79" y="74" font-size="2.2" fill="#79B8F2">VOUT_3V3</text>
+</svg>

@@ -1,0 +1,12 @@
+module_id: address_strap
+version: 1
+title: I2C address strap
+status: verified
+description: A2, A1 and A0 tied to GND, giving the 7-bit address 0x48.
+parts: {U1: ds1621_plus}
+constraints:
+  - {id: ADDRESS_PINS_LOW, expression: "net(U1.5) == net(U1.6) == net(U1.7) == GND"}
+  - {id: NO_ADDRESS_CONFLICT, expression: "no other device at 0x48 on this bus"}
+sources: [{id: D3, title: ADI DS1621 datasheet address table}]
+tests:
+  - {id: a0_high, expect: I2C_ADDRESS_STRAP=FAIL}

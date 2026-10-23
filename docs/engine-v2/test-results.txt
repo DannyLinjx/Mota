@@ -1,0 +1,573 @@
+Engine v2 — C0–C13 实际测试记录
+日期：2026-10-21 ~ 2026-10-22
+机器：macOS，10 核；测试期间系统负载约 3–4，连续构建存在明显墙钟膨胀。
+
+--------------------------------------------------------------------------
+1) 全量回归
+COMMAND:
+  .venv/bin/python -m pytest -q --durations=10
+RESULT:
+  ........................................................................ [ 48%]
+  ........................................................................ [ 96%]
+  .....                                                                    [100%]
+  149 passed
+  EXIT=0
+
+最慢用例（同一台机器连续运行时；引擎独立运行时 led_timer 约 4.3 s）：
+  50.08 s  tests/migration/test_v1_baseline.py::test_migration_is_derived_idempotent_and_reversible
+  49.19 s  tests/migration/test_v1_baseline.py::test_baseline_semantics_and_v2_migration[led_timer]
+  15.87 s  tests/migration/test_v1_baseline.py::test_baseline_semantics_and_v2_migration[i2c_temperature]
+  12.36 s  tests/circuit/test_free_edit.py::test_missing_or_wrong_footprint_blocks_review
+  12.35 s  tests/integration/test_api_flow.py::test_commit_fault_keeps_current_and_reports_candidate
+   8.52 s  tests/integration/test_api_flow.py::test_edit_conflict_undo_redo_and_busy
+   5.88 s  tests/integration/test_build_pipeline.py::test_two_golden_templates_are_ready_for_review
+   4.58 s  tests/unit/test_validation_negatives.py::test_short_and_clearance_failures
+
+说明：
+- 测试通过 conftest 设置 MOTA_ROUTE_BUDGET_SECONDS=300，避免把机器负载造成的
+  墙钟膨胀误判成设计回归；生产默认仍为 30 s。
+- 引擎独立进程连续 10 次 led_timer：4.27–4.46 s/次，RSS 147 MB，线程数 1。
+- 修复 Qt 测试退出析构后，integration + ui 由 EXIT=139 变为 EXIT=0。
+
+--------------------------------------------------------------------------
+2) C0 迁移测试
+COMMAND:
+  .venv/bin/python -m pytest tests/migration/test_v1_baseline.py -q
+RESULT:
+  6 passed
+
+--------------------------------------------------------------------------
+3) C1 库导入测试
+COMMAND:
+  .venv/bin/python -m pytest tests/library/test_import_snapshot.py -q
+RESULT:
+  6 passed
+
+组合复核：
+  .venv/bin/python -m pytest tests/library tests/migration tests/unit/test_validation_negatives.py -q
+  24 passed
+
+--------------------------------------------------------------------------
+4) 官方 KiCad 9.0.0 全量扫描
+COMMAND:
+  .venv/bin/python scripts/library_import_scan.py \
+    --symbols /tmp/mota-kicad/kicad-symbols-9.0.0 \
+    --footprints /tmp/mota-kicad/kicad-footprints-9.0.0 \
+    --root /tmp/mota-kicad/mota-data \
+    --out docs/engine-v2/library-scan.json \
+    --store-content
+
+RESULT:
+  kicad-symbols-9.0.0:
+    discovered 21806 = parsed 21771 + unsupported 35 + failed 0
+    mapped 21771, files 224, bytes 219,889,181
+    first pass 57.4 s, incremental 0.65 s (224/224 files reused)
+  kicad-footprints-9.0.0:
+    discovered 14216 = parsed 14047 + unsupported 169 + failed 0
+    mapped 13979, files 14216, bytes 183,360,838
+    first pass 37.4 s, incremental 3.11 s (14216/14216 files reused)
+  totals:
+    discovered 36022 = parsed 35818 + unsupported 204 + failed 0
+  进程峰值 RSS：689 MB（两源同进程，进程级最大值）
+
+--------------------------------------------------------------------------
+5) CLI 实测（使用官方快照）
+COMMAND:
+  MOTA_DATA_DIR=/tmp/mota-kicad/mota-data .venv/bin/mota library status
+  MOTA_DATA_DIR=/tmp/mota-kicad/mota-data .venv/bin/mota library search "usb uart" --limit 5
+  MOTA_DATA_DIR=/tmp/mota-kicad/mota-data .venv/bin/mota library inspect --asset-id sym:kicad-symbols-9.0.0:Device:R
+  MOTA_DATA_DIR=/tmp/mota-kicad/mota-data .venv/bin/mota library preview \
+    --asset-id "fp:kicad-footprints-9.0.0:Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" --out /tmp/mota-soic8.svg
+
+RESULT:
+  kicad-footprints-9.0.0   722a652b49aa57ac   14216 assets · parsed 14047 · unsupported 169 · failed 0
+  kicad-symbols-9.0.0      485955f46a22acb2   21806 assets · parsed 21771 · unsupported 35 · failed 0
+  "usb uart" → 80 match(es)，首条 fp:kicad-footprints-9.0.0:Module:Electrosmith_Daisy_Seed
+  Device:R → parsed · 2 pins · 0 pads · units 1 · styles 1
+  SOIC-8 预览 → Wrote /tmp/mota-soic8.svg（1.1 KB）
+
+CLI 端到端导入（临时数据目录）：
+COMMAND:
+  MOTA_DATA_DIR=/tmp/mota-cli-test .venv/bin/mota auth register --username cliuser ...
+  MOTA_DATA_DIR=/tmp/mota-cli-test .venv/bin/mota library import \
+    --source tests/fixtures/library/packed --source-id cli-fx --version fixture-1
+RESULT:
+  Library cli-fx PARTIAL · snapshot 9be8f30691e125c9 ·
+  6 assets (parsed 4, unsupported 1, failed 1) · 12 ms
+  search resistor → 1 match: sym:cli-fx:Device:R parsed 2p
+
+--------------------------------------------------------------------------
+6) C2 自由编辑实测
+COMMAND:
+  .venv/bin/python -m pytest tests/circuit -q
+RESULT:
+  13 passed（C2 10 项 + C3 3 项）
+
+  power_3v3 + AddComponent/AssignFootprint/ConnectTerminals/
+  PlaceFootprint/SetNoConnect/SetAssemblyState：
+    build 1.25 s, design.patch 1.75 s
+    components 6, nets 3, pads 13, tracks 9, unrouted 0
+    checks PASS 17 / FAIL 0 / WARN 0 / NOT_CHECKED 4
+    PIN_PAD_MAPPING PASS
+  缺封装：PIN_PAD_MAPPING FAIL + REVIEW_BLOCKED
+  补封装并放置后：PIN_PAD_MAPPING PASS
+  45° place_footprint → ROTATION_UNSUPPORTED
+  CLI design patch 与 service.dispatch 的规范化 CircuitIR 完全相等
+
+--------------------------------------------------------------------------
+7) C3 层次编译实测
+COMMAND:
+  .venv/bin/python -m pytest tests/circuit tests/schematic -q
+RESULT:
+  15 passed（C2 10 + C3 5）
+
+  16 通道 / 5 级路径 / 20 页：
+    compile+layout 9 / 10 / 13 ms（中位 10 ms）
+    components 99, nets 34, pages 20
+    symbols 100, wires 147, labels 147
+    diagnostics 0
+    16 个 TOP/din[k] 网络互不相交；GND 汇总 16 个引脚
+    JSON 导出再反序列化后 roundtrip_nets 与 CircuitIR 完全一致
+    锁定页新增通道后坐标不变；缺端口/循环分别定位到 PORT_UNBOUND / HIERARCHY_CYCLE
+
+--------------------------------------------------------------------------
+8) C4 模块组合与电气契约实测
+COMMAND:
+  .venv/bin/python -m pytest tests/knowledge -q
+RESULT:
+  9 passed
+
+  三个原创组合：
+    mcu_i2c_temp_uart:          13 components / 10 nets / 0.4 ms
+    mcu_i2c_eeprom_uart_led:    15 components / 11 nets / 0.3 ms
+    mcu_two_i2c_led_uart:       19 components / 11 nets / 0.3 ms
+    三个 semantic hash、器件数、网络 pin 签名均不同
+    场景 1 电源预算 3V3 13.0 / 250.0 mA PASS；地址 0x48；时序 VIN → 3V3
+  负例：
+    未知参数 → UNKNOWN_PARAMETER，无 CircuitIR
+    越界参数 → PARAMETER_OUT_OF_RANGE
+    5V 母线与 3V3 期望 → POWER_RAIL_LEVEL
+    两个 0x48 传感器 → ADDRESS_CONFLICT
+    两个 UART header → PIN_CONFLICT
+    15×20mA LED → POWER_BUDGET_EXCEEDED
+    电源时序环 → POWER_SEQUENCE_CYCLE
+  旧三模板均可作为模块取到；led_timer + 5V 输入组合预算 PASS
+  组合后追加非模块器件（NE555）不被拒绝
+  产物：docs/engine-v2/composition-report.md 与 compositions/*.svg/json
+
+--------------------------------------------------------------------------
+9) C5 约束编译器与平台包实测
+COMMAND:
+  .venv/bin/python -m pytest tests/constraints -q
+RESULT:
+  8 passed
+
+COMMAND:
+  .venv/bin/python -m pytest tests/constraints tests/knowledge tests/circuit -q
+RESULT:
+  30 passed
+
+  默认三包（制造下限 6 条 / 平台 6 条 / 用户 4 条）在 C4 场景 1 上：
+    status SAT，7 个硬约束目标组，0 冲突
+    clearance 0.300 mm（制造 0.15 / 平台 0.25 / 用户 0.30 取交集）
+    track_width 0.350 mm（signal）与 0.600 mm（power/ground）
+    via_drill 0.300 mm（制造 0.20 → 用户 0.30）
+    制造下限 min_clearance / min_track_width / min_via_drill 覆盖为 clamped
+    软规则 clearance 0.10 mm 只进入 soft_constraints，未降低硬下限
+    UART propagation_delay 因无 stackup → NOT_CHECKED / MISSING_STACKUP，
+      review_ready=False；不是 SKIPPED_PRECONDITION
+    USB 规则在无 USB 网络时 → SKIPPED_NO_TARGET（required=False，不阻断）
+    同一输入重复编译 content_hash 一致
+
+  负例：
+    propagation_delay 参数用 mm → UNIT_MISMATCH，status INVALID（不是 INFEASIBLE）
+    参数缺单位 → MISSING_UNIT
+    必需规则空 selector → EMPTY_SELECTOR，覆盖 REJECTED
+    无规则包 → NO_RULES，status INVALID（空规则集不算满足）
+    I2C_SDA 阻抗 ≥60 Ω 与 ≤50 Ω 硬冲突 → INFEASIBLE，冲突含双方 rule key、
+      net:I2C_SDA 与 focus bbox
+    同样的两条规则改为 soft → SAT，0 conflict，soft_constraints 保留上下界
+    budget_seconds=0 → UNKNOWN，complete=False，诊断明确“不是不可能”证明
+    map_solver_status: UNKNOWN→UNKNOWN，INFEASIBLE→INFEASIBLE，
+      MODEL_INVALID→INVALID，未知字符串→UNKNOWN
+
+  产物：docs/engine-v2/c5-compile-report.md（默认 / 硬冲突 / 预算耗尽三份实测）
+
+--------------------------------------------------------------------------
+10) C6 原生几何与 worker 实测
+BUILD:
+  .venv/bin/cmake -S native -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+  .venv/bin/cmake --build build --target mota-kernel-tests
+  .venv/bin/cmake --build build --target mota-kernel
+
+COMMAND:
+  .venv/bin/ctest --test-dir build -R geometry --output-on-failure
+RESULT:
+  1/1 Test #1: geometry ... Passed  0.69 sec
+  100% tests passed out of 1
+
+COMMAND:
+  ./build/mota-kernel-tests --report docs/engine-v2/c6-metrics.json
+RESULT:
+  checks=110 failures=0
+  rtree objects=100000 nodes=16383 depth=14 memory=8400072
+        build_ms=52.06 query_ms=132.42 rss=19283968
+
+  覆盖：
+    溢出/越界（COORDINATE_OUT_OF_RANGE、OVERFLOW）、__int128 对角距离
+    0/90/180/270/37 度旋转、底面镜像、RoundRect 半轴交换
+    弧端点/45 度距离、弧展平 50 nm 误差界
+    point/segment/circle/round_rect/slot/polygon 距离
+    100k R-tree 与暴力枚举 200 个区域完全一致
+    stackup 厚度与顺序、逐层 padstack、custom pad、slot drill、NPTH
+    through/blind/buried/micro via span 正负例
+    SHA-256 向量、输入冻结、预算（时间/操作数/内存）、取消、错误隔离、JSON-RPC
+
+COMMAND:
+  .venv/bin/python -m pytest tests/jobs -q
+RESULT:
+  8 passed
+
+  Python 端到端：
+    kernel.info 版本/限制
+    distance/board_query/via_span/padstack/stackup
+    冻结文件被篡改 → FAILED / STALE_JOB_INPUT
+    max_expansions=1 → PARTIAL；=0 → UNKNOWN；取消文件 → CANCELLED
+    单条查询越界 → PARTIAL，其余查询继续
+    to_job_result 保持 requested_targets 冻结分母
+    超 4 MiB 输入在 Python 侧拒绝；缺失二进制 → WORKER_UNAVAILABLE
+
+  产物：docs/engine-v2/c6-metrics.json、docs/engine-v2/c6-report.md
+
+--------------------------------------------------------------------------
+11) C7 填铜、物理连通与独立 DRC 实测
+COMMAND:
+  .venv/bin/cmake --build build -j 4
+  .venv/bin/ctest --test-dir build -R "connectivity|drc" --output-on-failure
+RESULT:
+  1/2 Test #2: connectivity ... Passed
+  2/2 Test #2: drc ............ Passed
+  100% tests passed out of 2
+
+COMMAND:
+  ./build/mota-connectivity-tests
+  ./build/mota-drc-tests
+RESULT:
+  connectivity checks=43 failures=0
+  drc checks=25 failures=0
+
+  覆盖：
+    zone fill：优先级、clearance、thermal spoke、island 移除、keepout、NPTH、
+      非直线轮廓 → ZONE_NON_RECTILINEAR（不近似）
+    同网断线 → NET_OPEN/U>0；异网相接 → COPPER_SHORT
+    net-tie allowed/disallowed 正负例
+    NPTH 不连接层；plated via 连接；via span 之外的同网铜 → VIA_SPAN_OPEN
+    zone 内 pad 无 thermal/实心连接 → THERMAL_DISCONNECT
+    移除孤岛 → PLANE_ISLAND；缺端点 → MISSING_ENDPOINT
+    U = Σ max(0, groups - required_groups)
+    DRC：short/clearance/width/via drill/ring/board edge/hole
+    空规则集 → NOT_CHECKED + NO_RULES；规则无适用对象 → NOT_CHECKED
+    可选规则失败仍使报告 FAIL，但不影响 required review gate
+
+COMMAND:
+  .venv/bin/python -m pytest tests/verification -q
+RESULT:
+  7 passed
+
+  服务端到端：
+    干净板 → READY_FOR_REVIEW，U=0，fill_hash 存在，24 个铜矩形 / 4 条 spoke
+    断线 → REVIEW_BLOCKED，U=1，NET_OPEN
+    异网短接 → REVIEW_BLOCKED，COPPER_SHORT
+    空规则集 → REVIEW_BLOCKED，DRC_RULES NOT_CHECKED
+    缺端点 → REVIEW_BLOCKED，MISSING_ENDPOINT
+    非直线 zone → REVIEW_BLOCKED，ZONE_FILL NOT_CHECKED
+    CircuitIR/BoardIR → 原生 board 投影 → 干净 READY / 断线 BLOCKED
+    EXTERNAL_KICAD 未安装 → NOT_CHECKED，不伪造对比
+
+  产物：docs/engine-v2/c7-fill-report.md、docs/engine-v2/c7-fill.json
+
+--------------------------------------------------------------------------
+12) C8 约束驱动布局实测
+COMMAND:
+  .venv/bin/cmake --build build -j 4
+  .venv/bin/ctest --test-dir build -R placement --output-on-failure
+RESULT:
+  1/1 Test #4: placement ... Passed
+  100% tests passed out of 1
+
+COMMAND:
+  ./build/mota-placement-tests
+RESULT:
+  placement checks=51 failures=0
+
+  覆盖：
+    固定连接器不移动；keepout 不被穿越
+    模块硬区域 + 去耦最大距离
+    两个锁定件重叠 → INFEASIBLE / FIXED_OVERLAP
+    锁定件在 keepout → FIXED_IN_KEEPOUT
+    整板 keepout → NO_LEGAL_PLACEMENT
+    max_search_nodes=0 → UNKNOWN；=1 → PARTIAL（不是 INFEASIBLE）
+    keepout 夹在两器件之间时，线长收益不能换取穿越
+    同一 seed 两次运行 patch 与 semantic hash 完全一致
+    细间距器件 escape pressure 与拥塞 hot cells 被报告
+
+COMMAND:
+  .venv/bin/python -m pytest tests/placement -q
+RESULT:
+  4 passed
+
+  Python 端到端：
+    CircuitIR/BoardIR → 原生 place 查询 → SUCCEEDED
+    J1 锁定位置保持；U1/C1 避开 keepout
+    seed=7 两次 semantic hash 与 patch 完全一致
+    两个锁定件重叠 → INFEASIBLE / FIXED_OVERLAP
+    C5 CompiledConstraints → courtyard gap / edge clearance 下界
+
+  实测干净布局（40×30 mm）：
+    J1 固定 (5,5) mm；U1 (8.58,12.39) mm；C1 (4.04,12.16) mm
+    HPWL 15.74 mm；congestion 20×15，max 2.03，mean 0.024
+    search nodes 2；semantic hash d5cc75fe...
+    max_search_nodes=0 → UNKNOWN；=1 → PARTIAL，未放置 ['U2','U3']
+
+  产物：docs/engine-v2/c8-placement-report.md、docs/engine-v2/c8-placement.json
+
+--------------------------------------------------------------------------
+13) C9 通用多层普通布线实测
+COMMAND:
+  .venv/bin/cmake --build build -j 4
+  .venv/bin/ctest --test-dir build -R routing --output-on-failure
+RESULT:
+  1/1 Test #5: routing ... Passed  0.01 sec
+  100% tests passed out of 1
+
+COMMAND:
+  ./build/mota-routing-tests
+RESULT:
+  routing checks=38 failures=0
+
+  覆盖：
+    2 层 3 端网络；keepout 绕行
+    双网络交叉 → 两网都布通、0 短接、至少 1 via
+    4 层 / 6 层 SMD 端子 + keepout 强制换层 → 合法 through via
+    锁定既有走线保留；锁定网络不重布
+    全高墙隔断 → INFEASIBLE；U>0 且未布通保留
+    max_expansions=0 → UNKNOWN（不是 INFEASIBLE）
+    同 seed 两次 semantic hash / track / via 完全一致
+
+COMMAND:
+  .venv/bin/python -m pytest tests/routing -q
+RESULT:
+  3 passed
+
+  worker/benchmark 端到端：
+    route 查询返回 tracks/vias/unrouted/requested/completed
+    阻挡网络 → INFEASIBLE，requested 与 unrouted 都保留
+    冻结套件 6 案、8 个请求网络、8 个完成、U=0
+
+COMMAND:
+  .venv/bin/mota benchmark run --suite single-ended-v2 --report ./reports/
+RESULT:
+  suite single-ended-v2: 6 cases, routed 8/8, unrouted 0, U=0, frozen=ok
+  report: reports/single-ended-v2.md
+
+  逐案：
+    two_layer_three_terminal  1/1  45.0 mm  0 via  0.7 ms
+    two_layer_obstacle        1/1  33.0 mm  0 via  0.3 ms
+    two_layer_two_nets        2/2  50.0 mm  2 via  0.4 ms
+    four_layer_smd            1/1  30.0 mm  2 via  0.6 ms
+    six_layer_smd             1/1  30.0 mm  2 via  0.8 ms
+    locked_track              2/2  40.0 mm  0 via  0.1 ms
+
+  产物：reports/single-ended-v2.json、reports/single-ended-v2.md、
+        docs/engine-v2/c9-report.md
+
+--------------------------------------------------------------------------
+14) C10 BGA 扇出实测
+COMMAND:
+  .venv/bin/cmake --build build -j 4
+  .venv/bin/ctest --test-dir build -R fanout --output-on-failure
+RESULT:
+  1/1 Test #6: fanout ... Passed  0.06 sec
+  100% tests passed out of 1
+
+COMMAND:
+  ./build/mota-fanout-tests
+RESULT:
+  fanout checks=3381 failures=0
+
+  fixture 实测：
+    platform_stm32h743_tfbga240  SUCCEEDED 240/240  dogbone=240  via_in_pad=0  channel=1
+    synthetic_0p5_feasible       SUCCEEDED 100/100  dogbone=36   via_in_pad=64 channel=0
+    synthetic_0p5_infeasible     INFEASIBLE 0/100   failures=100  channel=0
+    synthetic_0p8_feasible       SUCCEEDED 64/64    dogbone=64   channel=1
+    synthetic_0p8_infeasible     INFEASIBLE 0/64    failures=64   channel=1
+
+  覆盖：
+    0.8/0.4 与 0.5/0.3 两套 pitch/pad，各含可行/不可行变体
+    dogbone 四角/外圈 site + via-in-pad microvia
+    通道初筛：0.8 → 1，0.5 → 0
+    差分/byte lane 同层/相邻/顺序保留
+    0.8 不可行（环宽不足）输出 0 个非法 via，失败定位到球与因素
+    0.5 不可行（禁 dogbone / via-in-pad）100 个失败球定位
+    每个逃逸球的球—track—via 真实接触与短路检查
+    same seed 重放：semantic hash / via / track 一致
+    STM32H743 TFBGA240 代表性封装 240/240 逃逸
+
+COMMAND:
+  .venv/bin/ctest --test-dir build --output-on-failure
+RESULT:
+  6/6 tests passed（geometry / connectivity / drc / placement / routing / fanout）
+
+  产物：docs/engine-v2/c10-report.md、platform_packs/bga-fixtures/
+
+--------------------------------------------------------------------------
+15) C11 差分、路径与延迟约束实测
+COMMAND:
+  .venv/bin/cmake --build build -j 8
+  .venv/bin/ctest --test-dir build -R highspeed --output-on-failure
+RESULT:
+  1/1 Test #7: highspeed ... Passed  0.44 sec
+  100% tests passed out of 1
+
+COMMAND:
+  ./build/mota-highspeed-tests
+RESULT:
+  channel_series_matched   status=SUCCEEDED pass=4 fail=0 not_checked=0 skipped=0
+  local_uncoupled          status=FAILED    pass=1 fail=2 not_checked=0 skipped=2
+  missing_package_model    status=PARTIAL   pass=3 fail=0 not_checked=1 skipped=0
+  pair_matched             status=SUCCEEDED pass=5 fail=0 not_checked=0 skipped=0
+  reference_split          status=FAILED    pass=1 fail=1 not_checked=0 skipped=1
+  same_length_different_layer status=FAILED pass=2 fail=2 not_checked=0 skipped=2
+  tuning_required          status=FAILED    pass=2 fail=1 not_checked=0 skipped=3
+  highspeed checks=193 failures=0
+
+  bundle / tuning 实测：
+    DP1 (pair_matched)        coupled=20400000 uncoupled=0        skew=0      vias=1/1 paired=1
+    DP_NEAR (local_uncoupled) coupled=10500000 uncoupled=6200000  skew=2600000 corners=0/4 unmatched=4
+    DP_LAYER (same_len_diff_layer) coupled=0   uncoupled=20200000 skew=0
+    DP_SKEW (tuning_required) coupled=18200000 uncoupled=1000000  skew=2000000
+    tuning DP_N               required=2000000 added=2248192 teeth=8 pitch=500000 controlled=1
+
+  覆盖：
+    端到端 channel：driver → 串联元件两引脚 → 两个接收端，路径长度由真实铜图 Dijkstra 得出
+    删除 N1 铜后 channel_topology FAIL（TERMINAL_NOT_ON_COPPER），标签不代替铜
+    差分共同搜索：0.1 mm 采样、同层距离窗口、角点配对、via 成对转层
+    同长但层不同：diff_skew PASS（0 nm），delay_skew FAIL（-60 ps）
+    跨参考面裂缝：return_path FAIL，delay 为 SKIPPED（无 target）
+    局部失耦：非耦合长度 > 限值；未配对角点单独报告
+    缺封装模型：delay NOT_CHECKED，整体 PARTIAL，绝不 SUCCEEDED
+    受控 tuning：单侧锯齿，added_length ≥ 95% 需求、齿距 ≥ 最小值、与另一网保持 gap
+    采样预算：max_pair_samples=1 → budget_hit，耦合不 PASS，整体 UNKNOWN
+    same seed 重放：semantic hash 一致；SI/PI 恒为 NOT_CHECKED
+
+COMMAND:
+  .venv/bin/python -m pytest tests/constraints/test_highspeed_compile.py -q
+RESULT:
+  14 passed（含一次真实 mota-kernel kind=highspeed 端到端查询）
+
+COMMAND:
+  .venv/bin/ctest --test-dir build --output-on-failure
+RESULT:
+  7/7 tests passed（geometry / connectivity / drc / placement / routing / fanout / highspeed）
+
+COMMAND:
+  .venv/bin/python -m pytest -q --durations=10
+RESULT:
+  163 passed
+  EXIT=0
+  （C10 的 149 + C11 新增 14：13 个编译器/内核用例 + 1 个真实 highspeed 查询）
+  最慢仍为迁移用例（58.63 s / 55.69 s）；构建与全量测试并行会放大墙钟，未据此改动预算。
+
+  产物：docs/engine-v2/c11-report.md、platform_packs/highspeed-fixtures/
+
+--------------------------------------------------------------------------
+16) C12 工程导入、往返与生产文件实测
+COMMAND:
+  .venv/bin/python -m pytest tests/io -q
+RESULT:
+  18 passed
+
+CM4 IO 固定包（公开设计，不提交进仓库）：
+  https://pip-assets.raspberrypi.com/categories/1210-design-files/documents/RP-008173-DS-1-CM4IO-KiCAD.zip
+  zip: 6,819,369 bytes
+  sha256: 5ea867e17968cb9c117fbce7a982ea395d66a6ee605253a9a0879483bbfcb0aa
+  格式: KiCad 6（pcb 20211014 / pcbnew；sch 20211123 / eeschema）
+  许可: 包内 README.TXT 未声明；受 Raspberry Pi 产品信息门户条款约束，
+        3D 模型版权归各原厂（README 列出的外部 STEP 需另行下载）
+  实测规模：
+    22 layers（4 copper） 248 nets 151 footprints 944 pads
+    5,655 segments 781 vias 27 zones 25 graphics
+    7 schematic files 225 symbols 1,002 wires 417 labels
+
+往返：
+  status PASS_WITH_SOURCE_ISSUES
+  mota 引入差异 0；源工程问题 21 组（zone fill 234、custom pad 1、
+  dimension 28、target 2、槽孔 15、无编号焊盘 28、netclass 未编译字段、
+  未导出工程段）
+  比较覆盖 11 类：layers / nets / footprints / pads / tracks / vias /
+                zones / graphics / netclasses / rules / schematic
+  合成工程两次导出（.kicad_pcb/.kicad_sch/.kicad_pro）字节一致
+
+生产输出：
+  LAYER_MAP PASS（9 个生产层）
+  BOARD_OUTLINE PASS（69 点闭合）
+  DRILL_CONSISTENCY PASS（968 圆孔 + 15 槽；966 plated / 17 non-plated；15 把刀）
+  SLOT_GEOMETRY PASS（G85 槽端点与钻孔长度一致）
+  BOM_POSITION_REFERENCES / BOM_UNIQUE_REFERENCES / BOM_COMPLETENESS PASS（151 行）
+  SLOT_VALIDATION / POSITION_CONVENTION / GERBER_ARTWORK / EXTERNAL_VALIDATION
+    均为 NOT_CHECKED
+  整体 status NOT_CHECKED：没有冒充“生产就绪”
+
+厂商钻孔交叉验证（RPI-CM4IO-Gerber/CM4IOv5.drl，KiCad 5.99，2021-04-16）：
+  vendor 969 孔；187/187 个钻孔焊盘坐标完全一致
+  9 个不一致孔全部是 via（2021 Gerber 与当前板文件的版本差异）
+  厂商文件不含槽记录 → 15 个槽无法外部比对，保持 NOT_CHECKED
+
+证据：docs/engine-v2/c12-cm4io.json
+产物：docs/engine-v2/c12-report.md、src/mota/io/、tests/io/
+
+COMMAND:
+  .venv/bin/python -m pytest -q --durations=10
+RESULT:
+  181 passed
+  EXIT=0
+  （C11 的 163 + C12 新增 18）
+
+--------------------------------------------------------------------------
+17) C13 大场景界面与版本场景实测
+COMMAND:
+  .venv/bin/python -m pytest tests/desktop -q
+RESULT:
+  9 passed
+
+1000 器件压力（macOS 10 核，Qt offscreen，视口 1280×800，12 帧）：
+  scene_objects=8501  chunks=54  单网络定位=0.01 ms
+  build_ms=23.9  scene_ms=18.4  adapter_ms=73.8
+  可见块：总览 54 → 放大 6× 后 4
+  渲染：85.0 fps，p50 10.59 ms，p95 24.31 ms
+  3D 共享 mesh（200 器件）：1001 mesh 对象 → 4 个唯一 mesh、801 实例，
+    mesh 表 1,172 B vs 未去重 232,296 B
+
+版本防护（故意延迟旧回包）：
+  旧版本 scene token → STALE，当前场景不变（VersionedSceneCache）
+  同版本被后续请求取代 → SUPERSEDED，不写入
+  CanvasView.load_chunk 对旧 version_key 返回 False
+  旧版本 job 成功回包 → 状态 STALE · ignored，saved_count 不增加
+  JobPanel 按钮变为 Re-solve；新版本结果才显示 Saved
+
+导航与接管：
+  树分区 Views / Layers / Nets / Components / Unrouted / Constraints
+  层勾选与 net class / only-unrouted 过滤发出 filters_changed
+  点击网络或器件发出跨视图定位载荷（chunk ids + 世界坐标）
+  CLI `mota design move|lock|undo|redo` 与桌面共用 design.patch/undo/redo
+
+证据：docs/engine-v2/c13-report.md、src/mota/desktop/scene_adapter.py
+
+COMMAND:
+  .venv/bin/python -m pytest -q --durations=10
+RESULT:
+  190 passed
+  EXIT=0
+  （C12 的 181 + C13 新增 9）
+
+

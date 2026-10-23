@@ -1,0 +1,19 @@
+module_id: led_indicator
+version: 1
+title: Low-level-lit LED indicator
+status: verified
+description: >
+  VCC through a 1 kOhm resistor into the LED anode; LED cathode to the NE555 output.
+  The LED lights when the output is low.
+parts: {R3: r_1k, D1: led_red_5mm}
+pin_map: {"D1.1": A, "D1.2": K}
+constraints:
+  - {id: ANODE_TO_RESISTOR, expression: "D1.1 net contains R3.2"}
+  - {id: CATHODE_TO_OUT, expression: "D1.2 net contains U1.3"}
+  - {id: RESISTOR_TO_VCC, expression: "R3.1 in VCC_5V"}
+sources:
+  - {id: SPEC-LED, title: Mota 5 mm LED engineering spec (pad 1 anode)}
+assumptions:
+  - Physical LED lead polarity must be checked at assembly (non-blocking WARN).
+tests:
+  - {id: reversed_led, expect: LED_POLARITY=FAIL}

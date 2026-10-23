@@ -1,0 +1,7 @@
+Reference,MPN,Value,Package,Qty,Sources,Pin map,3D model,Notes
+C1,MOTA-C-100nF-X7R,100nF,Radial 2.54 mm,1,SPEC-C,unverified,simplified,effective capacitance / ESR evidence NOT_CHECKED
+J1,MOTA-HDR-1X04-2.54,3V3/GND/SDA/SCL,Pin header 1x04,1,SPEC-CONN,unverified,simplified,
+"R1, R2",MOTA-R-0.25W-3.3k,3.3k,Axial 10.16 mm,2,SPEC-R,unverified,simplified,
+U1,DS1621+,DS1621+,DIP-8 (300 mil),1,D3,verified,simplified,
+
+Note,No prices are included. This BOM is not a purchase order.

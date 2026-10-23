@@ -1,0 +1,317 @@
+{'PySide6/Qt/lib/QtCore.framework/Versions/A/QtCore': bytearray(b'm\xcc\xa3\x1b'
+                                                                b'(ND\xdd'
+                                                                b'\xa6)wq'
+                                                                b'\x96\xc4\x92\x14'
+                                                                b's}\xd1\xbb'),
+ 'PySide6/Qt/lib/QtDBus.framework/Versions/A/QtDBus': bytearray(b'\xb3\xab\xc5j'
+                                                                b'lDi\x00'
+                                                                b'\xc9\xc9\xfdV'
+                                                                b'\x85\xc7\x87\xd6'
+                                                                b' aS\xd1'),
+ 'PySide6/Qt/lib/QtGui.framework/Versions/A/QtGui': bytearray(b'\x8f\x97\xe0\xda'
+                                                              b'\x02\x95)\xfa'
+                                                              b'\x08\xb1=\xfb'
+                                                              b' \x0b[Q'
+                                                              b'S\xe0\x7f)'),
+ 'PySide6/Qt/lib/QtNetwork.framework/Versions/A/QtNetwork': bytearray(b'\x95\tfD'
+                                                                      b'\xc2\xf2>\x15'
+                                                                      b'U\x1c\x13H'
+                                                                      b'\xb1?\xd1\xd4'
+                                                                      b'P\xe0\xdel'),
+ 'PySide6/Qt/lib/QtOpenGL.framework/Versions/A/QtOpenGL': bytearray(b'\xd3}\xb2J'
+                                                                    b'\xf6o\xad\xa0'
+                                                                    b'\x9c!\x91\x9d'
+                                                                    b'-v\xe9\xd8'
+                                                                    b"'\xb7G\x9f"),
+ 'PySide6/Qt/lib/QtOpenGLWidgets.framework/Versions/A/QtOpenGLWidgets': bytearray(b'\xd8\xff\xc0\xbb'
+                                                                                  b'\xf9-\xd5('
+                                                                                  b'JZI\x1a'
+                                                                                  b'\x05\x92J\xc0'
+                                                                                  b'\x83\xdb;\x15'),
+ 'PySide6/Qt/lib/QtPdf.framework/Versions/A/QtPdf': bytearray(b'\x88\x9a\x1eM'
+                                                              b'm\xeb\x9e\t'
+                                                              b'\xe5"F\xdd'
+                                                              b'j\x0e\xe4\xa1'
+                                                              b'\x18\xeb\x05\x97'),
+ 'PySide6/Qt/lib/QtQml.framework/Versions/A/QtQml': bytearray(b'\x12\x91\xech'
+                                                              b' \x95\x85\xaa'
+                                                              b'\xec\x04d\xcb'
+                                                              b'\xb6\xf9\x0b\xe4'
+                                                              b'\xf2\x9f\x13\xaf'),
+ 'PySide6/Qt/lib/QtQmlMeta.framework/Versions/A/QtQmlMeta': bytearray(b'\x13\x93J\xe8'
+                                                                      b'\xf6`2\xfe'
+                                                                      b'\x9a\xb0\xe5\xfd'
+                                                                      b'0j\x02\xfe'
+                                                                      b'm\x0fgR'),
+ 'PySide6/Qt/lib/QtQmlModels.framework/Versions/A/QtQmlModels': bytearray(b'\xde\xa2\x06\xfe'
+                                                                          b'\xe6\xef`$'
+                                                                          b'4\xfcgr'
+                                                                          b'\xa2\xe0\xd9\xd3'
+                                                                          b'\xfdA\xa4\t'),
+ 'PySide6/Qt/lib/QtQmlWorkerScript.framework/Versions/A/QtQmlWorkerScript': bytearray(b'Qn\x7f\xf8'
+                                                                                      b'\xb3\x02;e'
+                                                                                      b'\xb1\x0e\xb5\x84'
+                                                                                      b'\xc1\xed\xb8t'
+                                                                                      b'(+FO'),
+ 'PySide6/Qt/lib/QtQuick.framework/Versions/A/QtQuick': bytearray(b'\x94\x97s~'
+                                                                  b'\x91\xa1c\x89'
+                                                                  b'\x8a\x08\x8e\xa3'
+                                                                  b'\xfb\x19f\xd1'
+                                                                  b'\x8f`\xea9'),
+ 'PySide6/Qt/lib/QtSvg.framework/Versions/A/QtSvg': bytearray(b'I\xb1S\r'
+                                                              b'\xac?\xb4\x06'
+                                                              b'\x8e\x119Z'
+                                                              b'\x9fi\xed\x15'
+                                                              b'+B7\x82'),
+ 'PySide6/Qt/lib/QtTest.framework/Versions/A/QtTest': bytearray(b'_\xea\x07\xe9'
+                                                                b'\x92\x83\xb2\xbb'
+                                                                b'o\xb9q\xda'
+                                                                b'\xec\x89&\xb2'
+                                                                b'\xc8\xb7\xe5\x9a'),
+ 'PySide6/Qt/lib/QtVirtualKeyboard.framework/Versions/A/QtVirtualKeyboard': bytearray(b'\x10\xa4\xa6\xcc'
+                                                                                      b'0\x0b\x02n'
+                                                                                      b'\x1d\x1e\x1f#'
+                                                                                      b'\x87\xfaE\x13'
+                                                                                      b"\xaa\x8f'c"),
+ 'PySide6/Qt/lib/QtVirtualKeyboardQml.framework/Versions/A/QtVirtualKeyboardQml': bytearray(b'5\x19%\xdd'
+                                                                                            b'\xf8\xf7\x89\xc7'
+                                                                                            b'3\xb04<'
+                                                                                            b'\xad\xc8\xe4\xf7'
+                                                                                            b'\xfa\x87\x80\xd5'),
+ 'PySide6/Qt/lib/QtWidgets.framework/Versions/A/QtWidgets': bytearray(b'\x8f\tr\x17'
+                                                                      b'\x06\xe5c7'
+                                                                      b'FF\x15\xd3'
+                                                                      b'\x95Dc\xfc'
+                                                                      b'\xa00!9'),
+ 'PySide6/Qt/plugins/generic/libqtuiotouchplugin.dylib': bytearray(b'\xcc\x81\xf1\x85'
+                                                                   b'\x807\x18s'
+                                                                   b'%\xc3\xe2\xf6'
+                                                                   b'%wY\xbf'
+                                                                   b'\x0e\xb3\x82Z'),
+ 'PySide6/Qt/plugins/iconengines/libqsvgicon.dylib': bytearray(b'\xefoO^H{}\x12'
+                                                               b'^\xe2\x14c'
+                                                               b'U\x9f\xd8a'
+                                                               b'\xb4G$ '),
+ 'PySide6/Qt/plugins/imageformats/libqgif.dylib': bytearray(b'b\x8a>\xb4'
+                                                            b'@\xd6W\xe0'
+                                                            b'_\x1b\x8d\x06'
+                                                            b'\xc1f=\xd3'
+                                                            b'.c\xdf\x8b'),
+ 'PySide6/Qt/plugins/imageformats/libqicns.dylib': bytearray(b'9B\xcdC'
+                                                             b'c\xfb+\xfe'
+                                                             b'T(W\xf5'
+                                                             b']\x14\x95\xe3'
+                                                             b'\xac/\xd4\xc9'),
+ 'PySide6/Qt/plugins/imageformats/libqico.dylib': bytearray(b'\xaf\xe3*C'
+                                                            b't@\xca\xe1'
+                                                            b'\x83\xca\xecQ'
+                                                            b'\xf8\xa3\xc1\xad'
+                                                            b'J\xc4\x85^'),
+ 'PySide6/Qt/plugins/imageformats/libqjpeg.dylib': bytearray(b'\x92\xd5r\xed'
+                                                             b'\xed\xc5\xdc\xe7'
+                                                             b'9\xc0\x19\xc7'
+                                                             b'U\xaa8\x1e'
+                                                             b'\x05\x13Tf'),
+ 'PySide6/Qt/plugins/imageformats/libqmacheif.dylib': bytearray(b'\xf4>Y\x97'
+                                                                b'\xa7\x90\xd8\x02'
+                                                                b' Z\xf2j'
+                                                                b'\x93\xe4\x8d{'
+                                                                b'\xe9d{C'),
+ 'PySide6/Qt/plugins/imageformats/libqmacjp2.dylib': bytearray(b'\x92\xd1\xeb\xcb'
+                                                               b'\xc2\xe6\xe26'
+                                                               b'S:N\x0cg\xa86#'
+                                                               b'\xfdO9E'),
+ 'PySide6/Qt/plugins/imageformats/libqpdf.dylib': bytearray(b'\x94\\\xb5f'
+                                                            b'\xf0\x15\xdfV'
+                                                            b'e\x19\xcb!'
+                                                            b'j\xce\xe4\xc6'
+                                                            b'`\xca\n\x83'),
+ 'PySide6/Qt/plugins/imageformats/libqsvg.dylib': bytearray(b'n\xe3\xa1B'
+                                                            b'\x94\xa3\xd7\xd9'
+                                                            b'\x05\x9a+\x97'
+                                                            b'\x0b\x95\xee;'
+                                                            b'\xb0\xad\xc4z'),
+ 'PySide6/Qt/plugins/imageformats/libqtga.dylib': bytearray(b'\xdd\xa1L\x06'
+                                                            b';\x85%\xf7J\x8cV4'
+                                                            b'Z2\xbd-\x03J\x18Z'),
+ 'PySide6/Qt/plugins/imageformats/libqtiff.dylib': bytearray(b'h\x04\x0e;'
+                                                             b'\xd0\x8d%\xf9'
+                                                             b'z\x18\xd5\x9c'
+                                                             b'\xaf\x92\x19\xf9'
+                                                             b'\xed\xd7[\xb8'),
+ 'PySide6/Qt/plugins/imageformats/libqwbmp.dylib': bytearray(b'\x9c\xe5p4'
+                                                             b'\xf2\x1c&/'
+                                                             b'\x85\xb4\xd3}'
+                                                             b'\xda\x17D,'
+                                                             b'72\x0f\xcc'),
+ 'PySide6/Qt/plugins/imageformats/libqwebp.dylib': bytearray(b':\x01Cm'
+                                                             b'\xf5J\xc4\xb9'
+                                                             b'\x19\xf2\xb7\xac'
+                                                             b')\xe6=\xb3'
+                                                             b'\xfa\xc6)\xae'),
+ 'PySide6/Qt/plugins/networkinformation/libqapplenetworkinformation.dylib': bytearray(b'\xfd\xa8G*'
+                                                                                      b'\xe6E\xeeZ'
+                                                                                      b'D\x05\xd3\x16'
+                                                                                      b'\xa0.J\xd2'
+                                                                                      b'\xc9\xe0\x88\x81'),
+ 'PySide6/Qt/plugins/platforminputcontexts/libqtvirtualkeyboardplugin.dylib': bytearray(b'C\x92\x07X'
+                                                                                        b'\x8f\xc5\n\x1f'
+                                                                                        b'\x83d\xac\xff'
+                                                                                        b'\x1a|]|'
+                                                                                        b'?\x14\xcf\x8d'),
+ 'PySide6/Qt/plugins/platforms/libqcocoa.dylib': bytearray(b'\n\x8a\xac\x81'
+                                                           b'\x1d\xe4\x0bc'
+                                                           b'\x03\xcd\x05\x9c'
+                                                           b'\xe5sr%'
+                                                           b'h\x9c\x00\xb4'),
+ 'PySide6/Qt/plugins/platforms/libqminimal.dylib': bytearray(b'\xe7\x93`d'
+                                                             b'\xdf8V\xae'
+                                                             b'\x85\x18\\\x86'
+                                                             b'UJ\xfb\rCs;\xc7'),
+ 'PySide6/Qt/plugins/platforms/libqoffscreen.dylib': bytearray(b'\xad\xa4\x8dF'
+                                                               b'\xf8\xe1\xda\xf1'
+                                                               b'\xfe\x8e\xe2Y'
+                                                               b'\x10^&F'
+                                                               b'hk\xe3\x9e'),
+ 'PySide6/Qt/plugins/styles/libqmacstyle.dylib': bytearray(b'\xdc\xce\xf4K'
+                                                           b'\xff\xb3E\x15'
+                                                           b'SjL\xb3\x16\xd4W^'
+                                                           b'\xd5i\xd5\x93'),
+ 'PySide6/Qt/plugins/tls/libqcertonlybackend.dylib': bytearray(b'O\xb5Do'
+                                                               b'\x84\xf8\xa93'
+                                                               b'\x08\xb44X'
+                                                               b'%\x0b^\xfa'
+                                                               b'\xe8\xaf\xb1\xa5'),
+ 'PySide6/Qt/plugins/tls/libqopensslbackend.dylib': bytearray(b'\x89\n"\x03'
+                                                              b'\x96\x16X#'
+                                                              b'M/\x11\x08'
+                                                              b'\x90,\xbb\xbe'
+                                                              b'l\xab[\xbb'),
+ 'PySide6/Qt/plugins/tls/libqsecuretransportbackend.dylib': bytearray(b'"\xa1\x1f:'
+                                                                      b'\xac\xf48\x90'
+                                                                      b'g)e\x10'
+                                                                      b'x\x05\x0b\xca'
+                                                                      b"'\xe1?\xe8"),
+ 'PySide6/QtCore.abi3.so': bytearray(b"~+\x00P'%\xbc\xfa\xd8\xd2\xae\xe8"
+                                     b'\xa4\xf9\xff\xb6d\xb4\x84R'),
+ 'PySide6/QtDBus.abi3.so': bytearray(b'\xc0\xc11a\x1c\x914.\xf5\x06\x85\xf1'
+                                     b'\xc1\xaf*y\xf8\x99Z\xf2'),
+ 'PySide6/QtGui.abi3.so': bytearray(b'\xe7\xd3?:\xe4\xd4\x90Xl\x11\x8c\xb5'
+                                    b'hJp\x8f+\x892\xe6'),
+ 'PySide6/QtNetwork.abi3.so': bytearray(b'\xcb\xf1\x84\xbf\xa89\xfca\xe3;\xb0Y'
+                                        b'z)\xf4\x1bf\x93\x0c)'),
+ 'PySide6/QtOpenGL.abi3.so': bytearray(b'\xc7\x9c\x0c\xe3\xc2\x057gjg\xe3\x9f'
+                                       b'ER\x9e\x1c\xf3\xe0(\x9b'),
+ 'PySide6/QtOpenGLWidgets.abi3.so': bytearray(b'+\xc8\xee\x17BT\xb1\xda'
+                                              b'\x8bk\xb9\\\x91\xa2\xdf\t'
+                                              b'\xb4}\xfa\xa1'),
+ 'PySide6/QtSvg.abi3.so': bytearray(b"_\xfa\xe97\xe3\xd5\x97'\xa0\x0e\x02*"
+                                    b'\x91\xeel\x8c"\x98p\x9d'),
+ 'PySide6/QtTest.abi3.so': bytearray(b'\xfc\xe6\xe4A\x9f\xec+\xcc\xba\xfce\xd6'
+                                     b'\xd6C-\xe2\x0e\xe1\x02D'),
+ 'PySide6/QtWidgets.abi3.so': bytearray(b'\x1ds\x16^v8\n\xcc\xac\xb7\xc1\xe1'
+                                        b'@\xbc\xc1d\xa1\x07+\xa6'),
+ 'PySide6/libpyside6.abi3.6.12.dylib': bytearray(b'\xaf\xcc\xfe\xf1\xa5+\xdcd'
+                                                 b'g3\x17I\xb6\x06"\x1b'
+                                                 b'6\x9a\xb8\\'),
+ '_argon2_cffi_bindings/_ffi.abi3.so': bytearray(b'\xc8G\x82\x8dd\xcf\x00\xf4'
+                                                 b'\xb1]XJ\x16\r9\xe9`\xf0\x85d'),
+ '_cffi_backend.cpython-312-darwin.so': bytearray(b'F\xbb\x98D\xda\xdbvQ'
+                                                  b'2\xb8\x17J\xb0\xd6E\xca'
+                                                  b'\xcd`\xe3\xb3'),
+ 'jiter/jiter.cpython-312-darwin.so': bytearray(b'\xd6\xf2\xb2\x96cX\xa9\xd0'
+                                                b'3\x0b\xb46\xa6m\x8b\x9f'
+                                                b'\x9b\xff\xbf\x82'),
+ 'libpython3.12.dylib': bytearray(b'\\\xaduOF\n\x90\xadn\xf0\xb6o\x8bJ`0'
+                                  b'\xadm\xd7d'),
+ 'lxml/_elementpath.cpython-312-darwin.so': bytearray(b'c\x92\x153\x08\x1b\x83H'
+                                                      b'\x8fh\xf7\xf7\xdfR\x124'
+                                                      b'5zX\xdb'),
+ 'lxml/builder.cpython-312-darwin.so': bytearray(b'B\xd8v\x01P\xe4!\x94'
+                                                 b'\x0f{b\xd8\xa0p}\xf6$nX\xc1'),
+ 'lxml/etree.cpython-312-darwin.so': bytearray(b'\x90B\xd8.\xe2\x99O\xc9'
+                                               b'O\xb6\xaa4c\x99\xe2\xb5'
+                                               b'\x19\xa4l\xa7'),
+ 'lxml/html/_difflib.cpython-312-darwin.so': bytearray(b'\xe2\x96\x103'
+                                                       b'\xa6\xd5O\xf8'
+                                                       b'\x87\x0cp\x83'
+                                                       b'\xd5\xfd\xf6\x03'
+                                                       b'\xee\xce\x02u'),
+ 'lxml/html/diff.cpython-312-darwin.so': bytearray(b'\xb5r\xcd,\x16{t\x18'
+                                                   b'\xc3\xb6\xac\x9a'
+                                                   b'\xd0\xb1\x918\x0f\xb75\xb6'),
+ 'lxml/objectify.cpython-312-darwin.so': bytearray(b'\x08\xfaLV8\xe8\x18\x03'
+                                                   b'\x02a\n+\xf5\xd5\x04\xb1'
+                                                   b'\xc1\xb7}\xfd'),
+ 'lxml/sax.cpython-312-darwin.so': bytearray(b'R\xc6\xa4\xefu\x1e\x99\xba'
+                                             b'\x19Q\x19\x10a>\xf3Mr:\xef\x0c'),
+ 'numpy/_core/_multiarray_tests.cpython-312-darwin.so': bytearray(b'J\x03O\xa5'
+                                                                  b'\x89v9\r'
+                                                                  b'\xb0.\xf1\xb1'
+                                                                  b'wB\x1ea'
+                                                                  b'JL[\x89'),
+ 'numpy/_core/_multiarray_umath.cpython-312-darwin.so': bytearray(b'\xac[\x91\x9e'
+                                                                  b'4\xb9\xf4z'
+                                                                  b'j\t\xb7A'
+                                                                  b'\x92\xe88>'
+                                                                  b'\x14\xa5]i'),
+ 'numpy/fft/_pocketfft_umath.cpython-312-darwin.so': bytearray(b'\xf0x)C'
+                                                               b'\xe2\xaf\x9a\x88'
+                                                               b'Y\xa2\xe4e'
+                                                               b'\xa0\xb2\x10\xcd'
+                                                               b'\xab\xc5O\x14'),
+ 'numpy/linalg/_umath_linalg.cpython-312-darwin.so': bytearray(b'\x82\xf3[\xff'
+                                                               b'~lt\xa6'
+                                                               b'\xb7/\xab\xae'
+                                                               b'\x02\xd7\xf6\xb7'
+                                                               b'\x8fL1\xef'),
+ 'numpy/random/_bounded_integers.cpython-312-darwin.so': bytearray(b'~\xdd\xdc\xed'
+                                                                   b'\x18\xa5\x82\xaa'
+                                                                   b'\xfeQJ\xad'
+                                                                   b')\xc6\r7'
+                                                                   b'X\xfd9\x9d'),
+ 'numpy/random/_common.cpython-312-darwin.so': bytearray(b'\xdb=\xa3yO\x8e\x8fg'
+                                                         b'\xc9\xe9\xe6\x89'
+                                                         b'\xee.Ue:[\x01\x8f'),
+ 'numpy/random/_generator.cpython-312-darwin.so': bytearray(b'\xab\x9f\x01\xef'
+                                                            b'\xe77\x00\x08'
+                                                            b'&y]\xcb()\xd7\x85'
+                                                            b'\x02\xe88P'),
+ 'numpy/random/_mt19937.cpython-312-darwin.so': bytearray(b'\xdeJ$\xdf'
+                                                          b'\xd1\x88o\t'
+                                                          b'\xc0\xa7\xfeN'
+                                                          b'\xf5\xac1h'
+                                                          b'\xbd\x8d\x97<'),
+ 'numpy/random/_pcg64.cpython-312-darwin.so': bytearray(b'\x81<\t\xcf&\x80\x9dU'
+                                                        b'\x8b\xf9\xb1D\xee!.|'
+                                                        b'\xb2/\xc5\x81'),
+ 'numpy/random/_philox.cpython-312-darwin.so': bytearray(b'\xe8\x87\xfe0'
+                                                         b'g\xc6\xdf\xd9'
+                                                         b'\xf7\x9b\x0e7'
+                                                         b'&\xec\xa9\x11'
+                                                         b'\x1b\x9fII'),
+ 'numpy/random/_sfc64.cpython-312-darwin.so': bytearray(b'\xc4\xc2\xd4\xf8'
+                                                        b'\x95kO\x96WuUq'
+                                                        b'\xd7\x95\x9dO'
+                                                        b'\x04\x8fqh'),
+ 'numpy/random/bit_generator.cpython-312-darwin.so': bytearray(b'\x0b\x15\x80T'
+                                                               b'\x81\x97\xa5\xac'
+                                                               b"\xe9LBCDB\xe6'"
+                                                               b'F\x06\x07\x99'),
+ 'numpy/random/mtrand.cpython-312-darwin.so': bytearray(b'OF,\x98\x91\x13\x1ay'
+                                                        b'2h\xd1\xcf'
+                                                        b'\x1a\xe2\x99k'
+                                                        b'\xa8\x9a<\n'),
+ 'pydantic_core/_pydantic_core.cpython-312-darwin.so': bytearray(b'\x83\x941\xb3'
+                                                                 b'e\xc3\xaf\xc2'
+                                                                 b'X\xece\xfe'
+                                                                 b'\x14\x94G*'
+                                                                 b'\x7fG\xa0\xc3'),
+ 'shiboken6/Shiboken.abi3.so': bytearray(b"\xf3\xc1\xd1\x03t\xde\xc40\x9d\xd5K'"
+                                         b'u\xfc\xe5I\xc2zB\x1c'),
+ 'shiboken6/libshiboken6.abi3.6.12.dylib': bytearray(b'g\xee\r\xca)-u\xcb'
+                                                     b'\x08V\xdf?(QM\x97'
+                                                     b'e\x85\x0bI'),
+ 'yaml/_yaml.cpython-312-darwin.so': bytearray(b'\x07\xaa\xe8\xbdG \xf9\xb6'
+                                               b'\xdc\xd9\xd0\xd7'
+                                               b'\xfe\x9e\xb9\xac\xf4|\x1f\xd1')}

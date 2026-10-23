@@ -1,0 +1,10 @@
+rule_id: MCP1700_TO92_PINMAP
+version: 1
+kind: hard
+applies_to: [mcp1700_3302e_to]
+source: {id: D1, section: "Table 3-1"}
+predicate_id: physical_pin_map_equals
+parameters:
+  expected: {"1": GND, "2": VIN, "3": VOUT}
+on_failure: {code: PINMAP_MISMATCH, block_auto_build: true}
+note: The SOT-23 package has a different pin order and is not supported by this recipe.

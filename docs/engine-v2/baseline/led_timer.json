@@ -1,0 +1,135 @@
+{
+  "schema_version": 2,
+  "template_id": "led_timer",
+  "template_version": 1,
+  "parameters": {
+    "supply_voltage_v": 5.0,
+    "target_frequency_hz": 1.0,
+    "ra_kohm": 10,
+    "rb_kohm": 68,
+    "timing_cap_uf": 10,
+    "board_width_mm": 50,
+    "board_height_mm": 35,
+    "board_thickness_mm": 1.6
+  },
+  "requirement": {
+    "board_size": {
+      "width_mm": 50.0,
+      "height_mm": 35.0
+    },
+    "supply": "5.0 V",
+    "parameters": {
+      "supply_voltage_v": {
+        "value": 5.0,
+        "unit": "V",
+        "origin": "user",
+        "source_ids": []
+      },
+      "target_frequency_hz": {
+        "value": 1.0,
+        "unit": "Hz",
+        "origin": "user",
+        "source_ids": []
+      },
+      "ra_kohm": {
+        "value": 10,
+        "unit": "kohm",
+        "origin": "user",
+        "source_ids": []
+      },
+      "rb_kohm": {
+        "value": 68,
+        "unit": "kohm",
+        "origin": "user",
+        "source_ids": []
+      },
+      "timing_cap_uf": {
+        "value": 10,
+        "unit": "uF",
+        "origin": "user",
+        "source_ids": []
+      },
+      "board_width_mm": {
+        "value": 50,
+        "unit": "mm",
+        "origin": "user",
+        "source_ids": []
+      },
+      "board_height_mm": {
+        "value": 35,
+        "unit": "mm",
+        "origin": "user",
+        "source_ids": []
+      },
+      "board_thickness_mm": {
+        "value": 1.6,
+        "unit": null,
+        "origin": "user",
+        "source_ids": []
+      }
+    }
+  },
+  "state": "SUCCEEDED",
+  "review_status": "READY_FOR_REVIEW",
+  "counts": {
+    "PASS": 20,
+    "FAIL": 0,
+    "WARN": 1,
+    "NOT_CHECKED": 1
+  },
+  "design_hash": "30241b9d71d307245125b600d2b869d09eb2d5935e9c9a7a77a346edd0fe46db",
+  "semantic_hash_v1": "24302110527f461dc766b96a20b266ca2898dd63b6f2439df62e48eb2214bf6c",
+  "semantic_hash_v2": "24302110527f461dc766b96a20b266ca2898dd63b6f2439df62e48eb2214bf6c",
+  "components": 9,
+  "nets": 7,
+  "pads": 24,
+  "tracks": 19,
+  "vias": 2,
+  "through_hole_pads": 24,
+  "component_ids": [
+    "component_c1",
+    "component_c2",
+    "component_c3",
+    "component_d1",
+    "component_j1",
+    "component_r1",
+    "component_r2",
+    "component_r3",
+    "component_u1"
+  ],
+  "net_ids": [
+    "net_cont",
+    "net_disch",
+    "net_gnd",
+    "net_leda",
+    "net_ledk",
+    "net_timing",
+    "net_vcc5v"
+  ],
+  "check_statuses": {
+    "PIN_PAD_MAPPING": "PASS",
+    "NET_COMPLETENESS": "PASS",
+    "REQUIRED_CONNECTIONS": "PASS",
+    "VOLTAGE_DOMAIN": "PASS",
+    "SUPPLY_DECOUPLING": "PASS",
+    "SCHEMATIC_PCB_CONSISTENCY": "PASS",
+    "VISIBLE_TEXT": "PASS",
+    "NE555_PINMAP": "PASS",
+    "NE555_RESET_BIAS": "PASS",
+    "NE555_TIMING": "PASS",
+    "LED_POLARITY": "PASS",
+    "LED_PHYSICAL_POLARITY": "WARN",
+    "EMC": "NOT_CHECKED",
+    "ROUTING_COMPLETE": "PASS",
+    "DRC_CLEARANCE": "PASS",
+    "COPPER_SHORTS": "PASS",
+    "DRC_BOARD_EDGE": "PASS",
+    "DRC_TRACK_WIDTH": "PASS",
+    "DRC_VIA": "PASS",
+    "DRC_HOLES": "PASS",
+    "COURTYARD": "PASS",
+    "COPPER_CONNECTIVITY": "PASS"
+  },
+  "run_id": "run_5cbaefafe9e0",
+  "revision_id": "rev_000002"
+}

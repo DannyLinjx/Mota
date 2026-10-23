@@ -1,0 +1,12 @@
+Reference,MPN,Value,Package,Qty,Sources,Pin map,3D model,Notes
+C1,MOTA-C-10uF-electrolytic,10uF,Radial 2.54 mm,1,SPEC-C,unverified,simplified,effective capacitance / ESR evidence NOT_CHECKED
+C2,MOTA-C-10nF-C0G,10nF,Radial 2.54 mm,1,SPEC-C,unverified,simplified,effective capacitance / ESR evidence NOT_CHECKED
+C3,MOTA-C-100nF-X7R,100nF,Radial 2.54 mm,1,SPEC-C,unverified,simplified,effective capacitance / ESR evidence NOT_CHECKED
+D1,MOTA-LED-RED-5MM,LED-RED,LED 5 mm,1,SPEC-LED,unverified,simplified,verify physical lead polarity
+J1,MOTA-HDR-1X02-2.54,5V IN,Pin header 1x02,1,SPEC-CONN,unverified,simplified,
+R1,MOTA-R-0.25W-10k,10k,Axial 10.16 mm,1,SPEC-R,unverified,simplified,
+R2,MOTA-R-0.25W-68k,68k,Axial 10.16 mm,1,SPEC-R,unverified,simplified,
+R3,MOTA-R-0.25W-1k,1k,Axial 10.16 mm,1,SPEC-R,unverified,simplified,
+U1,NE555P,NE555P,DIP-8 (300 mil),1,D2,verified,simplified,
+
+Note,No prices are included. This BOM is not a purchase order.

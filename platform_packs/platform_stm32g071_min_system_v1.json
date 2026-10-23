@@ -1,0 +1,98 @@
+{
+  "pack_id": "platform_stm32g071_min_system_v1",
+  "version": 1,
+  "kind": "platform",
+  "title": "STM32G071 minimal system platform requirements",
+  "purpose": "Platform requirements for the 9-pin STM32G071 subset used by knowledge/modules.py. Applies only where the selected nets exist; absent interfaces are skipped, not failed.",
+  "assumptions": [
+    "Only the 9-pin subset documented in the C4 module is covered.",
+    "USB and UART delay rules are optional requirements: they skip when the design has no such net.",
+    "Delay rules need footprint and stackup evidence; without it they stay NOT_CHECKED."
+  ],
+  "sources": [
+    {
+      "source_id": "d2_stm32g071",
+      "title": "STM32G071x8 datasheet",
+      "kind": "datasheet",
+      "note": "C4 knowledge source D2; subset pinout only."
+    },
+    {
+      "source_id": "mota_demo_rules",
+      "title": "Mota demo two-layer rule profile",
+      "kind": "engineering_spec",
+      "note": "src/mota/resources/rules/mota_demo_2layer_v1.yaml"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "power_clearance",
+      "kind": "clearance",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"net_classes": ["power", "ground"]},
+      "parameters": {"min": {"value": 0.25, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Power and ground nets keep more clearance than the manufacturing floor."
+    },
+    {
+      "rule_id": "signal_track_width",
+      "kind": "track_width",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"net_classes": ["signal"]},
+      "parameters": {"min": {"value": 0.3, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Signal routing uses at least 0.30 mm."
+    },
+    {
+      "rule_id": "power_track_width",
+      "kind": "track_width",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"net_classes": ["power", "ground"]},
+      "parameters": {"min": {"value": 0.6, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Power and ground rails use at least 0.60 mm."
+    },
+    {
+      "rule_id": "usb_impedance",
+      "kind": "impedance",
+      "hard": true,
+      "required": false,
+      "severity": "error",
+      "selector": {"nets": ["USB_DP", "USB_DN"]},
+      "parameters": {
+        "min": {"value": 45, "unit": "ohm"},
+        "max": {"value": 55, "unit": "ohm"}
+      },
+      "sources": ["d2_stm32g071"],
+      "intent": "Full-speed USB differential impedance; not applicable when the design has no USB nets."
+    },
+    {
+      "rule_id": "uart_propagation_delay",
+      "kind": "propagation_delay",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"nets": ["UART_TX", "UART_RX"]},
+      "parameters": {"max": {"value": 3000, "unit": "ps"}},
+      "precondition": {"requires_footprint": true, "requires_stackup": true},
+      "sources": ["d2_stm32g071"],
+      "intent": "UART net delay budget. Requires footprint and dielectric data; without it the rule is NOT_CHECKED, never skipped."
+    },
+    {
+      "rule_id": "led_delay_preference",
+      "kind": "propagation_delay",
+      "hard": false,
+      "required": false,
+      "severity": "warning",
+      "selector": {"nets": ["LED_SIG"]},
+      "parameters": {"max": {"value": 5000, "unit": "ps"}},
+      "sources": ["d2_stm32g071"],
+      "intent": "Soft preference only; it must never drive feasibility."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+(kicad_symbol_lib (version 20231120) (generator kicad_symbol_editor)
+  (symbol "Custom:Special"
+    (property "Reference" "J" (at 0 0 0))
+    (property "Value" "Special" (at 0 0 0))
+    (property "Description" "Single-symbol unpacked library entry" (at 0 0 0))
+    (symbol "Special_1_1"
+      (pin passive line (at -5 0 0) (length 2.54)
+        (name "P1" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 5 0 180) (length 2.54)
+        (name "P2" (effects (font (size 1.27 1.27))))
+        (number "2" (effects (font (size 1.27 1.27))))))
+  )
+)

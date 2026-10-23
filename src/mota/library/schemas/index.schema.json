@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mota.example/contracts/v1/index.schema.json",
+  "title": "MoTA derived catalog index v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generation": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._+-]*$",
+      "maxLength": 160
+    },
+    "registry_path": {
+      "$ref": "common.schema.json#/$defs/relative_path"
+    },
+    "scope": {
+      "$ref": "common.schema.json#/$defs/scope"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "$ref": "common.schema.json#/$defs/asset_id"
+          },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "namespace": {
+            "$ref": "common.schema.json#/$defs/namespace"
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "package_version": {
+            "$ref": "common.schema.json#/$defs/package_version"
+          },
+          "digest": {
+            "$ref": "common.schema.json#/$defs/digest"
+          },
+          "relative_path": {
+            "$ref": "common.schema.json#/$defs/relative_path"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "incomplete",
+              "missing",
+              "quarantined"
+            ]
+          },
+          "documentation_status": {
+            "$ref": "common.schema.json#/$defs/documentation_level"
+          },
+          "capabilities": {
+            "$ref": "common.schema.json#/$defs/capabilities"
+          }
+        },
+        "required": [
+          "asset_id",
+          "kind",
+          "namespace",
+          "display_name",
+          "summary",
+          "package_version",
+          "digest",
+          "relative_path",
+          "enabled",
+          "availability",
+          "documentation_status",
+          "capabilities"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "generation",
+    "registry_path",
+    "scope",
+    "entries"
+  ],
+  "additionalProperties": false
+}

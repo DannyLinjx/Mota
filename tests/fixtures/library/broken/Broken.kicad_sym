@@ -1,0 +1,7 @@
+(kicad_symbol_lib (version 20241209) (generator kicad_symbol_editor)
+  (symbol "Broken"
+    (property "Reference" "U" (at 0 0 0))
+    (symbol "Broken_1_1"
+      (pin passive line (at 0 0 0) (length 1.27)
+        (name "X" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))

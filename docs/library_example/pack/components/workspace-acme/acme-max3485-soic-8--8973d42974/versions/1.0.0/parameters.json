@@ -1,0 +1,16 @@
+{
+ "parameters": [
+  {
+   "applies_to": "MAX3485",
+   "evidence_refs": [
+    "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX3483-MAX3491.pdf"
+   ],
+   "kind": "recommended_operating",
+   "name": "supply_voltage_v",
+   "status": "verified",
+   "unit": "V",
+   "value_max": 3.6,
+   "value_min": 3.0
+  }
+ ]
+}

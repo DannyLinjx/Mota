@@ -1,0 +1,88 @@
+{
+  "pack_id": "manufacturing_fr4_2layer_v1",
+  "version": 1,
+  "kind": "manufacturing",
+  "title": "Generic FR4 two-layer manufacturing floor",
+  "purpose": "Minimum fabrication capability used by the demo. These are demo floors, not a vendor capability claim or a quote.",
+  "assumptions": [
+    "Two copper layers with plated through vias.",
+    "Values are a conservative floor; a real vendor pack must replace this pack.",
+    "The existing DRC profile mota_demo_2layer_v1 stays the source for current checks."
+  ],
+  "sources": [
+    {
+      "source_id": "mota_demo_rules",
+      "title": "Mota demo two-layer rule profile",
+      "kind": "engineering_spec",
+      "note": "src/mota/resources/rules/mota_demo_2layer_v1.yaml"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "min_clearance",
+      "kind": "clearance",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.15, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Absolute copper-to-copper clearance floor."
+    },
+    {
+      "rule_id": "min_track_width",
+      "kind": "track_width",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.15, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Absolute minimum track width."
+    },
+    {
+      "rule_id": "min_via_drill",
+      "kind": "via_drill",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.2, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Minimum finished via drill."
+    },
+    {
+      "rule_id": "min_via_annular_ring",
+      "kind": "via_annular_ring",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.13, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Minimum via annular ring."
+    },
+    {
+      "rule_id": "min_board_edge_clearance",
+      "kind": "board_edge_clearance",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.3, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Minimum copper distance to the routed board edge."
+    },
+    {
+      "rule_id": "min_hole_clearance",
+      "kind": "hole_clearance",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.2, "unit": "mm"}},
+      "sources": ["mota_demo_rules"],
+      "intent": "Minimum copper distance to a non-plated hole."
+    }
+  ]
+}

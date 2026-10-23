@@ -1,0 +1,262 @@
+{
+ "body_styles": 1,
+ "datasheet": "https://datasheets.maximintegrated.com/en/ds/MAX3483-MAX3491.pdf",
+ "extends": "MAX481E",
+ "pins": [
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "output",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "RO",
+   "number": "1",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": 2.54
+  },
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "input",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "~{RE}",
+   "number": "2",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": 0.0
+  },
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "input",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "DE",
+   "number": "3",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": -2.54
+  },
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "input",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "DI",
+   "number": "4",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": -5.08
+  },
+  {
+   "angle_deg": 90.0,
+   "body_style": 1,
+   "electrical_type": "power_in",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "GND",
+   "number": "5",
+   "unit": 1,
+   "x_mm": 0.0,
+   "y_mm": -15.24
+  },
+  {
+   "angle_deg": 180.0,
+   "body_style": 1,
+   "electrical_type": "bidirectional",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "A",
+   "number": "6",
+   "unit": 1,
+   "x_mm": 10.16,
+   "y_mm": -5.08
+  },
+  {
+   "angle_deg": 180.0,
+   "body_style": 1,
+   "electrical_type": "bidirectional",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "B",
+   "number": "7",
+   "unit": 1,
+   "x_mm": 10.16,
+   "y_mm": 2.54
+  },
+  {
+   "angle_deg": 270.0,
+   "body_style": 1,
+   "electrical_type": "power_in",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "VCC",
+   "number": "8",
+   "unit": 1,
+   "x_mm": 0.0,
+   "y_mm": 12.7
+  }
+ ],
+ "properties": {
+  "Datasheet": "https://datasheets.maximintegrated.com/en/ds/MAX3483-MAX3491.pdf",
+  "Footprint": "",
+  "Reference": "U",
+  "Value": "MAX3485",
+  "ki_description": "True RS-485/RS-422, 10Mbps, Slew-Rate Limited, with low-power shutdown, with receiver/driver enable, 32 receiver drive capacitity, DIP-8 and SOIC-8",
+  "ki_fp_filters": "DIP*W7.62mm* SOIC*3.9x4.9mm*P1.27mm*",
+  "ki_keywords": "RS-485 RS-422 UART line-driver transceiver"
+ },
+ "symbol_occurrences": [
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "output",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "RO",
+   "number": "1",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": 2.54
+  },
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "input",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "~{RE}",
+   "number": "2",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": 0.0
+  },
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "input",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "DE",
+   "number": "3",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": -2.54
+  },
+  {
+   "angle_deg": 0.0,
+   "body_style": 1,
+   "electrical_type": "input",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "DI",
+   "number": "4",
+   "unit": 1,
+   "x_mm": -10.16,
+   "y_mm": -5.08
+  },
+  {
+   "angle_deg": 90.0,
+   "body_style": 1,
+   "electrical_type": "power_in",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "GND",
+   "number": "5",
+   "unit": 1,
+   "x_mm": 0.0,
+   "y_mm": -15.24
+  },
+  {
+   "angle_deg": 180.0,
+   "body_style": 1,
+   "electrical_type": "bidirectional",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "A",
+   "number": "6",
+   "unit": 1,
+   "x_mm": 10.16,
+   "y_mm": -5.08
+  },
+  {
+   "angle_deg": 180.0,
+   "body_style": 1,
+   "electrical_type": "bidirectional",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "B",
+   "number": "7",
+   "unit": 1,
+   "x_mm": 10.16,
+   "y_mm": 2.54
+  },
+  {
+   "angle_deg": 270.0,
+   "body_style": 1,
+   "electrical_type": "power_in",
+   "hidden": false,
+   "length_mm": 2.54,
+   "name": "VCC",
+   "number": "8",
+   "unit": 1,
+   "x_mm": 0.0,
+   "y_mm": 12.7
+  }
+ ],
+ "terminals": [
+  {
+   "electrical_type": "output",
+   "hidden": false,
+   "name": "RO",
+   "number": "1"
+  },
+  {
+   "electrical_type": "input",
+   "hidden": false,
+   "name": "~{RE}",
+   "number": "2"
+  },
+  {
+   "electrical_type": "input",
+   "hidden": false,
+   "name": "DE",
+   "number": "3"
+  },
+  {
+   "electrical_type": "input",
+   "hidden": false,
+   "name": "DI",
+   "number": "4"
+  },
+  {
+   "electrical_type": "power_in",
+   "hidden": false,
+   "name": "GND",
+   "number": "5"
+  },
+  {
+   "electrical_type": "bidirectional",
+   "hidden": false,
+   "name": "A",
+   "number": "6"
+  },
+  {
+   "electrical_type": "bidirectional",
+   "hidden": false,
+   "name": "B",
+   "number": "7"
+  },
+  {
+   "electrical_type": "power_in",
+   "hidden": false,
+   "name": "VCC",
+   "number": "8"
+  }
+ ],
+ "units": 1,
+ "unknown_electrical": false
+}

@@ -1,0 +1,22 @@
+Mota test suite — actual run 2026-10-21
+
+Command:
+  .venv/bin/python -m pytest tests --junitxml=/tmp/mota-junit.xml -q
+
+Result (parsed from the JUnit XML written by that run):
+  83 tests · 0 failures · 0 errors · 0 skipped · 133.49 s
+
+Progress output observed:
+  ........................................................................ [ 86%]
+  ...........                                                              [100%]
+
+Notes:
+- The suite runs against the editable source tree (uv pip install -e .), not the
+  pre-built wheel, so src/mota/** is the code under test.
+- Includes real template builds, routing/DRC negatives, atomic commit and recovery,
+  per-user isolation, config schema v1→v2 migration, frozen provider bindings,
+  Chat Completions stream aggregation (including the terminal usage chunk),
+  probe request caps and evidence, plus the desktop UI contracts.
+
+Note: after the summary is written, Qt prints a widget-teardown warning while the
+test process exits. The JUnit XML reports 0 failures/errors and the exit code is 0.

@@ -1,0 +1,39 @@
+rule_profile_id: mota_demo_2layer_v1
+version: 1
+kind: demo_rule_profile
+description: Custom two-layer demo rules. These are not a manufacturer's capability claim.
+layers: [F.Cu, B.Cu]
+thickness_mm: 1.6
+clearance_mm: 0.25
+track_width_signal_mm: 0.30
+track_width_power_mm: 0.60
+board_edge_clearance_mm: 0.50
+npth_copper_clearance_mm: 0.25
+via_outer_mm: 0.80
+via_drill_mm: 0.40
+via_annular_ring_mm: 0.20
+routing_grid_mm: 0.127
+routing_budget_seconds: 30
+schematic_snap_mm: 1.27
+required_for_review:
+  - PIN_PAD_MAPPING
+  - NET_COMPLETENESS
+  - REQUIRED_CONNECTIONS
+  - VOLTAGE_DOMAIN
+  - SUPPLY_DECOUPLING
+  - SCHEMATIC_PCB_CONSISTENCY
+  - VISIBLE_TEXT
+  - ROUTING_COMPLETE
+  - DRC_CLEARANCE
+  - DRC_BOARD_EDGE
+  - DRC_TRACK_WIDTH
+  - DRC_VIA
+  - DRC_HOLES
+  - COURTYARD
+  - COPPER_CONNECTIVITY
+  - COPPER_SHORTS
+non_blocking_examples:
+  - THERMAL_ESTIMATE
+  - EMC
+  - INTERFACE_ASSUMPTION
+  - LED_PHYSICAL_POLARITY

@@ -1,0 +1,7 @@
+Reference,MPN,Value,Package,Qty,Sources,Pin map,3D model,Notes
+"C1, C2",MOTA-C-2.2uF-X7R,2.2uF,Radial 2.54 mm,2,SPEC-C,unverified,simplified,effective capacitance / ESR evidence NOT_CHECKED
+J1,MOTA-HDR-1X02-2.54,5V IN,Pin header 1x02,1,SPEC-CONN,unverified,simplified,
+J2,MOTA-HDR-1X02-2.54,3V3 OUT,Pin header 1x02,1,SPEC-CONN,unverified,simplified,
+U1,MCP1700-3302E/TO,MCP1700-3302E/TO,TO-92,1,D1,verified,simplified,
+
+Note,No prices are included. This BOM is not a purchase order.

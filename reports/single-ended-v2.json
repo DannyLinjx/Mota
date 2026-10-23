@@ -1,0 +1,205 @@
+{
+  "suite": "single-ended-v2",
+  "suite_version": 2,
+  "generated_at": "2026-10-22T01:53:08.312724+00:00",
+  "frozen_hashes_ok": true,
+  "aggregate": {
+    "cases": 6,
+    "requested_targets": 8,
+    "completed_targets": 8,
+    "unrouted_targets": 0,
+    "u_total": 0,
+    "routed_ratio": 1.0,
+    "frozen_hashes_ok": true,
+    "status_counts": {
+      "SUCCEEDED": 6
+    },
+    "total_runtime_ms": 2.871667
+  },
+  "cases": [
+    {
+      "id": "two_layer_three_terminal",
+      "file": "two_layer_three_terminal.json",
+      "sha256": "8ddb1a5754f4628afb1591f412f91a404fcf82870735593461f330e45ff1d8d1",
+      "actual_sha256": "8ddb1a5754f4628afb1591f412f91a404fcf82870735593461f330e45ff1d8d1",
+      "frozen_hash_ok": true,
+      "requested_nets": [
+        "N"
+      ],
+      "completed_nets": [
+        "N"
+      ],
+      "unrouted_nets": [],
+      "status": "SUCCEEDED",
+      "u_total": 0,
+      "wirelength_nm": 45000000.0,
+      "via_count": 0,
+      "track_count": 2,
+      "expansions": 860,
+      "rounds": 1,
+      "semantic_hash": "3fecd2e58c9d27fd20d62d56d40dc349a14fc247e9deb71cd52b5a6ee92edac8",
+      "runtime_ms": 0.636875,
+      "diagnostics": [],
+      "short_count": 0,
+      "grid": {
+        "columns": 80,
+        "rows": 60,
+        "layers": 2
+      }
+    },
+    {
+      "id": "two_layer_obstacle",
+      "file": "two_layer_obstacle.json",
+      "sha256": "ce1d5b8426c68507d42dba9b6540a04c83e5f0f993c576752053d5890420c57b",
+      "actual_sha256": "ce1d5b8426c68507d42dba9b6540a04c83e5f0f993c576752053d5890420c57b",
+      "frozen_hash_ok": true,
+      "requested_nets": [
+        "N"
+      ],
+      "completed_nets": [
+        "N"
+      ],
+      "unrouted_nets": [],
+      "status": "SUCCEEDED",
+      "u_total": 0,
+      "wirelength_nm": 33000000.0,
+      "via_count": 0,
+      "track_count": 1,
+      "expansions": 508,
+      "rounds": 1,
+      "semantic_hash": "096b163d6dd777b0e1d9502d818568509862b3fdb6da186899602fa4be6a6ff6",
+      "runtime_ms": 0.332292,
+      "diagnostics": [],
+      "short_count": 0,
+      "grid": {
+        "columns": 80,
+        "rows": 60,
+        "layers": 2
+      }
+    },
+    {
+      "id": "two_layer_two_nets",
+      "file": "two_layer_two_nets.json",
+      "sha256": "b9af199b9c182cf9fb106331cdf208776873b09869e254a4d9021b2747746fdc",
+      "actual_sha256": "b9af199b9c182cf9fb106331cdf208776873b09869e254a4d9021b2747746fdc",
+      "frozen_hash_ok": true,
+      "requested_nets": [
+        "A",
+        "B"
+      ],
+      "completed_nets": [
+        "A",
+        "B"
+      ],
+      "unrouted_nets": [],
+      "status": "SUCCEEDED",
+      "u_total": 0,
+      "wirelength_nm": 50000000.0,
+      "via_count": 2,
+      "track_count": 3,
+      "expansions": 1140,
+      "rounds": 1,
+      "semantic_hash": "500b1e55bdfdb2daff049c897a71b42a429c916500f1cc79d36114cd9ada612a",
+      "runtime_ms": 0.397625,
+      "diagnostics": [],
+      "short_count": 0,
+      "grid": {
+        "columns": 80,
+        "rows": 60,
+        "layers": 2
+      }
+    },
+    {
+      "id": "four_layer_smd",
+      "file": "four_layer_smd.json",
+      "sha256": "770f2057ab2d69766a0edaa14896b8444c43835e97f96980c871bc2d4848f0a6",
+      "actual_sha256": "770f2057ab2d69766a0edaa14896b8444c43835e97f96980c871bc2d4848f0a6",
+      "frozen_hash_ok": true,
+      "requested_nets": [
+        "N"
+      ],
+      "completed_nets": [
+        "N"
+      ],
+      "unrouted_nets": [],
+      "status": "SUCCEEDED",
+      "u_total": 0,
+      "wirelength_nm": 30000000.0,
+      "via_count": 2,
+      "track_count": 2,
+      "expansions": 2009,
+      "rounds": 1,
+      "semantic_hash": "274f0e0f1265163500566d8f6c20a5adcaebc50a8231892bae2a04a700268003",
+      "runtime_ms": 0.551291,
+      "diagnostics": [],
+      "short_count": 0,
+      "grid": {
+        "columns": 80,
+        "rows": 60,
+        "layers": 4
+      }
+    },
+    {
+      "id": "six_layer_smd",
+      "file": "six_layer_smd.json",
+      "sha256": "19b3010e13c74d0ac508083c3b82723749c8f30e58b797c4168b84e3b5843da6",
+      "actual_sha256": "19b3010e13c74d0ac508083c3b82723749c8f30e58b797c4168b84e3b5843da6",
+      "frozen_hash_ok": true,
+      "requested_nets": [
+        "N"
+      ],
+      "completed_nets": [
+        "N"
+      ],
+      "unrouted_nets": [],
+      "status": "SUCCEEDED",
+      "u_total": 0,
+      "wirelength_nm": 30000000.0,
+      "via_count": 2,
+      "track_count": 2,
+      "expansions": 2879,
+      "rounds": 1,
+      "semantic_hash": "9ecc18004a4d66d52d31442a889eb9c0f947ce7a2ab46f66755d015ac5ead8cf",
+      "runtime_ms": 0.773792,
+      "diagnostics": [],
+      "short_count": 0,
+      "grid": {
+        "columns": 80,
+        "rows": 60,
+        "layers": 6
+      }
+    },
+    {
+      "id": "locked_track",
+      "file": "locked_track.json",
+      "sha256": "b1b133090e5b3b8ad376fd7c2010f785fb46205a9532a4a6de3571ea7881e18a",
+      "actual_sha256": "b1b133090e5b3b8ad376fd7c2010f785fb46205a9532a4a6de3571ea7881e18a",
+      "frozen_hash_ok": true,
+      "requested_nets": [
+        "N",
+        "M"
+      ],
+      "completed_nets": [
+        "N",
+        "M"
+      ],
+      "unrouted_nets": [],
+      "status": "SUCCEEDED",
+      "u_total": 0,
+      "wirelength_nm": 40000000.0,
+      "via_count": 0,
+      "track_count": 2,
+      "expansions": 241,
+      "rounds": 1,
+      "semantic_hash": "efd89677ec7a0774fb1efe3dde45b18fbd10fbf8eef1ca490bf94fe3c936caa3",
+      "runtime_ms": 0.179792,
+      "diagnostics": [],
+      "short_count": 0,
+      "grid": {
+        "columns": 80,
+        "rows": 60,
+        "layers": 2
+      }
+    }
+  ]
+}

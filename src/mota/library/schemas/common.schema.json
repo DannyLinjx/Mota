@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mota.example/contracts/v1/common.schema.json",
+  "title": "MoTA shared contract types",
+  "$defs": {
+    "asset_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*:(component|symbol|footprint|model3d|module|template):[^\\x00-\\x1f\\x7f]+$"
+    },
+    "kind": {
+      "enum": [
+        "component",
+        "symbol",
+        "footprint",
+        "model3d",
+        "module",
+        "template"
+      ]
+    },
+    "namespace": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "package_version": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._+-]*$",
+      "maxLength": 160
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\x00-\\x1f\\x7f]+$"
+    },
+    "exact_ref": {
+      "type": "object",
+      "properties": {
+        "asset_id": {
+          "$ref": "common.schema.json#/$defs/asset_id"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/package_version"
+        },
+        "digest": {
+          "$ref": "common.schema.json#/$defs/digest"
+        }
+      },
+      "required": [
+        "asset_id",
+        "version",
+        "digest"
+      ],
+      "additionalProperties": false
+    },
+    "knowledge_status": {
+      "enum": [
+        "verified",
+        "source_reported",
+        "unknown",
+        "conflict"
+      ]
+    },
+    "documentation_level": {
+      "enum": [
+        "stub",
+        "basic",
+        "partial",
+        "verified"
+      ]
+    },
+    "evidence_ref": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_id",
+        "locator"
+      ],
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "metadata_only": {
+          "type": "boolean"
+        },
+        "documentation_read": {
+          "type": "boolean"
+        },
+        "parameter_read": {
+          "type": "boolean"
+        },
+        "schematic_place": {
+          "type": "boolean"
+        },
+        "pcb_place": {
+          "type": "boolean"
+        },
+        "model3d_view": {
+          "type": "boolean"
+        },
+        "module_expand": {
+          "type": "boolean"
+        },
+        "template_instantiate": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "metadata_only",
+        "documentation_read",
+        "parameter_read",
+        "schematic_place",
+        "pcb_place",
+        "model3d_view",
+        "module_expand",
+        "template_instantiate"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "metadata_only": {
+                "const": true
+              }
+            },
+            "required": [
+              "metadata_only"
+            ]
+          },
+          "then": {
+            "properties": {
+              "schematic_place": {
+                "const": false
+              },
+              "pcb_place": {
+                "const": false
+              },
+              "model3d_view": {
+                "const": false
+              },
+              "module_expand": {
+                "const": false
+              },
+              "template_instantiate": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "manufacturer_datasheet",
+            "official_documentation",
+            "library_metadata",
+            "third_party_documentation",
+            "import_record",
+            "user_note"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "url"
+          ]
+        },
+        {
+          "required": [
+            "locator"
+          ]
+        }
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "system",
+            "user",
+            "workspace"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "terminal_pad_mapping": {
+      "type": "object",
+      "properties": {
+        "terminal_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pad_numbers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "terminal_id",
+        "pad_numbers"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

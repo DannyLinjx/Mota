@@ -1,0 +1,1891 @@
+{
+  "$defs": {
+    "BoardPad": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "component_id": {
+          "title": "Component Id",
+          "type": "string"
+        },
+        "number": {
+          "title": "Number",
+          "type": "string"
+        },
+        "net_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Net Id"
+        },
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "w_nm": {
+          "title": "W Nm",
+          "type": "integer"
+        },
+        "h_nm": {
+          "title": "H Nm",
+          "type": "integer"
+        },
+        "shape": {
+          "enum": [
+            "rect",
+            "circle",
+            "oval"
+          ],
+          "title": "Shape",
+          "type": "string"
+        },
+        "drill_nm": {
+          "default": 0,
+          "title": "Drill Nm",
+          "type": "integer"
+        },
+        "pad_type": {
+          "default": "tht",
+          "enum": [
+            "smd",
+            "tht",
+            "npth"
+          ],
+          "title": "Pad Type",
+          "type": "string"
+        },
+        "layers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Layers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "component_id",
+        "number",
+        "net_id",
+        "x_nm",
+        "y_nm",
+        "w_nm",
+        "h_nm",
+        "shape"
+      ],
+      "title": "BoardPad",
+      "type": "object"
+    },
+    "BoardV2": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "outline": {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Outline",
+          "type": "array"
+        },
+        "width_nm": {
+          "default": 0,
+          "title": "Width Nm",
+          "type": "integer"
+        },
+        "height_nm": {
+          "default": 0,
+          "title": "Height Nm",
+          "type": "integer"
+        },
+        "thickness_nm": {
+          "default": 1600000,
+          "title": "Thickness Nm",
+          "type": "integer"
+        },
+        "layer_count": {
+          "default": 2,
+          "title": "Layer Count",
+          "type": "integer"
+        },
+        "footprints": {
+          "items": {
+            "$ref": "#/$defs/FootprintInstance"
+          },
+          "title": "Footprints",
+          "type": "array"
+        },
+        "pads": {
+          "items": {
+            "$ref": "#/$defs/BoardPad"
+          },
+          "title": "Pads",
+          "type": "array"
+        },
+        "tracks": {
+          "items": {
+            "$ref": "#/$defs/Track"
+          },
+          "title": "Tracks",
+          "type": "array"
+        },
+        "vias": {
+          "items": {
+            "$ref": "#/$defs/Via"
+          },
+          "title": "Vias",
+          "type": "array"
+        },
+        "holes": {
+          "items": {
+            "$ref": "#/$defs/Hole"
+          },
+          "title": "Holes",
+          "type": "array"
+        },
+        "ratsnest": {
+          "items": {
+            "$ref": "#/$defs/RatsnestLine"
+          },
+          "title": "Ratsnest",
+          "type": "array"
+        },
+        "unrouted_nets": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unrouted Nets",
+          "type": "array"
+        },
+        "placement_policy": {
+          "default": "module_rules_v1",
+          "title": "Placement Policy",
+          "type": "string"
+        },
+        "route_policy": {
+          "default": "grid_astar_2layer_v1",
+          "title": "Route Policy",
+          "type": "string"
+        },
+        "layer_order": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Layer Order",
+          "type": "array"
+        },
+        "stackup": {
+          "$ref": "#/$defs/Stackup"
+        },
+        "via_definitions": {
+          "items": {
+            "$ref": "#/$defs/ViaDefinition"
+          },
+          "title": "Via Definitions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "stackup"
+      ],
+      "title": "BoardV2",
+      "type": "object"
+    },
+    "CheckResult": {
+      "additionalProperties": false,
+      "properties": {
+        "check_id": {
+          "title": "Check Id",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "WARN",
+            "NOT_CHECKED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "severity": {
+          "default": "error",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "required_for_review": {
+          "default": true,
+          "title": "Required For Review",
+          "type": "boolean"
+        },
+        "object_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Object Ids",
+          "type": "array"
+        },
+        "message": {
+          "default": "",
+          "title": "Message",
+          "type": "string"
+        },
+        "evidence": {
+          "additionalProperties": true,
+          "title": "Evidence",
+          "type": "object"
+        },
+        "coverage": {
+          "default": "",
+          "title": "Coverage",
+          "type": "string"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        },
+        "design_version_key": {
+          "default": "",
+          "title": "Design Version Key",
+          "type": "string"
+        },
+        "outdated": {
+          "default": false,
+          "title": "Outdated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "check_id",
+        "rule_id",
+        "title",
+        "status"
+      ],
+      "title": "CheckResult",
+      "type": "object"
+    },
+    "CircuitV2": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/$defs/ComponentV2"
+          },
+          "title": "Components",
+          "type": "array"
+        },
+        "nets": {
+          "items": {
+            "$ref": "#/$defs/Net"
+          },
+          "title": "Nets",
+          "type": "array"
+        },
+        "no_connects": {
+          "items": {
+            "type": "string"
+          },
+          "title": "No Connects",
+          "type": "array"
+        },
+        "modules": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Modules",
+          "type": "array"
+        },
+        "rule_profile_id": {
+          "default": "mota_demo_2layer_v1",
+          "title": "Rule Profile Id",
+          "type": "string"
+        },
+        "library_snapshot_id": {
+          "default": "mota_builtin_v1",
+          "title": "Library Snapshot Id",
+          "type": "string"
+        },
+        "hierarchy": {
+          "$ref": "#/$defs/HierarchyIR"
+        }
+      },
+      "title": "CircuitV2",
+      "type": "object"
+    },
+    "ComponentV2": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        },
+        "part_id": {
+          "title": "Part Id",
+          "type": "string"
+        },
+        "symbol_id": {
+          "title": "Symbol Id",
+          "type": "string"
+        },
+        "footprint_id": {
+          "title": "Footprint Id",
+          "type": "string"
+        },
+        "pin_pad_map": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Pin Pad Map",
+          "type": "object"
+        },
+        "value": {
+          "default": "",
+          "title": "Value",
+          "type": "string"
+        },
+        "placement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Placement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "placement_origin": {
+          "default": "template",
+          "enum": [
+            "template",
+            "user",
+            "unplaced"
+          ],
+          "title": "Placement Origin",
+          "type": "string"
+        },
+        "locked": {
+          "default": false,
+          "title": "Locked",
+          "type": "boolean"
+        },
+        "module_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Module Id"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Properties"
+        },
+        "instance_path": {
+          "title": "Instance Path",
+          "type": "string"
+        },
+        "on_board": {
+          "default": true,
+          "title": "On Board",
+          "type": "boolean"
+        },
+        "in_bom": {
+          "default": true,
+          "title": "In Bom",
+          "type": "boolean"
+        },
+        "assembly_state": {
+          "default": "assembled",
+          "enum": [
+            "assembled",
+            "dnp",
+            "not_fitted"
+          ],
+          "title": "Assembly State",
+          "type": "string"
+        },
+        "footprint_instance_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Footprint Instance Id"
+        },
+        "parameter_bindings": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Parameter Bindings",
+          "type": "object"
+        },
+        "physical_terminals": {
+          "items": {
+            "$ref": "#/$defs/PhysicalTerminal"
+          },
+          "title": "Physical Terminals",
+          "type": "array"
+        },
+        "symbol_units": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Symbol Units",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "reference",
+        "part_id",
+        "symbol_id",
+        "footprint_id",
+        "pin_pad_map",
+        "instance_path"
+      ],
+      "title": "ComponentV2",
+      "type": "object"
+    },
+    "ConstraintIR": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "profile_id": {
+          "title": "Profile Id",
+          "type": "string"
+        },
+        "rules": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Rules",
+          "type": "array"
+        },
+        "unresolved": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unresolved",
+          "type": "array"
+        },
+        "source": {
+          "default": "migrated-v1",
+          "enum": [
+            "migrated-v1",
+            "declared"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "profile_id"
+      ],
+      "title": "ConstraintIR",
+      "type": "object"
+    },
+    "DesignVersion": {
+      "additionalProperties": false,
+      "description": "Exactly one of a saved revision or a draft identity.",
+      "properties": {
+        "revision_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Revision Id"
+        },
+        "draft_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Draft Id"
+        },
+        "draft_seq": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Draft Seq"
+        }
+      },
+      "title": "DesignVersion",
+      "type": "object"
+    },
+    "FootprintInstance": {
+      "additionalProperties": false,
+      "properties": {
+        "component_id": {
+          "title": "Component Id",
+          "type": "string"
+        },
+        "footprint_id": {
+          "title": "Footprint Id",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        },
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "rotation_deg": {
+          "default": 0,
+          "title": "Rotation Deg",
+          "type": "integer"
+        },
+        "side": {
+          "default": "top",
+          "enum": [
+            "top",
+            "bottom"
+          ],
+          "title": "Side",
+          "type": "string"
+        },
+        "courtyard": {
+          "$ref": "#/$defs/Rect"
+        },
+        "courtyard_approximate": {
+          "default": false,
+          "title": "Courtyard Approximate",
+          "type": "boolean"
+        },
+        "body_height_mm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Body Height Mm"
+        },
+        "model_fidelity": {
+          "default": "simplified",
+          "enum": [
+            "exact_asset",
+            "simplified",
+            "missing"
+          ],
+          "title": "Model Fidelity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "component_id",
+        "footprint_id",
+        "reference",
+        "x_nm",
+        "y_nm",
+        "courtyard"
+      ],
+      "title": "FootprintInstance",
+      "type": "object"
+    },
+    "HierarchyIR": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "modules": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Modules",
+          "type": "array"
+        },
+        "instances": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Instances",
+          "type": "array"
+        },
+        "buses": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Buses",
+          "type": "array"
+        },
+        "unresolved": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unresolved",
+          "type": "array"
+        },
+        "source": {
+          "default": "migrated-v1",
+          "enum": [
+            "migrated-v1",
+            "declared"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "title": "HierarchyIR",
+      "type": "object"
+    },
+    "Hole": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "drill_nm": {
+          "title": "Drill Nm",
+          "type": "integer"
+        },
+        "plated": {
+          "default": false,
+          "title": "Plated",
+          "type": "boolean"
+        },
+        "purpose": {
+          "default": "mounting",
+          "enum": [
+            "mounting",
+            "tooling",
+            "other"
+          ],
+          "title": "Purpose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "x_nm",
+        "y_nm",
+        "drill_nm"
+      ],
+      "title": "Hole",
+      "type": "object"
+    },
+    "Net": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "pins": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Pins",
+          "type": "array"
+        },
+        "net_class": {
+          "default": "signal",
+          "enum": [
+            "power",
+            "ground",
+            "signal"
+          ],
+          "title": "Net Class",
+          "type": "string"
+        },
+        "voltage_v": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Voltage V"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Net",
+      "type": "object"
+    },
+    "NetLabel": {
+      "additionalProperties": false,
+      "properties": {
+        "net_id": {
+          "title": "Net Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "rotation_deg": {
+          "default": 0,
+          "title": "Rotation Deg",
+          "type": "integer"
+        },
+        "justify": {
+          "default": "left",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "title": "Justify",
+          "type": "string"
+        }
+      },
+      "required": [
+        "net_id",
+        "text",
+        "x_nm",
+        "y_nm"
+      ],
+      "title": "NetLabel",
+      "type": "object"
+    },
+    "PhysicalTerminal": {
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "title": "Number",
+          "type": "string"
+        },
+        "pad_numbers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Pad Numbers",
+          "type": "array"
+        },
+        "hidden": {
+          "default": false,
+          "title": "Hidden",
+          "type": "boolean"
+        },
+        "unit_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit Id"
+        },
+        "electrical_type": {
+          "default": "unknown",
+          "title": "Electrical Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "number"
+      ],
+      "title": "PhysicalTerminal",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "rotation_deg": {
+          "default": 0,
+          "title": "Rotation Deg",
+          "type": "integer"
+        },
+        "side": {
+          "default": "top",
+          "enum": [
+            "top",
+            "bottom"
+          ],
+          "title": "Side",
+          "type": "string"
+        }
+      },
+      "required": [
+        "x_nm",
+        "y_nm"
+      ],
+      "title": "Placement",
+      "type": "object"
+    },
+    "PreservedFields": {
+      "additionalProperties": false,
+      "properties": {
+        "unknown_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknown Fields",
+          "type": "array"
+        }
+      },
+      "title": "PreservedFields",
+      "type": "object"
+    },
+    "RatsnestLine": {
+      "additionalProperties": false,
+      "properties": {
+        "net_id": {
+          "title": "Net Id",
+          "type": "string"
+        },
+        "x1_nm": {
+          "title": "X1 Nm",
+          "type": "integer"
+        },
+        "y1_nm": {
+          "title": "Y1 Nm",
+          "type": "integer"
+        },
+        "x2_nm": {
+          "title": "X2 Nm",
+          "type": "integer"
+        },
+        "y2_nm": {
+          "title": "Y2 Nm",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "net_id",
+        "x1_nm",
+        "y1_nm",
+        "x2_nm",
+        "y2_nm"
+      ],
+      "title": "RatsnestLine",
+      "type": "object"
+    },
+    "Rect": {
+      "additionalProperties": false,
+      "properties": {
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "w_nm": {
+          "title": "W Nm",
+          "type": "integer"
+        },
+        "h_nm": {
+          "title": "H Nm",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x_nm",
+        "y_nm",
+        "w_nm",
+        "h_nm"
+      ],
+      "title": "Rect",
+      "type": "object"
+    },
+    "RequirementSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "purpose": {
+          "default": "",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "inputs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Outputs",
+          "type": "array"
+        },
+        "supply": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Supply"
+        },
+        "load": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Load"
+        },
+        "interfaces": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Interfaces",
+          "type": "array"
+        },
+        "board_size": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "number"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Board Size"
+        },
+        "connector_preferences": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Connector Preferences",
+          "type": "array"
+        },
+        "assembly_preferences": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assembly Preferences",
+          "type": "array"
+        },
+        "hard_constraints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Hard Constraints",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "open_questions": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Open Questions",
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "$ref": "#/$defs/RequirementValue"
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "template_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template Id"
+        },
+        "template_version": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template Version"
+        },
+        "input_kind": {
+          "default": "template",
+          "enum": [
+            "template",
+            "prompt",
+            "requirements"
+          ],
+          "title": "Input Kind",
+          "type": "string"
+        },
+        "input_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Text"
+        }
+      },
+      "title": "RequirementSpec",
+      "type": "object"
+    },
+    "RequirementValue": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "default": null,
+          "title": "Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "origin": {
+          "default": "inferred",
+          "enum": [
+            "user",
+            "template",
+            "memory",
+            "inferred"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "title": "RequirementValue",
+      "type": "object"
+    },
+    "SchematicJunction": {
+      "additionalProperties": false,
+      "properties": {
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "net_id": {
+          "title": "Net Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "x_nm",
+        "y_nm",
+        "net_id"
+      ],
+      "title": "SchematicJunction",
+      "type": "object"
+    },
+    "SchematicV2": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "page_w_nm": {
+          "title": "Page W Nm",
+          "type": "integer"
+        },
+        "page_h_nm": {
+          "title": "Page H Nm",
+          "type": "integer"
+        },
+        "snap_nm": {
+          "default": 1270000,
+          "title": "Snap Nm",
+          "type": "integer"
+        },
+        "symbols": {
+          "items": {
+            "$ref": "#/$defs/SymbolInstance"
+          },
+          "title": "Symbols",
+          "type": "array"
+        },
+        "wires": {
+          "items": {
+            "$ref": "#/$defs/SchematicWire"
+          },
+          "title": "Wires",
+          "type": "array"
+        },
+        "junctions": {
+          "items": {
+            "$ref": "#/$defs/SchematicJunction"
+          },
+          "title": "Junctions",
+          "type": "array"
+        },
+        "labels": {
+          "items": {
+            "$ref": "#/$defs/NetLabel"
+          },
+          "title": "Labels",
+          "type": "array"
+        },
+        "no_connect_pins": {
+          "items": {
+            "type": "string"
+          },
+          "title": "No Connect Pins",
+          "type": "array"
+        },
+        "no_connects": {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "No Connects",
+          "type": "array"
+        },
+        "title": {
+          "default": "Mota schematic",
+          "title": "Title",
+          "type": "string"
+        },
+        "page_instances": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Page Instances",
+          "type": "array"
+        }
+      },
+      "required": [
+        "page_w_nm",
+        "page_h_nm"
+      ],
+      "title": "SchematicV2",
+      "type": "object"
+    },
+    "SchematicWire": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "net_id": {
+          "title": "Net Id",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "width_nm": {
+          "default": 152400,
+          "title": "Width Nm",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "net_id",
+        "points"
+      ],
+      "title": "SchematicWire",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "source_schema_version": {
+          "title": "Source Schema Version",
+          "type": "integer"
+        },
+        "source_hash": {
+          "title": "Source Hash",
+          "type": "string"
+        },
+        "source_files": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Source Files",
+          "type": "object"
+        },
+        "design_hash": {
+          "default": "",
+          "title": "Design Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_schema_version",
+        "source_hash"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "Stackup": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "layers": {
+          "items": {
+            "$ref": "#/$defs/StackupLayer"
+          },
+          "title": "Layers",
+          "type": "array"
+        },
+        "total_thickness_nm": {
+          "title": "Total Thickness Nm",
+          "type": "integer"
+        },
+        "source": {
+          "default": "migrated-v1",
+          "enum": [
+            "migrated-v1",
+            "declared"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "layers",
+        "total_thickness_nm"
+      ],
+      "title": "Stackup",
+      "type": "object"
+    },
+    "StackupLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "copper",
+            "dielectric",
+            "mask"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "thickness_nm": {
+          "title": "Thickness Nm",
+          "type": "integer"
+        },
+        "material_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Ref"
+        },
+        "reference_nets": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reference Nets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "order",
+        "kind",
+        "thickness_nm"
+      ],
+      "title": "StackupLayer",
+      "type": "object"
+    },
+    "SymbolInstance": {
+      "additionalProperties": false,
+      "properties": {
+        "component_id": {
+          "title": "Component Id",
+          "type": "string"
+        },
+        "symbol_id": {
+          "title": "Symbol Id",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "rotation_deg": {
+          "default": 0,
+          "title": "Rotation Deg",
+          "type": "integer"
+        },
+        "body_w_nm": {
+          "title": "Body W Nm",
+          "type": "integer"
+        },
+        "body_h_nm": {
+          "title": "Body H Nm",
+          "type": "integer"
+        },
+        "pin_anchors": {
+          "additionalProperties": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Pin Anchors",
+          "type": "object"
+        }
+      },
+      "required": [
+        "component_id",
+        "symbol_id",
+        "reference",
+        "value",
+        "x_nm",
+        "y_nm",
+        "body_w_nm",
+        "body_h_nm"
+      ],
+      "title": "SymbolInstance",
+      "type": "object"
+    },
+    "Track": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "net_id": {
+          "title": "Net Id",
+          "type": "string"
+        },
+        "layer": {
+          "enum": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "title": "Layer",
+          "type": "string"
+        },
+        "width_nm": {
+          "title": "Width Nm",
+          "type": "integer"
+        },
+        "points": {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "net_id",
+        "layer",
+        "width_nm"
+      ],
+      "title": "Track",
+      "type": "object"
+    },
+    "UnitContract": {
+      "additionalProperties": false,
+      "properties": {
+        "length": {
+          "const": "nm",
+          "default": "nm",
+          "title": "Length",
+          "type": "string"
+        },
+        "voltage": {
+          "const": "V",
+          "default": "V",
+          "title": "Voltage",
+          "type": "string"
+        },
+        "current": {
+          "const": "mA",
+          "default": "mA",
+          "title": "Current",
+          "type": "string"
+        },
+        "time": {
+          "const": "s",
+          "default": "s",
+          "title": "Time",
+          "type": "string"
+        },
+        "frequency": {
+          "const": "Hz",
+          "default": "Hz",
+          "title": "Frequency",
+          "type": "string"
+        },
+        "coordinate_range_nm": {
+          "default": 1000000000000000,
+          "title": "Coordinate Range Nm",
+          "type": "integer"
+        }
+      },
+      "title": "UnitContract",
+      "type": "object"
+    },
+    "ValidationReportV2": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "project_id": {
+          "title": "Project Id",
+          "type": "string"
+        },
+        "design_version": {
+          "$ref": "#/$defs/DesignVersion"
+        },
+        "design_version_key": {
+          "title": "Design Version Key",
+          "type": "string"
+        },
+        "profile_id": {
+          "default": "mota_demo_2layer_v1",
+          "title": "Profile Id",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/CheckResult"
+          },
+          "title": "Checks",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "DRAFT",
+          "enum": [
+            "DRAFT",
+            "NEEDS_INPUT",
+            "READY_FOR_REVIEW",
+            "REVIEW_BLOCKED"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "checker_version": {
+          "default": "mota-validator-v1",
+          "title": "Checker Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "design_version",
+        "design_version_key"
+      ],
+      "title": "ValidationReportV2",
+      "type": "object"
+    },
+    "Via": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "net_id": {
+          "title": "Net Id",
+          "type": "string"
+        },
+        "x_nm": {
+          "title": "X Nm",
+          "type": "integer"
+        },
+        "y_nm": {
+          "title": "Y Nm",
+          "type": "integer"
+        },
+        "outer_nm": {
+          "default": 800000,
+          "title": "Outer Nm",
+          "type": "integer"
+        },
+        "drill_nm": {
+          "default": 400000,
+          "title": "Drill Nm",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "net_id",
+        "x_nm",
+        "y_nm"
+      ],
+      "title": "Via",
+      "type": "object"
+    },
+    "ViaDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "default": "through",
+          "enum": [
+            "through",
+            "blind",
+            "buried",
+            "micro"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "start_layer_id": {
+          "title": "Start Layer Id",
+          "type": "string"
+        },
+        "end_layer_id": {
+          "title": "End Layer Id",
+          "type": "string"
+        },
+        "drill_nm": {
+          "title": "Drill Nm",
+          "type": "integer"
+        },
+        "pad_outer_nm": {
+          "title": "Pad Outer Nm",
+          "type": "integer"
+        },
+        "plating": {
+          "default": "plated",
+          "enum": [
+            "plated",
+            "non_plated"
+          ],
+          "title": "Plating",
+          "type": "string"
+        },
+        "source": {
+          "default": "migrated-v1",
+          "enum": [
+            "migrated-v1",
+            "declared"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "start_layer_id",
+        "end_layer_id",
+        "drill_nm",
+        "pad_outer_nm"
+      ],
+      "title": "ViaDefinition",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "engine": {
+      "const": "mota-engine-v2",
+      "default": "mota-engine-v2",
+      "title": "Engine",
+      "type": "string"
+    },
+    "migration_version": {
+      "title": "Migration Version",
+      "type": "string"
+    },
+    "design_version": {
+      "$ref": "#/$defs/DesignVersion"
+    },
+    "source": {
+      "$ref": "#/$defs/SourceRef"
+    },
+    "units": {
+      "$ref": "#/$defs/UnitContract"
+    },
+    "requirement": {
+      "$ref": "#/$defs/RequirementSpec"
+    },
+    "circuit": {
+      "$ref": "#/$defs/CircuitV2"
+    },
+    "schematic": {
+      "$ref": "#/$defs/SchematicV2"
+    },
+    "board": {
+      "$ref": "#/$defs/BoardV2"
+    },
+    "checks": {
+      "$ref": "#/$defs/ValidationReportV2"
+    },
+    "constraints": {
+      "$ref": "#/$defs/ConstraintIR"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "preserved": {
+      "$ref": "#/$defs/PreservedFields"
+    }
+  },
+  "required": [
+    "migration_version",
+    "design_version",
+    "source",
+    "requirement",
+    "circuit",
+    "schematic",
+    "board",
+    "checks",
+    "constraints"
+  ],
+  "title": "Mota Complex PCB Engine v2 document",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mota.local/schemas/engine-v2.json"
+}

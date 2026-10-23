@@ -1,0 +1,56 @@
+module_id: ne555_astable
+version: 1
+title: NE555P astable timer
+status: verified
+description: >
+  Astable timer using the TI NE555P in a DIP-8 package. RA connects VCC to DISCH,
+  RB connects DISCH to TRIG/THRES, and the timing capacitor connects TRIG/THRES to
+  GND. RESET is tied to VCC and CONT has a 10 nF bypass.
+parts:
+  U1: ne555p
+  R1: r_10k
+  R2: r_68k
+  C1: c_10u_16v
+  C2: c_10n_50v
+pin_map:
+  "1": GND
+  "2": TRIG
+  "3": OUT
+  "4": RESET
+  "5": CONT
+  "6": THRES
+  "7": DISCH
+  "8": VCC
+topology:
+  nets:
+    - {name: VCC_5V, pins: [J1:1, U1:8, U1:4, R1:1, C3:1, R3:1]}
+    - {name: GND, pins: [J1:2, U1:1, C1:2, C2:2, C3:2]}
+    - {name: DISCH, pins: [U1:7, R1:2, R2:1]}
+    - {name: TIMING, pins: [U1:2, U1:6, R2:2, C1:1]}
+    - {name: CONT, pins: [U1:5, C2:1]}
+formula:
+  expression: "f = 1.44 / ((RA + 2*RB) * C)"
+  units: {RA: ohm, RB: ohm, C: farad}
+  nominal_hz_at_defaults: 0.986
+constraints:
+  - id: RESET_TIED_TO_VCC
+    expression: net(U1.4) == net(U1.8)
+  - id: CONT_BYPASS_10NF
+    expression: C2.value == "10nF"
+  - id: VCC_DECOUPLING_100NF
+    expression: C3.value == "100nF"
+  - id: TIMING_WITHIN_TARGET
+    expression: abs(f_nominal - f_target)/f_target <= 0.20
+sources:
+  - id: D2
+    title: TI NE555 datasheet
+    url: https://www.ti.com/lit/ds/symlink/ne555.pdf
+tests:
+  - id: missing_reset
+    expect: NE555_RESET_BIAS=FAIL
+    fixture: remove U1.4 from all nets
+  - id: timing_drift
+    expect: NE555_TIMING=FAIL
+    fixture: R1.value = 100k
+  - id: nominal_timing
+    expect: NE555_TIMING=PASS with f≈0.986 Hz (calculated, not measured)

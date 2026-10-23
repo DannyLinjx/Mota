@@ -1,0 +1,198 @@
+{
+  "schema_version": 2,
+  "input_id": "two_layer_two_nets",
+  "board": {
+    "width_nm": 40000000,
+    "height_nm": 30000000,
+    "thickness_nm": 570000,
+    "outline": [
+      {
+        "x": 0,
+        "y": 0
+      },
+      {
+        "x": 40000000,
+        "y": 0
+      },
+      {
+        "x": 40000000,
+        "y": 30000000
+      },
+      {
+        "x": 0,
+        "y": 30000000
+      }
+    ],
+    "stackup": {
+      "layers": [
+        {
+          "id": "F.Cu",
+          "order": 1,
+          "kind": "copper",
+          "thickness_nm": 35000,
+          "material_ref": "copper"
+        },
+        {
+          "id": "D1",
+          "order": 2,
+          "kind": "dielectric",
+          "thickness_nm": 500000,
+          "material_ref": "FR4"
+        },
+        {
+          "id": "B.Cu",
+          "order": 3,
+          "kind": "copper",
+          "thickness_nm": 35000,
+          "material_ref": "copper"
+        }
+      ]
+    },
+    "pads": [
+      {
+        "id": "A1",
+        "net": "A",
+        "component_id": "U1",
+        "pin": "A1",
+        "plated": true,
+        "copper_by_layer": {
+          "F.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 5000000,
+              "y": 15000000
+            },
+            "radius": 800000
+          },
+          "B.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 5000000,
+              "y": 15000000
+            },
+            "radius": 800000
+          }
+        }
+      },
+      {
+        "id": "A2",
+        "net": "A",
+        "component_id": "U1",
+        "pin": "A2",
+        "plated": true,
+        "copper_by_layer": {
+          "F.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 35000000,
+              "y": 15000000
+            },
+            "radius": 800000
+          },
+          "B.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 35000000,
+              "y": 15000000
+            },
+            "radius": 800000
+          }
+        }
+      },
+      {
+        "id": "B1",
+        "net": "B",
+        "component_id": "U1",
+        "pin": "B1",
+        "plated": true,
+        "copper_by_layer": {
+          "F.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 20000000,
+              "y": 5000000
+            },
+            "radius": 800000
+          },
+          "B.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 20000000,
+              "y": 5000000
+            },
+            "radius": 800000
+          }
+        }
+      },
+      {
+        "id": "B2",
+        "net": "B",
+        "component_id": "U1",
+        "pin": "B2",
+        "plated": true,
+        "copper_by_layer": {
+          "F.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 20000000,
+              "y": 25000000
+            },
+            "radius": 800000
+          },
+          "B.Cu": {
+            "kind": "circle",
+            "center": {
+              "x": 20000000,
+              "y": 25000000
+            },
+            "radius": 800000
+          }
+        }
+      }
+    ],
+    "tracks": [],
+    "keepouts": []
+  },
+  "routing": {
+    "nets": [
+      {
+        "net": "A",
+        "terminals": [
+          "A1",
+          "A2"
+        ],
+        "locked": false
+      },
+      {
+        "net": "B",
+        "terminals": [
+          "B1",
+          "B2"
+        ],
+        "locked": false
+      }
+    ],
+    "rules": {
+      "grid_nm": 500000,
+      "track_width_nm": 300000,
+      "clearance_nm": 200000,
+      "edge_clearance_nm": 500000,
+      "via_drill_nm": 400000,
+      "via_pad_nm": 800000,
+      "via_cost_factor": 6.0,
+      "corridor_penalty": 0.5,
+      "max_rounds": 3,
+      "max_expansions": 100000,
+      "max_grid_cells": 8000000,
+      "max_millis": 15000,
+      "seed": 7
+    },
+    "seed": 7
+  },
+  "queries": [
+    {
+      "id": "route",
+      "kind": "route"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "template_id": "led_timer",
+  "template_version": 1,
+  "status": "verified",
+  "validated_run_ids": [
+    "run_b8b019e60ee8",
+    "run_97a3de8ba745",
+    "run_34cdb1e2df84",
+    "run_d348f5023a55",
+    "run_516b9f29ea3a",
+    "run_1933af799484",
+    "run_1e1f138308dd",
+    "run_54f187a72172",
+    "run_d726610fc4b2",
+    "run_7497546dfab7"
+  ],
+  "validated_revision_ids": [
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002",
+    "rev_000002"
+  ],
+  "runs": 10,
+  "sample_runs": [
+    {
+      "index": 1,
+      "run_id": "run_b8b019e60ee8",
+      "revision_id": "rev_000002",
+      "state": "SUCCEEDED",
+      "review_status": "READY_FOR_REVIEW",
+      "counts": {
+        "PASS": 20,
+        "FAIL": 0,
+        "WARN": 1,
+        "NOT_CHECKED": 1
+      },
+      "parameters": {
+        "supply_voltage_v": 5.0,
+        "target_frequency_hz": 1.0,
+        "board_width_mm": 50,
+        "board_height_mm": 35
+      },
+      "design_hash": "30241b9d71d307245125b600d2b869d09eb2d5935e9c9a7a77a346edd0fe46db",
+      "wall_ms": 4161
+    },
+    {
+      "index": 2,
+      "run_id": "run_97a3de8ba745",
+      "revision_id": "rev_000002",
+      "state": "SUCCEEDED",
+      "review_status": "READY_FOR_REVIEW",
+      "counts": {
+        "PASS": 20,
+        "FAIL": 0,
+        "WARN": 1,
+        "NOT_CHECKED": 1
+      },
+      "parameters": {
+        "supply_voltage_v": 5.0,
+        "target_frequency_hz": 1.0,
+        "board_width_mm": 55,
+        "board_height_mm": 35
+      },
+      "design_hash": "e4d31aea85b7578e3dd6415ef9dc73e7738438c9e0df72c172be594f5d5fe3d2",
+      "wall_ms": 4429
+    },
+    {
+      "index": 3,
+      "run_id": "run_34cdb1e2df84",
+      "revision_id": "rev_000002",
+      "state": "SUCCEEDED",
+      "review_status": "READY_FOR_REVIEW",
+      "counts": {
+        "PASS": 20,
+        "FAIL": 0,
+        "WARN": 1,
+        "NOT_CHECKED": 1
+      },
+      "parameters": {
+        "supply_voltage_v": 4.9,
+        "target_frequency_hz": 1.0,
+        "board_width_mm": 50,
+        "board_height_mm": 40
+      },
+      "design_hash": "2c25cf877fed294c98324525e13476d60853a4f901c11f221f4374e2ad17a509",
+      "wall_ms": 4166
+    }
+  ],
+  "states": {
+    "SUCCEEDED": 10
+  },
+  "review_statuses": {
+    "READY_FOR_REVIEW": 10
+  },
+  "deterministic_per_variant": true,
+  "design_hashes_by_board_variant": {
+    "{\"board_height_mm\": 35, \"board_width_mm\": 50}": [
+      "30241b9d71d307245125b600d2b869d09eb2d5935e9c9a7a77a346edd0fe46db"
+    ],
+    "{\"board_height_mm\": 35, \"board_width_mm\": 55}": [
+      "e4d31aea85b7578e3dd6415ef9dc73e7738438c9e0df72c172be594f5d5fe3d2"
+    ],
+    "{\"board_height_mm\": 40, \"board_width_mm\": 50}": [
+      "2c25cf877fed294c98324525e13476d60853a4f901c11f221f4374e2ad17a509"
+    ]
+  },
+  "wall_ms_median": 4233.0,
+  "wall_ms_max": 4429,
+  "generated_at": "2026-10-21T06:49:17Z",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.15",
+  "notes": "All runs READY_FOR_REVIEW with deterministic canonical hashes."
+}

@@ -1,0 +1,65 @@
+{
+  "pack_id": "user_demo_strict_v1",
+  "version": 1,
+  "kind": "user",
+  "title": "User stricter conditions for the demo board",
+  "purpose": "A user pack may only tighten the manufacturing floor and platform requirements. It never loosens them; a looser user value is recorded as clamped.",
+  "assumptions": [
+    "Values are user preferences for this demo, not manufacturer capabilities.",
+    "The soft clearance preference is intentionally looser than the hard floor to prove it cannot loosen it."
+  ],
+  "sources": [
+    {
+      "source_id": "user_strict_profile",
+      "title": "User-provided stricter profile",
+      "kind": "user",
+      "note": "demo input, not a datasheet claim"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "strict_clearance",
+      "kind": "clearance",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.3, "unit": "mm"}},
+      "sources": ["user_strict_profile"],
+      "intent": "User demands 0.30 mm everywhere, above the 0.25 mm platform value."
+    },
+    {
+      "rule_id": "strict_signal_track_width",
+      "kind": "track_width",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"net_classes": ["signal"]},
+      "parameters": {"min": {"value": 0.35, "unit": "mm"}},
+      "sources": ["user_strict_profile"],
+      "intent": "User demands 0.35 mm signal tracks."
+    },
+    {
+      "rule_id": "strict_via_drill",
+      "kind": "via_drill",
+      "hard": true,
+      "required": true,
+      "severity": "error",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.3, "unit": "mm"}},
+      "sources": ["user_strict_profile"],
+      "intent": "User prefers a larger via drill than the manufacturing floor."
+    },
+    {
+      "rule_id": "soft_clearance_preference",
+      "kind": "clearance",
+      "hard": false,
+      "required": false,
+      "severity": "info",
+      "selector": {"all": true},
+      "parameters": {"min": {"value": 0.1, "unit": "mm"}},
+      "sources": ["user_strict_profile"],
+      "intent": "Soft preference only; 0.10 mm is below the hard floor and must not reduce it."
+    }
+  ]
+}

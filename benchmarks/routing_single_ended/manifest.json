@@ -1,0 +1,56 @@
+{
+  "suite": "single-ended-v2",
+  "version": 2,
+  "cases": [
+    {
+      "id": "two_layer_three_terminal",
+      "file": "two_layer_three_terminal.json",
+      "sha256": "8ddb1a5754f4628afb1591f412f91a404fcf82870735593461f330e45ff1d8d1",
+      "requested_nets": [
+        "N"
+      ]
+    },
+    {
+      "id": "two_layer_obstacle",
+      "file": "two_layer_obstacle.json",
+      "sha256": "ce1d5b8426c68507d42dba9b6540a04c83e5f0f993c576752053d5890420c57b",
+      "requested_nets": [
+        "N"
+      ]
+    },
+    {
+      "id": "two_layer_two_nets",
+      "file": "two_layer_two_nets.json",
+      "sha256": "b9af199b9c182cf9fb106331cdf208776873b09869e254a4d9021b2747746fdc",
+      "requested_nets": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "four_layer_smd",
+      "file": "four_layer_smd.json",
+      "sha256": "770f2057ab2d69766a0edaa14896b8444c43835e97f96980c871bc2d4848f0a6",
+      "requested_nets": [
+        "N"
+      ]
+    },
+    {
+      "id": "six_layer_smd",
+      "file": "six_layer_smd.json",
+      "sha256": "19b3010e13c74d0ac508083c3b82723749c8f30e58b797c4168b84e3b5843da6",
+      "requested_nets": [
+        "N"
+      ]
+    },
+    {
+      "id": "locked_track",
+      "file": "locked_track.json",
+      "sha256": "b1b133090e5b3b8ad376fd7c2010f785fb46205a9532a4a6de3571ea7881e18a",
+      "requested_nets": [
+        "N",
+        "M"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/mota-kernel-tests.dir/tests/geometry_tests.cpp.o" "CMakeFiles/mota-kernel-tests.dir/tests/worker_tests.cpp.o" -o mota-kernel-tests  libmota-kernel-lib.a

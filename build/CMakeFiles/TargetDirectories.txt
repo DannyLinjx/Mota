@@ -1,0 +1,12 @@
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-kernel-lib.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-kernel.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-kernel-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-connectivity-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-drc-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-placement-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-routing-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-fanout-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/mota-highspeed-tests.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/test.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/edit_cache.dir
+/Users/danny/Documents/Mota/build/CMakeFiles/rebuild_cache.dir

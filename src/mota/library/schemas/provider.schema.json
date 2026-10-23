@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mota.example/contracts/v1/provider.schema.json",
+  "title": "MoTA library provider descriptor v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "provider_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/package_version"
+    },
+    "implementation_status": {
+      "enum": [
+        "contract_only",
+        "integrated"
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "builtin",
+            "python_module",
+            "executable"
+          ]
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocol": {
+          "enum": [
+            "in_process",
+            "json_rpc_stdio"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "entrypoint",
+        "protocol"
+      ],
+      "additionalProperties": false
+    },
+    "operations": {
+      "type": "object",
+      "properties": {
+        "describe": {
+          "const": true
+        },
+        "enumerate": {
+          "const": true
+        },
+        "fetch": {
+          "const": true
+        },
+        "normalize": {
+          "const": true
+        },
+        "search": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "describe",
+        "enumerate",
+        "fetch",
+        "normalize"
+      ],
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "asset_kinds": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/kind"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "local_directory",
+              "local_archive",
+              "http_archive",
+              "api"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "geometry_kinds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "symbol",
+              "footprint",
+              "model3d"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "documentation_levels": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/documentation_level"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "reference_mode": {
+          "type": "boolean"
+        },
+        "snapshot_copy": {
+          "type": "boolean"
+        },
+        "license_metadata": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "asset_kinds",
+        "source_types",
+        "formats",
+        "geometry_kinds",
+        "documentation_levels",
+        "reference_mode",
+        "snapshot_copy",
+        "license_metadata"
+      ],
+      "additionalProperties": false
+    },
+    "config_schema_path": {
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/relative_path"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "provider_id",
+    "display_name",
+    "version",
+    "implementation_status",
+    "runtime",
+    "operations",
+    "capabilities",
+    "config_schema_path"
+  ],
+  "additionalProperties": false
+}

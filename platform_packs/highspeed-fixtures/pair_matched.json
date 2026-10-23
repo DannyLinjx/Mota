@@ -1,0 +1,71 @@
+{
+  "id": "pair_matched",
+  "source": "Synthetic coupled pair on F.Cu and B.Cu with a paired layer transition. Gap, skew and delay windows are declared in the fixture.",
+  "expected_status": "SUCCEEDED",
+  "layers": ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"],
+  "board": {
+    "width_nm": 40000000,
+    "height_nm": 20000000,
+    "outline": [
+      {"x": 0, "y": 0},
+      {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000},
+      {"x": 0, "y": 20000000}
+    ]
+  },
+  "pairs": [
+    {
+      "id": "DP1",
+      "net_p": "DP_P",
+      "net_n": "DP_N",
+      "gap_nm": 200000,
+      "gap_tolerance_nm": 50000,
+      "skew_tolerance_nm": 100000,
+      "max_uncoupled_nm": 1000000,
+      "delay_skew_tolerance_ps": 5.0,
+      "pair_layer_transitions": true
+    }
+  ],
+  "tracks": [
+    {"id": "TP1", "net": "DP_P", "layer": "F.Cu", "width_nm": 150000,
+     "points": [{"x": 5000000, "y": 5000000}, {"x": 20000000, "y": 5000000}]},
+    {"id": "TN1", "net": "DP_N", "layer": "F.Cu", "width_nm": 150000,
+     "points": [{"x": 5000000, "y": 5200000}, {"x": 20000000, "y": 5200000}]},
+    {"id": "TP2", "net": "DP_P", "layer": "B.Cu", "width_nm": 150000,
+     "points": [{"x": 20000000, "y": 5000000}, {"x": 25000000, "y": 5000000}]},
+    {"id": "TN2", "net": "DP_N", "layer": "B.Cu", "width_nm": 150000,
+     "points": [{"x": 20000000, "y": 5200000}, {"x": 25000000, "y": 5200000}]}
+  ],
+  "vias": [
+    {"id": "VP1", "net": "DP_P", "x_nm": 20000000, "y_nm": 5000000,
+     "start_layer": "F.Cu", "end_layer": "B.Cu", "drill_nm": 300000,
+     "delay_ps": 12.0, "has_delay": true},
+    {"id": "VN1", "net": "DP_N", "x_nm": 20000000, "y_nm": 5200000,
+     "start_layer": "F.Cu", "end_layer": "B.Cu", "drill_nm": 300000,
+     "delay_ps": 12.0, "has_delay": true}
+  ],
+  "layer_models": [
+    {"layer": "F.Cu", "thickness_nm": 100000, "reference_layer": "In1.Cu", "propagation_ps_per_mm": 6.0, "source": "declared in fixture"},
+    {"layer": "In1.Cu", "thickness_nm": 200000, "reference_layer": "In2.Cu", "propagation_ps_per_mm": 9.0, "source": "declared in fixture"},
+    {"layer": "In2.Cu", "thickness_nm": 200000, "reference_layer": "In1.Cu", "propagation_ps_per_mm": 9.4, "source": "declared in fixture"},
+    {"layer": "B.Cu", "thickness_nm": 100000, "reference_layer": "In2.Cu", "propagation_ps_per_mm": 6.4, "source": "declared in fixture"}
+  ],
+  "reference_planes": [
+    {"layer": "In1.Cu", "polygons": [[
+      {"x": 0, "y": 0}, {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000}, {"x": 0, "y": 20000000}
+    ]]},
+    {"layer": "In2.Cu", "polygons": [[
+      {"x": 0, "y": 0}, {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000}, {"x": 0, "y": 20000000}
+    ]]}
+  ],
+  "expect_checks": [
+    {"kind": "diff_coupling", "status": "PASS"},
+    {"kind": "diff_skew", "status": "PASS", "measured_nm": 0},
+    {"kind": "diff_turn", "status": "PASS"},
+    {"kind": "pair_layer", "status": "PASS"},
+    {"kind": "delay_skew", "status": "PASS"}
+  ],
+  "rules": {"sample_step_nm": 100000, "seed": 21}
+}

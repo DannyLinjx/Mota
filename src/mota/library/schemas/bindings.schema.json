@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mota.example/contracts/v1/bindings.schema.json",
+  "title": "MoTA exact symbol-footprint bindings v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "asset_id": {
+      "$ref": "common.schema.json#/$defs/asset_id"
+    },
+    "status": {
+      "enum": [
+        "unbound",
+        "partial",
+        "bound"
+      ]
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/binding"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "asset_id",
+    "status",
+    "bindings"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "binding": {
+      "type": "object",
+      "properties": {
+        "binding_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "unbound",
+            "partial",
+            "bound"
+          ]
+        },
+        "symbol_ref": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/exact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "footprint_ref": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/exact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "model3d_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/exact_ref"
+          },
+          "uniqueItems": true
+        },
+        "terminal_pad_map": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/terminal_pad_mapping"
+          }
+        },
+        "unmapped_terminals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "unmapped_pads": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/evidence_ref"
+          }
+        }
+      },
+      "required": [
+        "binding_id",
+        "status",
+        "symbol_ref",
+        "footprint_ref",
+        "model3d_refs",
+        "terminal_pad_map",
+        "unmapped_terminals",
+        "unmapped_pads",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "bound"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "symbol_ref": {
+                "type": "object"
+              },
+              "footprint_ref": {
+                "type": "object"
+              },
+              "terminal_pad_map": {
+                "minItems": 1
+              },
+              "unmapped_terminals": {
+                "maxItems": 0
+              },
+              "unmapped_pads": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unbound"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "symbol_ref": {
+                "type": "null"
+              },
+              "footprint_ref": {
+                "type": "null"
+              },
+              "model3d_refs": {
+                "maxItems": 0
+              },
+              "terminal_pad_map": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "unbound"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "bindings": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "bound"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "bindings": {
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "status": {
+                  "const": "bound"
+                }
+              },
+              "required": [
+                "status"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

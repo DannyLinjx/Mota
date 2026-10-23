@@ -1,0 +1,81 @@
+{
+  "id": "channel_series_matched",
+  "source": "Synthetic 4-layer channel: driver -> series pin pair -> two receivers. Board and stackup numbers are declared here, not taken from a vendor datasheet.",
+  "expected_status": "SUCCEEDED",
+  "layers": ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"],
+  "board": {
+    "width_nm": 40000000,
+    "height_nm": 20000000,
+    "outline": [
+      {"x": 0, "y": 0},
+      {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000},
+      {"x": 0, "y": 20000000}
+    ]
+  },
+  "channels": [
+    {
+      "id": "CH_SPI",
+      "net": "N1",
+      "driver": "D1",
+      "receivers": ["R1", "R2"],
+      "series": ["S1", "S2"],
+      "length_tolerance_nm": 1000000,
+      "target_delay_ps": 238.0,
+      "delay_tolerance_ps": 1.0,
+      "nodes": [
+        {"id": "D1", "kind": "driver", "net": "N1", "component_id": "U1", "pin": "1", "x_nm": 5000000, "y_nm": 10000000, "layer": "F.Cu"},
+        {"id": "S1", "kind": "series", "net": "N1", "component_id": "R1", "pin": "1", "x_nm": 15000000, "y_nm": 10000000, "layer": "F.Cu"},
+        {"id": "S2", "kind": "series", "net": "N2", "component_id": "R1", "pin": "2", "x_nm": 16000000, "y_nm": 10000000, "layer": "F.Cu"},
+        {"id": "R1", "kind": "receiver", "net": "N2", "component_id": "U2", "pin": "1", "x_nm": 26000000, "y_nm": 14000000, "layer": "F.Cu"},
+        {"id": "R2", "kind": "receiver", "net": "N2", "component_id": "U3", "pin": "1", "x_nm": 26000000, "y_nm": 6000000, "layer": "F.Cu"}
+      ],
+      "links": [
+        {"id": "L1", "from": "D1", "to": "S1", "kind": "copper"},
+        {"id": "L2", "from": "S1", "to": "S2", "kind": "component", "internal_length_nm": 1000000},
+        {"id": "L3", "from": "S2", "to": "R1", "kind": "copper"},
+        {"id": "L4", "from": "S2", "to": "R2", "kind": "copper"}
+      ]
+    }
+  ],
+  "tracks": [
+    {"id": "T_N1", "net": "N1", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 5000000, "y": 10000000}, {"x": 15000000, "y": 10000000}]},
+    {"id": "T_N2_MAIN", "net": "N2", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 16000000, "y": 10000000}, {"x": 26000000, "y": 10000000}]},
+    {"id": "T_N2_UP", "net": "N2", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 26000000, "y": 10000000}, {"x": 26000000, "y": 14000000}]},
+    {"id": "T_N2_DOWN", "net": "N2", "layer": "F.Cu", "width_nm": 200000,
+     "points": [{"x": 26000000, "y": 10000000}, {"x": 26000000, "y": 6000000}]}
+  ],
+  "layer_models": [
+    {"layer": "F.Cu", "thickness_nm": 100000, "reference_layer": "In1.Cu", "propagation_ps_per_mm": 6.0, "source": "declared in fixture"},
+    {"layer": "In1.Cu", "thickness_nm": 200000, "reference_layer": "In2.Cu", "propagation_ps_per_mm": 9.0, "source": "declared in fixture"},
+    {"layer": "In2.Cu", "thickness_nm": 200000, "reference_layer": "In1.Cu", "propagation_ps_per_mm": 9.4, "source": "declared in fixture"},
+    {"layer": "B.Cu", "thickness_nm": 100000, "reference_layer": "In2.Cu", "propagation_ps_per_mm": 6.4, "source": "declared in fixture"}
+  ],
+  "reference_planes": [
+    {"layer": "In1.Cu", "polygons": [[
+      {"x": 0, "y": 0}, {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000}, {"x": 0, "y": 20000000}
+    ]]},
+    {"layer": "In2.Cu", "polygons": [[
+      {"x": 0, "y": 0}, {"x": 40000000, "y": 0},
+      {"x": 40000000, "y": 20000000}, {"x": 0, "y": 20000000}
+    ]]}
+  ],
+  "package_models": [
+    {"component_id": "U1", "pin": "1", "length_nm": 2000000, "delay_ps": 20.0, "present": true, "source": "declared in fixture"},
+    {"component_id": "R1", "pin": "1", "length_nm": 0, "delay_ps": 10.0, "present": true, "source": "declared in fixture"},
+    {"component_id": "R1", "pin": "2", "length_nm": 0, "delay_ps": 10.0, "present": true, "source": "declared in fixture"},
+    {"component_id": "U2", "pin": "1", "length_nm": 2000000, "delay_ps": 15.0, "present": true, "source": "declared in fixture"},
+    {"component_id": "U3", "pin": "1", "length_nm": 2000000, "delay_ps": 15.0, "present": true, "source": "declared in fixture"}
+  ],
+  "expect_checks": [
+    {"kind": "channel_topology", "status": "PASS"},
+    {"kind": "length_match", "status": "PASS", "measured_nm": 0},
+    {"kind": "delay", "status": "PASS"},
+    {"kind": "return_path", "status": "PASS"}
+  ],
+  "rules": {"sample_step_nm": 100000, "seed": 11}
+}

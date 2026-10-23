@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mota.example/contracts/v1/pins.schema.json",
+  "title": "MoTA physical terminals and schematic pin occurrences v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "asset_id": {
+      "$ref": "common.schema.json#/$defs/asset_id"
+    },
+    "status": {
+      "$ref": "common.schema.json#/$defs/knowledge_status"
+    },
+    "physical_terminal_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "physical_terminals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "terminal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "number": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "electrical_type": {
+            "enum": [
+              "input",
+              "output",
+              "bidirectional",
+              "tri_state",
+              "passive",
+              "power_in",
+              "power_out",
+              "open_collector",
+              "open_emitter",
+              "no_connect",
+              "unspecified",
+              "unknown"
+            ]
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/knowledge_status"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/evidence_ref"
+            }
+          }
+        },
+        "required": [
+          "terminal_id",
+          "number",
+          "name",
+          "electrical_type",
+          "status",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "symbol_occurrences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "occurrence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "symbol_asset_id": {
+            "$ref": "common.schema.json#/$defs/asset_id"
+          },
+          "terminal_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "pin_number": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pin_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "body_style": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/knowledge_status"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/evidence_ref"
+            }
+          }
+        },
+        "required": [
+          "occurrence_id",
+          "symbol_asset_id",
+          "terminal_id",
+          "pin_number",
+          "pin_name",
+          "unit",
+          "body_style",
+          "hidden",
+          "status",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "asset_id",
+    "status",
+    "physical_terminal_count",
+    "physical_terminals",
+    "symbol_occurrences"
+  ],
+  "additionalProperties": false
+}
